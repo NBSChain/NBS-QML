@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>AboutNBS.qml</file>
+        <file>NavigationBar.qml</file>
+        <file>SlidingMenu.qml</file>
+    </qresource>
+</RCC>
