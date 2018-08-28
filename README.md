@@ -1,4 +1,4 @@
-![banner](https://github.com/NBSChain/nbs-qmlc/blob/master/doc/banner.gif?raw=true)
+![banner](https://github.com/NBSChain/NBS-QML/blob/master/doc/banner.gif)
 
 # NBS QML C++
 A Dapp application based on NBS, QML, C++
