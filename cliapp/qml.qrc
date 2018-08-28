@@ -4,5 +4,6 @@
         <file>AboutNBS.qml</file>
         <file>NavigationBar.qml</file>
         <file>SlidingMenu.qml</file>
+        <file>RootWindow.qml</file>
     </qresource>
 </RCC>
