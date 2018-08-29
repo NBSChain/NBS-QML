@@ -1,4 +1,4 @@
-QT += qml quick sql
+QT += quick qml
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
@@ -13,8 +13,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        main.cpp \
-    qmllog4qml.cpp
+        main.cpp
 
 RESOURCES += qml.qrc
 
@@ -29,10 +28,5 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-
-# Set App logo
+#Set Icon
 RC_ICONS = logo.ico
-
-HEADERS += \
-    qmllog4qml.h \
-    qmllog4qml.h
