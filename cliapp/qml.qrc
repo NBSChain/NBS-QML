@@ -4,5 +4,6 @@
         <file>components/BaseButton.qml</file>
         <file>views/AboutPage.qml</file>
         <file>Font/fontawesome-webfont.ttf</file>
+        <file>Settings.qml</file>
     </qresource>
 </RCC>

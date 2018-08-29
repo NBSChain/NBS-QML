@@ -8,13 +8,12 @@ Window {
     visible                                         : true
     width                                           : 900
     height                                          : 620
-    title                                           : qsTr("NBS 客户端")
 
     BaseButton {
         id                                          : aboutPage
         x                                           : 20
         y                                           : 20
-        text                                        : qsTr("测试")
+        text                                        : qsTr("测试");
 
         onClicked                                   : {
             status.text = "Button Clicked."
@@ -27,7 +26,7 @@ Window {
         y                                           : 76
         width                                       : 116
         height                                      : 26
-        text                                        : qsTr("waiting...")
+        text                                        : qsTr("waiting...");
         horizontalAlignment                         : Text.AlignHCenter
     }
 
