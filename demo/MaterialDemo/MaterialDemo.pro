@@ -29,4 +29,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 
-
+#Set Icon
+RC_ICONS = ../demo.ico

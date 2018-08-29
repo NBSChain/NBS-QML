@@ -16,8 +16,7 @@ OTHER_FILES = $$PWD/README.md
 OTHER_FILES += $$PWD/LICENSE
 
 
-#Set Icon
-RC_ICONS = logo.ico
+
 
 
 
