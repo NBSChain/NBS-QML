@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/logo.ico</file>
+        <file>font/fontawesome-webfont.ttf</file>
+        <file>font/icomoon.ttf</file>
+    </qresource>
+</RCC>

@@ -1,3 +1,11 @@
+/**
+ * @file    nbs-qml
+ * @version 1.0
+ * @brief   入口QML
+ * @date    2018-08-30
+ * @author  lanbery
+ * @section LICENSE Copyright (c) 2018 - 2025 lanbery,NBS Chain Co.
+ */
 import QtQuick 2.11
 import QtQuick.Controls 2.2
 import QtQuick.Window 2.11
@@ -6,8 +14,8 @@ import "./components"
 
 Window {
     visible                                         : true
-    width                                           : 900
-    height                                          : 620
+    width                                           : 910
+    height                                          : 560
 
     BaseButton {
         id                                          : aboutPage

@@ -1,11 +1,13 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.4
 
+import "."
+
 ApplicationWindow {
     id: window
     visible: true
-    width: 640
-    height: 480
+    width: 910
+    height: 560
     title: qsTr("Stack")
 
     header: ToolBar {
@@ -32,11 +34,20 @@ ApplicationWindow {
 
     Drawer {
         id: drawer
-        width: window.width * 0.34
+        width: window.width * 0.382
         height: window.height
+
 
         Column {
             anchors.fill: parent
+
+
+//            Item {
+//                id: navHeader
+//                SilingDemo {
+//                    anchors.fill    : parent
+//                }
+//            }
 
             ItemDelegate {
                 text: qsTr("Page 1")

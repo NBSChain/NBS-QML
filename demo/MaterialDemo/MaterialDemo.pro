@@ -28,6 +28,8 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
+OTHER_FILES = nbs_header.png
+
 
 #Set Icon
 RC_ICONS = ../demo.ico

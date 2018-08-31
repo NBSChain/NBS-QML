@@ -11,4 +11,11 @@ Page {
         text: qsTr("You are on Page 1.")
         anchors.centerIn: parent
     }
+
+    Image {
+        id: image
+        opacity: 0.7
+        anchors.fill: parent
+        source: "about_ic.png"
+    }
 }

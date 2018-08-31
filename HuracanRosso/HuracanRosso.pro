@@ -1,4 +1,4 @@
-QT += quick qml
+QT += qml quick
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
@@ -15,7 +15,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp
 
-RESOURCES += qml.qrc
+RESOURCES += \
+    res.qrc \
+    qml.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -28,9 +30,10 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
+
 #Set Icon
-RC_ICONS = logo.ico
+ RC_ICONS = logo.ico
 
 DISTFILES += \
-    qmldir \
-    Modules/Fonts.qml
+    logo.ico \
+    font/font-awesome.css
