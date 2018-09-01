@@ -1,4 +1,4 @@
-import QtQuick 2.11
+import QtQuick 2.7
 import QtQuick.Controls 2.2
 /**
  * @file    WindButton.qml
@@ -12,9 +12,9 @@ Label   {
     property var        btnClicked                  : (function(){});                       //点击触发的事件函数
 
     property bool       ishovered                   : false;                                //是否hover状态
-    property color      fontColor                   : mainWindow.normalFontColor;           //
     property color      hoveredColor                : mainWindow.rossoMarsColor;            //
     property color      bgColor                     : mainWindow.grigioLynxColor;
+    property color      fontColor;           //
 
     property real       wBtnWidth;
     property real       wBtnHeight;

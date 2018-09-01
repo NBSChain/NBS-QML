@@ -32,7 +32,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 
 #Set Icon
- RC_ICONS = logo.ico
+ RC_ICONS = .\images\logo.ico
 
 DISTFILES += \
     logo.ico \

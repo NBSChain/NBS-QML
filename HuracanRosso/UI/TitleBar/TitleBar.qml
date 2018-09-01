@@ -14,6 +14,25 @@ Rectangle   {
     id                                      : root;
     color                                   : mainWindow.grigioLynxColor;
 
+    MouseArea   {
+        property real xmouse;//鼠标x,y坐标
+        property real ymouse;
+
+        anchors.fill                        : parent;
+        acceptedButtons                     : Qt.LeftButton;//只处理鼠标左键事件
+
+        drag.filterChildren                 : true;//拖动
+
+        onPressed                           : {
+            xmouse  = mouse.x;
+            ymouse  = mouse.y;
+        }
+
+        onPositionChanged                   : {
+            mainWindow.x = mainWindow.x + (mouse.x - xmouse);
+            mainWindow.y = mainWindow.y + (mouse.y - ymouse);
+        }
+    }
     //主程序ico
     Image   {
         id                                  : icon;
@@ -26,6 +45,34 @@ Rectangle   {
             verticalCenter                  : parent.verticalCenter;
         }
     }
+
+    Rectangle   {
+        id                                  : peerMenu;
+        color                               : mainWindow.rossoBiaColor;
+        width                               : 60*dp;
+        height                              : parent.height;
+
+        anchors.left                        : icon.right;
+        anchors.leftMargin                  : 5*dp;
+        Label   {
+            id                                  : title;
+            text: qsTr("File");
+            color                               : mainWindow.neroNoctisColor;
+            verticalAlignment                   : Text.AlignVCenter;
+            horizontalAlignment                 : Text.AlignHCenter;
+            anchors.fill                        : parent;
+            font    {
+                family                          : icomoonFont.name;
+                pixelSize                       : 20*dp;
+                bold                            : true;
+            }
+
+        }
+
+
+    }
+
+
 
 
     /* 窗口操作 */
@@ -123,23 +170,5 @@ Rectangle   {
     }
 
 
-    MouseArea   {
-        property real xmouse;//鼠标x,y坐标
-        property real ymouse;
 
-        anchors.fill                        : parent;
-        acceptedButtons                     : Qt.LeftButton;//只处理鼠标左键事件
-
-        drag.filterChildren                 : true;//拖动
-
-        onPressed                           : {
-            xmouse  = mouse.x;
-            ymouse  = mouse.y;
-        }
-
-        onPositionChanged                   : {
-            mainWindow.x = mainWindow.x + (mouse.x - xmouse);
-            mainWindow.y = mainWindow.y + (mouse.y - ymouse);
-        }
-    }
 }

@@ -3,5 +3,6 @@
         <file>UI/main.qml</file>
         <file>UI/TitleBar/TitleBar.qml</file>
         <file>UI/TitleBar/WindButton.qml</file>
+        <file>UI/Utils/CustomMouseArea.qml</file>
     </qresource>
 </RCC>

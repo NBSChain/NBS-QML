@@ -29,8 +29,8 @@ Window {
     color                                           : neroHeleneColor;
     minimumWidth                                    : 840;
     minimumHeight                                   : 520;
-    width                                           : 840*dp; //h=w*0.618
-    height                                          : 520*dp;
+    width                                           : 1000*dp; //h=w*0.618
+    height                                          : 618*dp;
     flags                                           : Qt.FramelessWindowHint | Qt.Window;
 
     //增加字体库
@@ -66,6 +66,21 @@ Window {
         anchors.leftMargin                          : 1*dp;
         anchors.top                                 : titleBar.bottom;
     }
+
+    Rectangle   {
+        width                                       : parent.width -2*dp;
+        height                                      : parent.height -42*dp;
+        anchors.top                                 : skyline.bottom;
+        anchors.topMargin                           : 1*dp;
+        color                                       :  neroHeleneColor;
+        Image {
+            anchors.centerIn                        : parent;
+            source                                  : "qrc:/images/huracan.png"
+        }
+    }
+
+
+
 
 
 }
