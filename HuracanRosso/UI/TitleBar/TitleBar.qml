@@ -41,11 +41,27 @@ Rectangle   {
         height                              : 32*dp;
         anchors {
             left                            : parent.left;
-            leftMargin                      : 15*dp;
+            leftMargin                      : 10*dp;
             verticalCenter                  : parent.verticalCenter;
         }
     }
 
+    Label   {
+        id                                  : appTitle;
+        anchors {
+            left                            : icon.right;
+            leftMargin                      : 5*dp;
+            verticalCenter                  : parent.verticalCenter;
+        }
+        text                                : qsTr("NBS 客户端");
+        color                               : settings.foregroundColor;
+        font{
+            family                          : aweFont.name;
+            pixelSize                       : 20*dp;
+            bold                            : true;
+        }
+
+    }
 
     /* 窗口操作 */
     Row         {

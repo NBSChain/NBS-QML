@@ -15,12 +15,32 @@ import "../Utils"
  * @section LICENSE Copyright (c) 2018 - 2025 lanbery,NBS Chain Co.
  */
 Rectangle   {
+    property string     currentViewName         : "HOME";
     id                                          : root;
 
     width                                       : parent.width;
     height                                      : parent.height;
     color                                       : settings.grigioLynxColor;
 
+
+    function allReset(){
+        for(var i =0 ;i<itemBtnGroup.buttons.length;++i){
+            itemBtnGroup.buttons[i].reset();
+        }
+    }
+
+    function btnGroupClicked(name){
+        for(var i =0 ;i<itemBtnGroup.buttons.length;++i){
+            if(itemBtnGroup.buttons[i].idName !== name)
+                itemBtnGroup.buttons[i].reset();
+        }
+
+        currentViewName = name;
+    }
+
+    ButtonGroup     {
+        id                                      : itemBtnGroup;
+    }
 
     ColumnLayout    {
         anchors.fill                            : parent;
@@ -56,14 +76,30 @@ Rectangle   {
                     anchors.left                : parent.left;
                     width                       : root.width;
                     spacing                     : 0;
-                    ListItemBtn {
 
+                    ListItemBtn {
                         id                      : home;
                         idName                  : "HOME";
                         symbolText              : "\uf015";
                         itemText                : "主页";
+                        ButtonGroup.group       : itemBtnGroup;
 
-                        selected                : true;
+                        Component.objectName    : home.firstSelected();
+                    }
+                    ListItemBtn {
+                        id                      : nodes;
+                        idName                  : "MEDIA";
+                        symbolText              : "\uf0c1";
+                        itemText                : "节点";
+                        ButtonGroup.group       : itemBtnGroup;
+                    }
+
+                    ListItemBtn {
+                        id                      : im;
+                        idName                  : "IM";
+                        symbolText              : "\uf0c0";
+                        itemText                : "聊天";
+                        ButtonGroup.group       : itemBtnGroup;
                     }
 
 
