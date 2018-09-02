@@ -12,9 +12,10 @@ Label   {
     property var        btnClicked                  : (function(){});                       //点击触发的事件函数
 
     property bool       ishovered                   : false;                                //是否hover状态
-    property color      hoveredColor                : mainWindow.rossoMarsColor;            //
-    property color      bgColor                     : mainWindow.grigioLynxColor;
-    property color      fontColor;           //
+    property bool       _showToolTip                : true;
+    property color      hoveredColor                : settings.rossoMarsColor;            //
+    property color      bgColor                     : settings.grigioLynxColor;
+    property color      fontColor;                  //
 
     property real       wBtnWidth;
     property real       wBtnHeight;
@@ -47,7 +48,7 @@ Label   {
 
     MouseArea       {
         anchors.fill                                : parent;
-        hoverEnabled                                : true;
+        hoverEnabled                                : _showToolTip;
         cursorShape                                 : Qt.PointingHandCursor;
 
         onEntered   :   {

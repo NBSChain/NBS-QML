@@ -12,7 +12,7 @@ import QtQuick.Window 2.3
  */
 Rectangle   {
     id                                      : root;
-    color                                   : mainWindow.grigioLynxColor;
+    color                                   : settings.grigioLynxColor;
 
     MouseArea   {
         property real xmouse;//鼠标x,y坐标
@@ -41,38 +41,10 @@ Rectangle   {
         height                              : 32*dp;
         anchors {
             left                            : parent.left;
-            leftMargin                      : 10*dp;
+            leftMargin                      : 15*dp;
             verticalCenter                  : parent.verticalCenter;
         }
     }
-
-    Rectangle   {
-        id                                  : peerMenu;
-        color                               : mainWindow.rossoBiaColor;
-        width                               : 60*dp;
-        height                              : parent.height;
-
-        anchors.left                        : icon.right;
-        anchors.leftMargin                  : 5*dp;
-        Label   {
-            id                                  : title;
-            text: qsTr("File");
-            color                               : mainWindow.neroNoctisColor;
-            verticalAlignment                   : Text.AlignVCenter;
-            horizontalAlignment                 : Text.AlignHCenter;
-            anchors.fill                        : parent;
-            font    {
-                family                          : icomoonFont.name;
-                pixelSize                       : 20*dp;
-                bold                            : true;
-            }
-
-        }
-
-
-    }
-
-
 
 
     /* 窗口操作 */
@@ -103,16 +75,19 @@ Rectangle   {
             anchors.verticalCenter          : parent.verticalCenter;
             wBtnWidth                       : 24*dp;
             wBtnHeight                      : 24*dp;
-
-            wBtnText                        : "\uf4e9";     //窗口图标
+            _showToolTip                    : false;
+            wBtnText                        : "\uf4e9";     //
             fontSize                        : 22*dp;
             toolTip                         : qsTr("");
 
             btnClicked                      : function(){
-
+                if(menuDrawer.visible){
+                    menuDrawer.close();
+                }else{
+                    menuDrawer.open();
+                }
             }
         }
-
 
         WindButton      {
             id                              : miniBtn;
