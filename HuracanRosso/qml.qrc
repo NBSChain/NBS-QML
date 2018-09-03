@@ -8,5 +8,9 @@
         <file>UI/SilingBar/SilingHeader.qml</file>
         <file>UI/SilingBar/SilingBar.qml</file>
         <file>UI/Utils/ListItemBtn.qml</file>
+        <file>UI/TitleBar/SearchRect.qml</file>
+        <file>UI/TitleBar/QuickLabelBtn.qml</file>
+        <file>UI/TitleBar/QuickLabelLayout.qml</file>
+        <file>UI/AddFile/TitleAddIcon.qml</file>
     </qresource>
 </RCC>

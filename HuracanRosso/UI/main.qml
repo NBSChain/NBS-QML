@@ -37,7 +37,7 @@ Window {
     //用户titlebar
     FontLoader {
        id                                           : icomoonFont;
-       source                                       : "../font/icomoon.ttf";
+       source                                       : "qrc:/font/icomoon.ttf";
     }
 
 
@@ -121,9 +121,10 @@ Window {
         property color  grigioLynxColor             : "#2e2e2d";    //bg toolBar
 
         //font
-        property color  itemBtnForceFontColor       : "#B0B0AE";   //
-        property color  silingBarBgColor            : "#1A1B1F";
+        property color  itemBtnForceFontColor       : "#B0B0AE";    //
+        property color  silingBarBgColor            : "#1A1B1F";    //
 
+        property string curStackView                : "";
     }
 
 }

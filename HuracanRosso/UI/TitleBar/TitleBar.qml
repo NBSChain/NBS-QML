@@ -1,6 +1,10 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.2
+import QtQuick.Controls 1.4 as Controls_1_4
+import QtQuick.Controls.Styles 1.4
 import QtQuick.Window 2.3
+import "../Utils"
+import "../AddFile"
 
 /**
  * @file    TitleBar.qml
@@ -61,6 +65,154 @@ Rectangle   {
             bold                            : true;
         }
 
+    }
+
+
+    /* 快捷操作 */
+    function qlbResetAll(){
+        for(var i = 0;i<qlbtnGroup.buttons.length;++i){
+            if(settings.curStackView!==qlbtnGroup.buttons[i].idName)
+                qlbtnGroup.buttons[i].reset();
+        }
+    }
+
+    function qlbtnGroupClicked (name){
+        for(var i = 0;i<qlbtnGroup.buttons.length;++i){
+            if(name !==qlbtnGroup.buttons[i].idName)
+                qlbtnGroup.buttons[i].reset();
+        }
+        settings.curStackView = name;
+    }
+
+    ButtonGroup {
+        id                                  : qlbtnGroup;
+    }
+
+    Rectangle   {
+        id                                  : quickOperRect;
+        anchors.verticalCenter              : parent.verticalCenter;
+        width                               : 122*dp;
+        height                              : parent.height;
+        //color                               : settings.rossoMarsColor;
+        anchors  {
+            left                            : appTitle.right;
+            leftMargin                      : 20*dp;
+        }
+
+        QuickLabelBtn   {
+            id                              : homeQLBtn;
+            anchors.left                    : parent.left;
+            width                           : (parent.width)/2;
+            idName                          : "HOMEMENU";
+            labelText                       : "主页";
+            selected                        : true;
+            ButtonGroup.group               : qlbtnGroup;
+        }
+        QuickLabelBtn   {
+            id                              : imQLBtn;
+            anchors.left                    : homeQLBtn.right;
+            width                           : (parent.width)/2;
+            idName                          : "IMMENU";
+            labelText                       : "聊天";
+            ButtonGroup.group               : qlbtnGroup;
+        }
+
+    }
+
+    //搜索框
+    Rectangle   {
+        id                                  : searcherBar;
+        width                               : 340*dp;
+        height                              : 25*dp;
+        anchors {
+            left                            : quickOperRect.right;
+            leftMargin                      : 80*dp;
+            verticalCenter                  : parent.verticalCenter;
+        }
+        radius                              : 15*dp;
+        color                               : settings.neroHeleneColor;
+
+        Controls_1_4.TextField  {
+            id                              : searchText;
+            width                           : parent.width - 20*dp;
+            height                          : parent.height;
+            anchors.left                    : parent.left;
+            anchors.leftMargin              : 10*dp;
+
+            font.family                     : aweFont.name;
+            font.pixelSize                  : 13*dp;
+            verticalAlignment               : TextInput.AlignVCenter;
+            placeholderText                 : qsTr("输入hash58，搜索...");
+            textColor                       : settings.foregroundColor;
+            style                           : TextFieldStyle {
+                placeholderTextColor        : settings.itemBtnForceFontColor;
+                background                  : Rectangle {
+                    anchors.centerIn        : parent;
+                    id                      : searchFieldBg;
+                    implicitWidth           : searchText.width;
+                    implicitHeight          : searchText.height;
+                    color                   : settings.neroHeleneColor;
+                    Label   {
+
+                        id                  : searchPlusIcon;
+                        width               : 25*dp;
+                        anchors {
+                            right           : parent.right;
+                            rightMargin     : -5*dp;
+                            verticalCenter  : parent.verticalCenter;
+                        }
+                        font.family         : aweFont.name;
+                        font.pixelSize      : 22*dp;
+                        text                : "\uf00e";
+
+                        ToolTip {
+                            id              : searchTipID;
+                            visible         : false;
+                            delay           : 500;
+                            text            : qsTr("点击图标或回车搜索");
+                        }
+
+                        MouseArea   {
+                            anchors.fill    : parent;
+                            hoverEnabled    : true;
+                            cursorShape     : Qt.PointingHandCursor;
+
+                            onEntered       : {
+                                searchTipID.visible     = true;
+                                searchPlusIcon.color    = settings.foregroundColor;
+
+                            }
+
+                            onExited        : {
+                                searchPlusIcon.color = settings.itemBtnForceFontColor;
+                                 searchTipID.visible     = false;
+                            }
+
+                            onClicked       : {
+
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        }
+    }
+
+    //添加文件
+    TitleAddIcon   {
+        id                                  : quickAddRect;
+        height                              : parent.height;
+        anchors.left                        : searcherBar.right;
+        anchors.leftMargin                  : 10*dp;
+        _normalBGColor                      : parent.color;
+        _activedBGColor                     : parent.color;
+        _normalFontColor                    : settings.itemBtnForceFontColor;
+        _activesFontColor                   : settings.rossoMarsColor;
+
+        iconText                            : "\uf196";
+        iconTipText                         : qsTr("添加文件到NBS网络");
     }
 
     /* 窗口操作 */

@@ -10,5 +10,7 @@
         <file>images/nbs_header2.png</file>
         <file>images/bg.png</file>
         <file>logo.ico</file>
+        <file>font/icomoon01.ttf</file>
+        <file>font/fontawesome-webfont.origin.ttf</file>
     </qresource>
 </RCC>

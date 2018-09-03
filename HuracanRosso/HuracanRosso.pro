@@ -36,8 +36,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
  RC_ICONS = .\logo.ico
 
 DISTFILES += \
-    logo.ico \
-    font/font-awesome.css
+    font/font-awesome.css \
+    README.md
 
 HEADERS += \
     cpp/animationhuracanbackgroup.h

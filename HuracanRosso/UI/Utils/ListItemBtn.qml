@@ -12,6 +12,7 @@ import QtQuick.Controls 2.2
 Button  {
     property color  _forceFontColor             : settings.itemBtnForceFontColor;   //前景色
     property color  _activedFontColor           : settings.rossoMarsColor;
+    property color  _normalBackgroundColor      : settings.silingBarBgColor;
     property real   _fontSize                   : 12*dp;
     property bool   selected                    : false;
     property bool   isSiling                    : true;             //是否侧边
@@ -23,14 +24,15 @@ Button  {
 
 
     id                                          : itemBtn;
-    height                                      : isSiling ? 30*dp : parent.height;
-    width                                       : isSiling ? parent.width : 60*dp;
+    height                                      : 30*dp;
+    width                                       : parent.width;
 
     signal  btnClicked(string name);
 
     background  : Rectangle {
         id                                          : backgroundRect;
-        color                                       : selected ? settings.grigioLynxColor : settings.silingBarBgColor;
+        color                                       : selected ? settings.grigioLynxColor : _normalBackgroundColor;
+
         Label   {
             id                                      : itemSymbol;
             anchors {
@@ -55,8 +57,8 @@ Button  {
             id                                      : itemLabelBtn;
             height                                  : parent.height;
             anchors {
-                left                                : isSiling ? itemSymbol.right : parent.left;
-                leftMargin                          : isSiling ? 15*dp : 10*dp;
+                left                                : itemSymbol.right;
+                leftMargin                          : 10*dp;
                 right                               : parent.right;
                 rightMargin                         : 3*dp;
             }
@@ -84,8 +86,8 @@ Button  {
 
             onEntered                               : {
                 if(!selected){
-                    itemLabelBtn.color      = settings.rossoMarsColor;
-                    itemSymbol.color        = settings.rossoMarsColor;
+                    itemLabelBtn.color      = _activedFontColor;
+                    itemSymbol.color        = _activedFontColor;
                     parent.color            = settings.grigioLynxColor;
                 }
             }
