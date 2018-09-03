@@ -30,7 +30,7 @@ Button  {
 
     background  : Rectangle {
         id                                          : backgroundRect;
-        color                                       : settings.silingBarBgColor;
+        color                                       : selected ? settings.grigioLynxColor : settings.silingBarBgColor;
         Label   {
             id                                      : itemSymbol;
             anchors {
@@ -39,7 +39,7 @@ Button  {
                 verticalCenter                      : parent.verticalCenter;
             }
 
-            color                                   : _forceFontColor;
+            color                                   : selected ? _activedFontColor : _forceFontColor;
             width                                   : 25*dp;
             height                                  : parent.height;
 
@@ -60,7 +60,7 @@ Button  {
                 right                               : parent.right;
                 rightMargin                         : 3*dp;
             }
-            color                                   : selected ? _activedFontColor :_forceFontColor;
+            color                                   : selected ? _activedFontColor : _forceFontColor;
             verticalAlignment                       : Label.AlignVCenter;
             wrapMode                                : Text.Wrap;
             text                                    : itemText;
@@ -70,7 +70,7 @@ Button  {
         Rectangle {
             id                                      : itemRightRect;
             color                                   : settings.rossoMarsColor;
-            visible                                 : false;
+            visible                                 : selected ? true : false;
             width                                   : 2*dp;
             height                                  : parent.height;
             anchors.right                           : parent.right;
@@ -122,7 +122,7 @@ Button  {
         backgroundRect.color    = settings.grigioLynxColor;
     }
 
-    Component.objectName                            : {
+    Component.onCompleted                            : {
         itemBtn.btnClicked.connect(btnGroupClicked);
     }
 

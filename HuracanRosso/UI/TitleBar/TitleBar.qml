@@ -36,7 +36,7 @@ Rectangle   {
     //主程序ico
     Image   {
         id                                  : icon;
-        source                              : "qrc:/images/logo.ico";
+        source                              : "qrc:/logo.ico";
         width                               : 32*dp;
         height                              : 32*dp;
         anchors {
@@ -77,7 +77,7 @@ Rectangle   {
             wBtnWidth                       : 22*dp;
             wBtnHeight                      : 22*dp;
 
-            wBtnText                        : "\uf535";     //消息
+            wBtnText                        : "\uf535";      //消息
             fontSize                        : 20*dp;
             toolTip                         : qsTr("消息");
 

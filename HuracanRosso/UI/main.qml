@@ -74,7 +74,7 @@ Window {
         anchors.top                                 : skyline.bottom;
         anchors.topMargin                           : 1*dp;
         color                                       : settings.neroHeleneColor;
-        opacity                                     : 0.95;
+        opacity                                     : 0.80;
         Image {
             anchors.centerIn                        : parent;
             source                                  : "qrc:/images/huracan.png"

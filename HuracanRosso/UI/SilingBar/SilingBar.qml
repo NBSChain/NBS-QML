@@ -20,7 +20,7 @@ Rectangle   {
 
     width                                       : parent.width;
     height                                      : parent.height;
-    color                                       : settings.grigioLynxColor;
+    color                                       : settings.neroHeleneColor;
 
 
     function allReset(){
@@ -49,7 +49,7 @@ Rectangle   {
             id                                  : headerImgRect;
             Layout.fillWidth                    : true;
             Layout.preferredHeight              : 120;
-            anchors.top                         : parent.top;
+//            anchors.top                         : parent.top;
             color                               : settings.neroHeleneColor;
 
             Image {
@@ -61,7 +61,7 @@ Rectangle   {
 
 
         Rectangle   {
-            anchors.top                         : headerImgRect.bottom;
+//            anchors.top                         : headerImgRect.bottom;
             Layout.fillWidth                    : true;
             Layout.preferredHeight              : (root.height-headerImgRect.height)*dp;
             color                               : settings.silingBarBgColor;
@@ -82,9 +82,10 @@ Rectangle   {
                         idName                  : "HOME";
                         symbolText              : "\uf015";
                         itemText                : "主页";
+                        selected                : true;
                         ButtonGroup.group       : itemBtnGroup;
 
-                        Component.objectName    : home.firstSelected();
+                       // Component.objectName    : home.firstSelected();
                     }
                     ListItemBtn {
                         id                      : nodes;
@@ -97,6 +98,62 @@ Rectangle   {
                     ListItemBtn {
                         id                      : im;
                         idName                  : "IM";
+                        symbolText              : "\uf0c0";
+                        itemText                : "聊天";
+                        ButtonGroup.group       : itemBtnGroup;
+                    }
+                    ListItemBtn {
+                        id                      : im1;
+                        idName                  : "IM1";
+                        symbolText              : "\uf0c0";
+                        itemText                : "聊天";
+                        ButtonGroup.group       : itemBtnGroup;
+                    }
+                    ListItemBtn {
+                        id                      : im2;
+                        idName                  : "IM2";
+                        symbolText              : "\uf0c0";
+                        itemText                : "聊天";
+                        ButtonGroup.group       : itemBtnGroup;
+                    }
+                    ListItemBtn {
+                        id                      : im3;
+                        idName                  : "IM3";
+                        symbolText              : "\uf0c0";
+                        itemText                : "聊天";
+                        ButtonGroup.group       : itemBtnGroup;
+                    }
+                    ListItemBtn {
+                        id                      : im4;
+                        idName                  : "IM4";
+                        symbolText              : "\uf0c0";
+                        itemText                : "聊天";
+                        ButtonGroup.group       : itemBtnGroup;
+                    }
+                    ListItemBtn {
+                        id                      : im5;
+                        idName                  : "IM5";
+                        symbolText              : "\uf0c0";
+                        itemText                : "聊天";
+                        ButtonGroup.group       : itemBtnGroup;
+                    }
+                    ListItemBtn {
+                        id                      : im6;
+                        idName                  : "IM6";
+                        symbolText              : "\uf0c0";
+                        itemText                : "聊天";
+                        ButtonGroup.group       : itemBtnGroup;
+                    }
+                    ListItemBtn {
+                        id                      : im7;
+                        idName                  : "IM7";
+                        symbolText              : "\uf0c0";
+                        itemText                : "聊天";
+                        ButtonGroup.group       : itemBtnGroup;
+                    }
+                    ListItemBtn {
+                        id                      : im8;
+                        idName                  : "IM8";
                         symbolText              : "\uf0c0";
                         itemText                : "聊天";
                         ButtonGroup.group       : itemBtnGroup;
