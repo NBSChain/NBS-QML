@@ -142,7 +142,7 @@ Rectangle   {
             font.family                     : aweFont.name;
             font.pixelSize                  : 13*dp;
             verticalAlignment               : TextInput.AlignVCenter;
-            placeholderText                 : qsTr("输入hash58，搜索...");
+            placeholderText                 : qsTr("输入hash58，回车搜索...");
             textColor                       : settings.foregroundColor;
             style                           : TextFieldStyle {
                 placeholderTextColor        : settings.itemBtnForceFontColor;
@@ -209,7 +209,7 @@ Rectangle   {
         _normalBGColor                      : parent.color;
         _activedBGColor                     : parent.color;
         _normalFontColor                    : settings.itemBtnForceFontColor;
-        _activesFontColor                   : settings.rossoMarsColor;
+        _activedFontColor                   : settings.rossoMarsColor;
 
         iconText                            : "\uf196";
         iconTipText                         : qsTr("添加文件到NBS网络");

@@ -17,7 +17,8 @@ Button  {
     property bool   selected                    : false;
     property bool   isSiling                    : true;             //是否侧边
 
-    property real   itemFontSize                : 20*dp;
+    property real   itemFontSize                : 14*dp;
+
     property string symbolText;
     property string idName;
     property string itemText;
@@ -32,11 +33,18 @@ Button  {
     background  : Rectangle {
         id                                          : backgroundRect;
         color                                       : selected ? settings.grigioLynxColor : _normalBackgroundColor;
-
+        Rectangle {
+            id                                      : itemRightRect;
+            color                                   : settings.rossoMarsColor;
+            visible                                 : selected ? true : false;
+            width                                   : 2*dp;
+            height                                  : parent.height;
+            anchors.left                            : parent.left;
+        }
         Label   {
             id                                      : itemSymbol;
             anchors {
-                left                                : parent.left;
+                left                                : itemRightRect.right;
                 leftMargin                          : 15*dp;
                 verticalCenter                      : parent.verticalCenter;
             }
@@ -47,7 +55,7 @@ Button  {
 
             text                                    : symbolText;
             font.family                             : aweFont.name;
-            font.pixelSize                          : 18*dp;
+            font.pixelSize                          : itemFontSize;
             verticalAlignment                       : Label.AlignVCenter;
             horizontalAlignment                     : Label.AlignHCenter;
 
@@ -67,16 +75,9 @@ Button  {
             wrapMode                                : Text.Wrap;
             text                                    : itemText;
             font.family                             : aweFont.name;
-            font.pixelSize                          : _fontSize;
+            font.pixelSize                          : itemFontSize;
         }
-        Rectangle {
-            id                                      : itemRightRect;
-            color                                   : settings.rossoMarsColor;
-            visible                                 : selected ? true : false;
-            width                                   : 2*dp;
-            height                                  : parent.height;
-            anchors.right                           : parent.right;
-        }
+
 
         MouseArea   {
             id                                      : itemMouseArea;

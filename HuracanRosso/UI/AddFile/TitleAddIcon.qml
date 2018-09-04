@@ -14,7 +14,7 @@ Rectangle   {
     property bool   ishovered                   : false;                                //
     property color  _normalFontColor            : settings.foregroundColor;       //
     property color  _normalBGColor              : settings.grigioLynxColor;       //
-    property color  _activesFontColor           : settings.rossoMarsColor;       //
+    property color  _activedFontColor           : settings.rossoMarsColor;       //
     property color  _activedBGColor             : settings.grigioLynxColor;       //
     property string iconText;
     property string iconTipText;
@@ -29,7 +29,7 @@ Rectangle   {
         verticalAlignment                       : Label.AlignVCenter;
         horizontalAlignment                     : Label.AlignHCenter;
         text                                    : iconText;
-        color                                   : settings.foregroundColor;
+        color                                   : _normalFontColor;
         font {
             family                              : aweFont.name;
             pixelSize                           : 28*dp;
@@ -48,11 +48,11 @@ Rectangle   {
 
             onEntered   : {
                 ishovered               = true;
-                addLabelIcon.color      = settings.rossoMarsColor;
+                addLabelIcon.color      = _activedFontColor;
             }
 
             onExited    : {
-                addLabelIcon.color      = settings.foregroundColor;
+                addLabelIcon.color      = _normalFontColor;
                 ishovered               = false;
             }
 

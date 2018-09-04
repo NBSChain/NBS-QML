@@ -2,6 +2,7 @@ import QtQuick 2.11
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 1.4 as Controls_1_4
+import QtQuick.Controls.Styles 1.4
 
 import "."
 import "../Utils"
@@ -59,17 +60,22 @@ Rectangle   {
             }
         }
 
-
+        /* 功能菜单 */
         Rectangle   {
 //            anchors.top                         : headerImgRect.bottom;
             Layout.fillWidth                    : true;
-            Layout.preferredHeight              : (root.height-headerImgRect.height)*dp;
+            Layout.fillHeight                   : true;
+            Layout.preferredHeight              : (root.height-headerImgRect.height-5)*dp;
+
+            height                              : (root.height-headerImgRect.height-5)*dp;
             color                               : settings.silingBarBgColor;
             Controls_1_4.ScrollView {
                 id                              : silingScrollView;
                 width                           : parent.width;
-                height                          : (parent.height - headerImgRect.height-1)*dp;
+
+                height                          : (618-40-120)*dp;
                 horizontalScrollBarPolicy       : Qt.ScrollBarAlwaysOff;
+                verticalScrollBarPolicy         : Qt.ScrollBarAlwaysOn;
 
                 Column  {
                     id                          : colItems;
@@ -80,53 +86,33 @@ Rectangle   {
                     Label   {
                         id                      : labelItemDiscover;
                         width                   : parent.width;
-                        height                  : 30*dp;
+                        height                  : 32*dp;
                         anchors.left            : parent.left;
                         anchors.leftMargin      : 10*dp;
                         verticalAlignment       : Label.AlignVCenter;
-                        text                    : qsTr("发现");
+                        text                    : qsTr("网络");
                         font.family             : aweFont.name;
                         font.pixelSize          : 12*dp;
-                        color                   : settings.itemBtnForceFontColor;
+                        color                   : settings.foregroundColor;
 
                     }
 
-                    ListItemBtn {
-                        id                      : home;
-                        idName                  : "HOMEMENU";
-                        symbolText              : "\uf015";
-                        itemText                : "主页";
-                        selected                : true;
-                        ButtonGroup.group       : itemBtnGroup;
+//                    ListItemBtn {
+//                        id                      : home;
+//                        idName                  : "HOMEMENU";
+//                        symbolText              : "\uf015";
+//                        itemText                : "主页";
+//                        selected                : true;
+//                        ButtonGroup.group       : itemBtnGroup;
 
-                       // Component.objectName    : home.firstSelected();
-                    }
+//                       // Component.objectName    : home.firstSelected();
+//                    }
                     ListItemBtn {
                         id                      : nodes;
                         idName                  : "NODESMENU";
-                        symbolText              : "\uf0c1";
+                        symbolText              : "\uf1aa";
                         itemText                : "节点";
                         ButtonGroup.group       : itemBtnGroup;
-                    }
-
-                    ListItemBtn {
-                        id                      : datasSilingBtn;
-                        idName                  : "DATASMENU";
-                        symbolText              : "\uf1b2";
-                        itemText                : "数据";
-                        ButtonGroup.group       : itemBtnGroup;
-                    }
-                    Label   {
-                        id                      : labelItemSett;
-                        width                   : parent.width;
-                        height                  : 30*dp;
-                        anchors.left            : parent.left;
-                        anchors.leftMargin      : 10*dp;
-                        verticalAlignment       : Label.AlignVCenter;
-                        text                    : qsTr("我的");
-                        font.family             : aweFont.name;
-                        font.pixelSize          : 12*dp;
-                        color                   : settings.itemBtnForceFontColor;
 
                     }
                     ListItemBtn {
@@ -136,6 +122,28 @@ Rectangle   {
                         itemText                : "聊天";
                         ButtonGroup.group       : itemBtnGroup;
                     }
+                    ListItemBtn {
+                        id                      : datasSilingBtn;
+                        idName                  : "DATASMENU";
+                        symbolText              : "\uf1b2";
+                        itemText                : "数据";
+                        ButtonGroup.group       : itemBtnGroup;
+                    }
+
+                    Label   {
+                        id                      : labelItemSett;
+                        width                   : parent.width;
+                        height                  : 32*dp;
+                        anchors.left            : parent.left;
+                        anchors.leftMargin      : 10*dp;
+                        verticalAlignment       : Label.AlignVCenter;
+                        text                    : qsTr("系统");
+                        font.family             : aweFont.name;
+                        font.pixelSize          : 12*dp;
+                        color                   : settings.foregroundColor;
+
+                    }
+
                     ListItemBtn {
                         id                      : settMenu;
                         idName                  : "CONFMENU";
@@ -150,6 +158,30 @@ Rectangle   {
                         itemText                : "关于";
                         ButtonGroup.group       : itemBtnGroup;
                     }
+
+                    ListItemBtn {
+                        id                      : im4;
+                        idName                  : "IM4";
+                        symbolText              : "\uf0c1";
+                        itemText                : "DAG";
+                        ButtonGroup.group       : itemBtnGroup;
+                    }
+                    ListItemBtn {
+                        id                      : im7;
+                        idName                  : "IM7";
+                        symbolText              : "\uf1b3";
+                        itemText                : "存储";
+                        ButtonGroup.group       : itemBtnGroup;
+                    }
+
+                    ListItemBtn {
+                        id                      : im6;
+                        idName                  : "IM6";
+                        symbolText              : "\uf2dc";
+                        itemText                : "mmm";
+                        ButtonGroup.group       : itemBtnGroup;
+                    }
+
                     ListItemBtn {
                         id                      : im2;
                         idName                  : "IM2";
@@ -157,37 +189,110 @@ Rectangle   {
                         itemText                : "huracan";
                         ButtonGroup.group       : itemBtnGroup;
                     }
+                    /* 收藏夹 */
+                    Rectangle   {
+                        id                      : favorateItemRect;
+                        height                  : 32*dp;
+                        width                   : parent.width;
+                        color                   : settings.silingBarBgColor;
+                        Label   {
+                             id                 : favorateIconLabel;
+                             //width              : 40*dp;
+                             height             : parent.height;
+                             verticalAlignment  : Label.AlignVCenter;
+                             anchors    {
+                                 left           : parent.left;
+                                 leftMargin     : 5*dp;
+                                 rightMargin    : 0*dp;
+                             }
+                             text               : "\uf2a1";
+                             font.family        : aweFont.name;
+                             font.pixelSize     : 12*dp;
+                             color              : settings.foregroundColor;
+
+                        }
+
+                        Label   {
+                            //width                   : 60*dp;
+                            height              : parent.height;
+                            anchors.left        : favorateIconLabel.right;
+                            anchors.leftMargin  : 5*dp;
+                            horizontalAlignment : Label.AlignLeft;
+                            verticalAlignment   : Label.AlignVCenter;
+                            text                : qsTr("收藏");
+                            font.family         : aweFont.name;
+                            font.pixelSize      : 12*dp;
+                            color               : settings.foregroundColor;
+                        }
+                    }
+
+
                     ListItemBtn {
-                        id                      : im4;
-                        idName                  : "IM4";
-                        symbolText              : "\uf1aa";
-                        itemText                : "DAG";
+                        id                      : favItemMov;
+                        idName                  : "FAVMOVIES";
+                        symbolText              : "\uf03d";
+                        itemText                : "视频";
+                        ButtonGroup.group       : itemBtnGroup;
+                    }
+                    ListItemBtn {
+                        id                      : favItemMusic;
+                        idName                  : "FAVMUSIC";
+                        symbolText              : "\uf001";
+                        itemText                : "音乐";
+                        ButtonGroup.group       : itemBtnGroup;
+                    }
+                    ListItemBtn {
+                        id                      : favItemDocs;
+                        idName                  : "FAVDOCS";
+                        symbolText              : "\uf0c5";
+                        itemText                : "文档";
                         ButtonGroup.group       : itemBtnGroup;
                     }
 
                     ListItemBtn {
-                        id                      : im6;
-                        idName                  : "IM6";
-                        symbolText              : "\uf0c0";
-                        itemText                : "聊天";
-                        ButtonGroup.group       : itemBtnGroup;
-                    }
-                    ListItemBtn {
-                        id                      : im7;
-                        idName                  : "IM7";
-                        symbolText              : "\uf0c0";
-                        itemText                : "聊天";
-                        ButtonGroup.group       : itemBtnGroup;
-                    }
-                    ListItemBtn {
-                        id                      : im8;
-                        idName                  : "IM8";
-                        symbolText              : "\uf0c0";
-                        itemText                : "聊天";
+                        id                      : favItemDocs1;
+                        idName                  : "FAVDOCS";
+                        symbolText              : "\uf0c5";
+                        itemText                : "文档";
                         ButtonGroup.group       : itemBtnGroup;
                     }
 
+                    ListItemBtn {
+                        id                      : favItemDocs2;
+                        idName                  : "FAVDOCS";
+                        symbolText              : "\uf0c5";
+                        itemText                : "文档";
+                        ButtonGroup.group       : itemBtnGroup;
+                    }
 
+                }
+
+                style   : ScrollViewStyle   {
+                    handle                      : Rectangle {
+                        implicitHeight          : 0;
+                        implicitWidth           : 3*dp;
+                        color                   : settings.grigioLynxColor;
+                        radius                  : 3*dp;
+                        anchors.fill            : parent;
+                        anchors.top             : parent.top;
+                        anchors.right           : parent.right;
+                    }
+                    scrollBarBackground         : Rectangle {
+                        anchors.top             : parent.top;
+                        anchors.right           : parent.right;
+                        implicitWidth           : 3*dp;
+                        implicitHeight          : 0;
+                        color                   : settings.neroHeleneColor;
+                    }
+
+                    decrementControl            : Rectangle {
+                        implicitWidth           : 0;
+                        implicitHeight          : 0;
+                    }
+                    incrementControl            : Rectangle {
+                        implicitWidth           : 0;
+                        implicitHeight          : 1;
+                    }
                 }
             }
         }

@@ -12,5 +12,8 @@
         <file>UI/TitleBar/QuickLabelBtn.qml</file>
         <file>UI/TitleBar/QuickLabelLayout.qml</file>
         <file>UI/AddFile/TitleAddIcon.qml</file>
+        <file>UI/MainView/MainStackView.qml</file>
+        <file>UI/MainView/Pages/AboutPage.qml</file>
+        <file>UI/MainView/Pages/BasePage.qml</file>
     </qresource>
 </RCC>
