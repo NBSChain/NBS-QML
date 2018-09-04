@@ -7,12 +7,10 @@
 ![](https://img.shields.io/badge/QtQuick-2.2-blue.svg)
 ![](https://img.shields.io/badge/VS-2017-blue.svg)
 [![GitHub license](https://img.shields.io/github/license/NBSChain/NBS-QML.svg)](https://github.com/NBSChain/NBS-QML/blob/master/LICENSE)
-
+[![GitHub issues](https://img.shields.io/github/issues/NBSChain/NBS-QML.svg)](https://github.com/NBSChain/NBS-QML/issues)
 
 ## project Status
 
-[![GitHub issues](https://img.shields.io/github/issues/NBSChain/NBS-QML.svg)](https://github.com/NBSChain/NBS-QML/issues)
-[![GitHub license](https://img.shields.io/github/license/NBSChain/NBS-QML.svg)](https://github.com/NBSChain/NBS-QML/blob/master/LICENSE)
 
 
 
