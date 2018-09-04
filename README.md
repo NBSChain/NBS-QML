@@ -16,6 +16,10 @@ A Dapp application based on NBS, QML, C++
 [![GitHub issues](https://img.shields.io/github/issues/NBSChain/NBS-QML.svg)](https://github.com/NBSChain/NBS-QML/issues)
 [![GitHub license](https://img.shields.io/github/license/NBSChain/NBS-QML.svg)](https://github.com/NBSChain/NBS-QML/blob/master/LICENSE)
 
+## 项目状态
+[![Throughput Graph](https://graphs.waffle.io/NBSChain/NBS-QML/throughput.svg)](https://waffle.io/NBSChain/NBS-QML/metrics/throughput)
+[**`Weekly Core Dev Calls`**](https://github.com/NBSChain/pm/issues/1)
+
 #### 技术
 ***
 * 基于NBS公链开发，具有去中心化存储、通信服务
