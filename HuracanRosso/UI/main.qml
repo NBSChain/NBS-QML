@@ -6,6 +6,8 @@ import Qt.labs.settings 1.0
 import "./TitleBar"
 import "./Utils"
 import "./SilingBar"
+import "./MainView"
+import "./MainView/Pages"
 
 /**
  * @file    mian.qml
@@ -16,6 +18,8 @@ import "./SilingBar"
  * @section LICENSE Copyright (c) 2018 - 2025 lanbery,NBS Chain Co.
  */
 Window {
+
+
     property bool   winAventador                    : false;        //aventador 是否最大化
 
     id                                              : mainWindow;
@@ -23,8 +27,8 @@ Window {
     property real           dpScale                 : 1.5;//不同分辨率窗口伸缩比例
     readonly property real  dp                      : Math.max(Screen.pixelDensity*25.4/200*dpScale);
     color                                           : settings.neroNoctisColor;
-    minimumWidth                                    : 840;
-    minimumHeight                                   : 520;
+    minimumWidth                                    : 840.;
+    minimumHeight                                   : 520.;
     width                                           : 1000*dp; //h=w*0.618
     height                                          : 618*dp;
     flags                                           : Qt.FramelessWindowHint | Qt.Window;
@@ -66,6 +70,17 @@ Window {
         anchors.leftMargin                          : 1*dp;
         anchors.top                                 : titleBar.bottom;
     }
+
+
+//    Rectangle   {
+
+//    }
+
+//    StackView   {
+//        id                                          : stackView;
+
+//    }
+
 
     //
     Rectangle   {
@@ -110,24 +125,28 @@ Window {
 
     /* App Settings */
     Settings    {
-        id                                          : settings;
-        property real   winWidth                    : 1000;
-        property real   winHeight                   : 618;
+        id                                                  : settings;
+        readonly property real      headHeight              : 40;
+        readonly property real      winWidth                : 1000;
+        readonly property real      winHeight               : 618;
+        readonly property real      dpScale                 : 1.5;
+        readonly property real      prefectRate             : 0.618;
 
-        property color  foregroundColor             : "#ffffff";    //白色前景
-        property color  normalFontColor             : "#ffffff";    //#FFFFFF
-        property color  rossoMarsColor              : "#cc0805";    //火星红
-        property color  rossoBiaColor               : "#a00a00";    // 酒红#F04155
 
-        property color  neroHeleneColor             : "#050505";    //土卫黑 bg main
-        property color  neroNoctisColor             : "#000000";    //神秘黑
-        property color  grigioLynxColor             : "#2e2e2d";    //bg toolBar
+        readonly property color     foregroundColor         : "#ffffff";    //白色前景
+        readonly property color     normalFontColor         : "#ffffff";    //#FFFFFF
+        readonly property color     rossoMarsColor          : "#cc0805";    //火星红
+        readonly property color     rossoBiaColor           : "#a00a00";    // 酒红#F04155
+
+        readonly property color     neroHeleneColor         : "#050505";    //土卫黑 bg main
+        readonly property color     neroNoctisColor         : "#000000";    //神秘黑
+        readonly property color     grigioLynxColor         : "#2e2e2d";    //bg toolBar
 
         //font
-        property color  itemBtnForceFontColor       : "#B0B0AE";    //
-        property color  silingBarBgColor            : "#1A1B1F";    //
+        readonly property color     itemBtnForceFontColor   : "#B0B0AE";    //
+        readonly property color     silingBarBgColor        : "#1A1B1F";    //
 
-        property string curStackView                : "";
+        property string             curStackView            : "";
     }
 
 }

@@ -16,5 +16,6 @@
         <file>UI/MainView/Pages/AboutPage.qml</file>
         <file>UI/MainView/Pages/BasePage.qml</file>
         <file>UI/Utils/Developing.qml</file>
+        <file>UI/MainView/Pages/IndexView.qml</file>
     </qresource>
 </RCC>

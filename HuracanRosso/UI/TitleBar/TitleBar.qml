@@ -103,7 +103,7 @@ Rectangle   {
             id                              : homeQLBtn;
             anchors.left                    : parent.left;
             width                           : (parent.width)/2;
-            idName                          : "HOMEMENU";
+            idName                          : "INDEX";
             labelText                       : "主页";
             selected                        : true;
             ButtonGroup.group               : qlbtnGroup;

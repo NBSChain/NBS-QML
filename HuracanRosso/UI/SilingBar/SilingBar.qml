@@ -125,7 +125,7 @@ Rectangle   {
                     ListItemBtn {
                         id                      : datasSilingBtn;
                         idName                  : "DATASMENU";
-                        symbolText              : "\uf1b2";
+                        symbolText              : "\uf20e";//\f20e;uf1b2
                         itemText                : "数据";
                         ButtonGroup.group       : itemBtnGroup;
                     }
@@ -242,6 +242,14 @@ Rectangle   {
                         ButtonGroup.group       : itemBtnGroup;
                     }
                     ListItemBtn {
+                        id                      : favItemPic;
+                        idName                  : "FAVPICS";
+                        symbolText              : "\uf03e";
+                        itemText                : "图片";
+                        ButtonGroup.group       : itemBtnGroup;
+                    }
+
+                    ListItemBtn {
                         id                      : favItemDocs;
                         idName                  : "FAVDOCS";
                         symbolText              : "\uf0c5";
@@ -250,18 +258,10 @@ Rectangle   {
                     }
 
                     ListItemBtn {
-                        id                      : favItemDocs1;
-                        idName                  : "FAVDOCS";
-                        symbolText              : "\uf0c5";
-                        itemText                : "文档";
-                        ButtonGroup.group       : itemBtnGroup;
-                    }
-
-                    ListItemBtn {
-                        id                      : favItemDocs2;
-                        idName                  : "FAVDOCS";
-                        symbolText              : "\uf0c5";
-                        itemText                : "文档";
+                        id                      : favItemIpsn;
+                        idName                  : "FAVIPSN";
+                        symbolText              : "\uf0e8";
+                        itemText                : "IPSN";
                         ButtonGroup.group       : itemBtnGroup;
                     }
 
