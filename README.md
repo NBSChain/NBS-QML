@@ -28,7 +28,7 @@ A Dapp application based on NBS, QML, C++
 
 ## 项目状态
 [![Throughput Graph](https://graphs.waffle.io/NBSChain/NBS-QML/throughput.svg)](https://waffle.io/NBSChain/NBS-QML/metrics/throughput)
-[**`Weekly Core Dev Calls`**](https://github.com/NBSChain/pm/issues/1)
+[**`Project Issues dev`**](https://github.com/NBSChain/NBS-QML/issues)
 
 #### 技术
 ***
