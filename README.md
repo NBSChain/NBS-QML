@@ -1,6 +1,15 @@
 ![banner](https://github.com/NBSChain/NBS-QML/blob/master/doc/banner.gif)
+[![GitHub issues](https://img.shields.io/github/issues/NBSChain/NBS-QML.svg)](https://github.com/NBSChain/NBS-QML/issues)
+[![GitHub forks](https://img.shields.io/github/forks/NBSChain/NBS-QML.svg)](https://github.com/NBSChain/NBS-QML/network)
+[![GitHub stars](https://img.shields.io/github/stars/NBSChain/NBS-QML.svg)](https://github.com/NBSChain/NBS-QML/stargazers)
+[![GitHub license](https://img.shields.io/github/license/NBSChain/NBS-QML.svg)](https://github.com/NBSChain/NBS-QML/blob/master/LICENSE)
+[![Twitter](https://img.shields.io/twitter/url/https/github.com/NBSChain/NBS-QML.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FNBSChain%2FNBS-QML)
 
 # NBS QML C++
+![](https://img.shields.io/badge/Qt-5.11-blue.svg)
+![](https://img.shields.io/badge/QtQuick-2.2-blue.svg)
+![](https://img.shields.io/badge/C++-blue.svg)
+
 A Dapp application based on NBS, QML, C++
 
 ### 功能介绍
@@ -10,20 +19,9 @@ A Dapp application based on NBS, QML, C++
   - 文件查询
 
 
-[![GitHub issues](https://img.shields.io/github/issues/NBSChain/NBS-QML.svg)](https://github.com/NBSChain/NBS-QML/issues)
-[![GitHub forks](https://img.shields.io/github/forks/NBSChain/NBS-QML.svg)](https://github.com/NBSChain/NBS-QML/network)
 
-[![GitHub stars](https://img.shields.io/github/stars/NBSChain/NBS-QML.svg)](https://github.com/NBSChain/NBS-QML/stargazers)
 
-[![GitHub license](https://img.shields.io/github/license/NBSChain/NBS-QML.svg)](https://github.com/NBSChain/NBS-QML/blob/master/LICENSE)
 
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/NBSChain/NBS-QML.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FNBSChain%2FNBS-QML)
-
-![](https://img.shields.io/badge/Qt-5.11-blue.svg)
-![](https://img.shields.io/badge/VS-2017-blue.svg)
-![](https://img.shields.io/badge/QtQuick-2.2-blue.svg)
-[![GitHub issues](https://img.shields.io/github/issues/NBSChain/NBS-QML.svg)](https://github.com/NBSChain/NBS-QML/issues)
-[![GitHub license](https://img.shields.io/github/license/NBSChain/NBS-QML.svg)](https://github.com/NBSChain/NBS-QML/blob/master/LICENSE)
 
 ## 项目状态
 [![Throughput Graph](https://graphs.waffle.io/NBSChain/NBS-QML/throughput.svg)](https://waffle.io/NBSChain/NBS-QML/metrics/throughput)
