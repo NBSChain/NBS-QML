@@ -21,6 +21,8 @@ Window {
 
 
     property bool   winAventador                    : false;        //aventador 是否最大化
+    readonly property real  windMode                : Qt.FramelessWindowHint | Qt.Window;    //Qt.FramelessWindowHint | Qt.Window;
+
 
     id                                              : mainWindow;
     visible                                         : true;
@@ -31,8 +33,7 @@ Window {
     minimumHeight                                   : 520.;
     width                                           : 1000*dp; //h=w*0.618
     height                                          : 618*dp;
-    flags                                           : Qt.FramelessWindowHint | Qt.Window;
-
+    flags                                           : windMode;
     //增加字体库
     FontLoader  {
        id                                           : aweFont;
@@ -59,7 +60,6 @@ Window {
         anchors.top                                 : parent.top;
         anchors.topMargin                           : 1*dp;
     }
-
     //skyline 分割线
     Rectangle   {
         id                                          : skyline;
@@ -70,7 +70,19 @@ Window {
         anchors.leftMargin                          : 1*dp;
         anchors.top                                 : titleBar.bottom;
     }
-
+    //
+    Rectangle   {
+        width                                       : parent.width -0*dp;
+        height                                      : parent.height -42*dp;
+        anchors.top                                 : skyline.bottom;
+        anchors.topMargin                           : 1*dp;
+        //color                                       : settings.neroHeleneColor;
+        opacity                                     : 0.05;
+        Image {
+            anchors.centerIn                        : parent;
+            source                                  : "qrc:/images/huracan.png"
+        }
+    }
 
 //    Rectangle   {
 
@@ -82,19 +94,10 @@ Window {
 //    }
 
 
-    //
-    Rectangle   {
-        width                                       : parent.width -0*dp;
-        height                                      : parent.height -42*dp;
-        anchors.top                                 : skyline.bottom;
-        anchors.topMargin                           : 1*dp;
-        //color                                       : settings.neroHeleneColor;
-        opacity                                     : 0.1;
-        Image {
-            anchors.centerIn                        : parent;
-            source                                  : "qrc:/images/huracan.png"
-        }
-    }
+
+
+
+
 
 
     Drawer  {

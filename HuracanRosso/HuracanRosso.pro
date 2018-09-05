@@ -18,8 +18,9 @@ SOURCES += \
     cpp/appmodel.cpp
 
 RESOURCES += \
-    res.qrc \
-    qml.qrc
+    qml.qrc \
+    res.qrc
+
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =

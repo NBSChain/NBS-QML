@@ -40,6 +40,7 @@ Rectangle   {
     //主程序ico
     Image   {
         id                                  : icon;
+        visible                             : (windMode !== Qt.Window);
         source                              : "qrc:/logo.ico";
         width                               : 32*dp;
         height                              : 32*dp;
@@ -52,6 +53,7 @@ Rectangle   {
 
     Label   {
         id                                  : appTitle;
+        visible                             : (windMode !== Qt.Window);
         anchors {
             left                            : icon.right;
             leftMargin                      : 5*dp;
@@ -95,8 +97,8 @@ Rectangle   {
         height                              : parent.height;
         //color                               : settings.rossoMarsColor;
         anchors  {
-            left                            : appTitle.right;
-            leftMargin                      : 20*dp;
+            left                            : (windMode === Qt.Window) ? root.left : appTitle.right;
+            leftMargin                      : (windMode === Qt.Window) ? 0*dp : 20*dp;
         }
 
         QuickLabelBtn   {
@@ -259,6 +261,7 @@ Rectangle   {
 
         WindButton      {
             id                              : miniBtn;
+            visible                         : (windMode !== Qt.Window )
             anchors.verticalCenter          : parent.verticalCenter;
             wBtnWidth                       : 22*dp;
             wBtnHeight                      : 22*dp;
@@ -274,6 +277,7 @@ Rectangle   {
 
         WindButton      {
             id                              : toggleBtn;
+            visible                         : (windMode !== Qt.Window )
             anchors.verticalCenter          : parent.verticalCenter;
             wBtnWidth                       : 20*dp;
             wBtnHeight                      : 20*dp;
@@ -298,6 +302,7 @@ Rectangle   {
 
         WindButton      {
             id                              : closeBtn;
+            visible                         : (windMode !== Qt.Window )
             anchors.verticalCenter          : parent.verticalCenter;
             wBtnWidth                       : 22*dp;
             wBtnHeight                      : 22*dp;
