@@ -7,8 +7,8 @@
 
 # NBS QML C++
 ![](https://img.shields.io/badge/Qt-5.11-blue.svg)
-![](https://img.shields.io/badge/QtQuick-2.2-blue.svg)
-![](https://img.shields.io/badge/C++-blue.svg)
+![](https://img.shields.io/badge/QtQuick-2.2-green.svg)
+![](https://img.shields.io/badge/C++-red.svg)
 
 A Dapp application based on NBS, QML, C++
 
