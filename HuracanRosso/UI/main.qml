@@ -111,6 +111,9 @@ Window {
     /* App Settings */
     Settings    {
         id                                          : settings;
+        property real   winWidth                    : 1000;
+        property real   winHeight                   : 618;
+
         property color  foregroundColor             : "#ffffff";    //白色前景
         property color  normalFontColor             : "#ffffff";    //#FFFFFF
         property color  rossoMarsColor              : "#cc0805";    //火星红
