@@ -4,8 +4,9 @@
 [![GitHub forks](https://img.shields.io/github/forks/NBSChain/NBS-QML.svg)](https://github.com/NBSChain/NBS-QML/network)
 [![GitHub stars](https://img.shields.io/github/stars/NBSChain/NBS-QML.svg)](https://github.com/NBSChain/NBS-QML/stargazers)
 [![GitHub license](https://img.shields.io/github/license/NBSChain/NBS-QML.svg)](https://github.com/NBSChain/NBS-QML/blob/master/LICENSE)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/NBSChain/NBS-QML.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FNBSChain%2FNBS-QML)
 
+[![GitHub followers](https://img.shields.io/github/followers/espadrine.svg?style=social&label=Follow)](https://github.com/lamborqq?tab=following)
+[![Twitter Follow](https://img.shields.io/twitter/follow/espadrine.svg?style=social&label=Follow)](https://github.com/NBSChain/NBS-QML)
 # NBS QML C++
 ![](https://img.shields.io/badge/Qt-5.11-blue.svg)
 ![](https://img.shields.io/badge/QtQuick-2.2-green.svg)
