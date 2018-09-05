@@ -33,4 +33,4 @@ A Dapp application based on NBS, QML, C++
 
 ## Huracan Rosso
 一套红黑色调UI
-https://github.com/NBSChain/NBS-QML/blob/master/doc/NBS-operator.gif
+![](https://github.com/NBSChain/NBS-QML/blob/master/doc/NBS-operator.gif?raw=true)
