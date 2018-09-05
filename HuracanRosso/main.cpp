@@ -1,5 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+
+#include "./cpp/appmodel.h"
 #include <QScreen>
 
 int main(int argc, char *argv[])
@@ -35,7 +37,7 @@ int main(int argc, char *argv[])
 
 
 
-
+    qmlRegisterType<AppModel>("NBSAppModel",1,0,"AppModel");
 
     QQmlApplicationEngine engine;
     engine.load(QUrl(QStringLiteral("qrc:/UI/main.qml")));

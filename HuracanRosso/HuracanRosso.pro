@@ -14,7 +14,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-    cpp/animationhuracanbackgroup.cpp
+    cpp/animationhuracanbackgroup.cpp \
+    cpp/appmodel.cpp
 
 RESOURCES += \
     res.qrc \
@@ -40,4 +41,5 @@ DISTFILES += \
     README.md
 
 HEADERS += \
-    cpp/animationhuracanbackgroup.h
+    cpp/animationhuracanbackgroup.h \
+    cpp/appmodel.h
