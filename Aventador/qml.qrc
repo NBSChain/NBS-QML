@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>UI/main.qml</file>
+        <file>UI/TitleBar/TitleBar.qml</file>
+        <file>UI/TitleBar/WindButton.qml</file>
+    </qresource>
+</RCC>

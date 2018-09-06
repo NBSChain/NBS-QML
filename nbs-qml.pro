@@ -15,7 +15,8 @@ OTHER_FILES = $$PWD/README.md
 OTHER_FILES += $$PWD/LICENSE
 
 SUBDIRS += \
-    HuracanRosso
+#    HuracanRosso \
+    Aventador
 
 
 

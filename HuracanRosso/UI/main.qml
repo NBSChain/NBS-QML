@@ -141,7 +141,7 @@ Window {
         readonly property color     rossoMarsColor          : "#cc0805";    //火星红
         readonly property color     rossoBiaColor           : "#a00a00";    // 酒红#F04155
 
-        readonly property color     neroHeleneColor         : "#050505";    //土卫黑 bg main
+        readonly property color     neroHeleneColor         : "#050505";    //土卫黑 bg main #050505
         readonly property color     neroNoctisColor         : "#000000";    //神秘黑
         readonly property color     grigioLynxColor         : "#2e2e2d";    //bg toolBar
 
@@ -150,6 +150,7 @@ Window {
         readonly property color     silingBarBgColor        : "#1A1B1F";    //
 
         property string             curStackView            : "";
+
     }
 
 }
