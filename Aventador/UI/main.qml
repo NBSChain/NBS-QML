@@ -38,7 +38,6 @@ Window {
        source                                       : "qrc:/font/icomoon.ttf";
     }
 
-    //title: qsTr("Hello World")
     TitleBar    {
         id                                                      : titleBar;
         color                                                   : settings.silingBarBgColor;
@@ -92,6 +91,16 @@ Window {
             anchors.fill                            : parent;
             scrollBarHeight                         : parent.height;
         }
+    }
+
+    function resizeWin(){
+        if(windState === Qt.WindowFullScreen){
+            silingToolar.setSilingScrollViewHeight((menuDrawer.height-120)*dp);
+        }else{
+            silingToolar.setSilingScrollViewHeight((520-120)*dp);
+        }
+
+
     }
 
     /* App Settings */

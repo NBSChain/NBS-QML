@@ -300,6 +300,9 @@ Rectangle   {
 
     }
 
+    function setSilingScrollViewHeight(h){
+        silingScrollView.height = h;
+    }
 
 }
 
