@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
 
 import "./TitleBar"
+import "./SilingBar"
 
 Window {
     id                                                          : mainWindow;
@@ -25,7 +26,7 @@ Window {
     minimumWidth                                                : settings.winWidth;
     minimumHeight                                               : settings.winHeight;
     color                                                       : bgColor;
-    opacity                                                     : 0.98;
+    opacity                                                     : 0.90;
     //增加字体库
     FontLoader  {
        id                                           : aweFont;
@@ -63,28 +64,35 @@ Window {
         spacing                                                 : 0;
         Layout.fillWidth                                        : true;
         Layout.preferredHeight                                  : settings.winHeight-settings.titleHeight-2;
-        opacity                                                 : 1;
+        opacity                                                 : 0.8;
 
-
-        Rectangle {
-            //color       : settings.rossoBiaColor;
-            Layout.fillWidth                         : true;
-            Text    {
-                text: qsTr("NBS Aventador");
-                color: settings.rossoBiaColor;
-            }
-
-
-
-
-        }
-        Image {
-           Layout.fillWidth                         : true;
-           source                                  : "qrc:/images/bg.png"
-        }
     }
 
 
+    /*  */
+    Drawer  {
+        id                                          : menuDrawer;
+        y                                           : skyline.y+skyline.height;
+        visible                                     : false;
+        modal                                       : false;
+        clip                                        : true;
+        edge                                        : Qt.RightEdge;
+        closePolicy                                 : Popup.CloseOnEscape | Popup.CloseOnPressOutside;
+
+        width: (mainWindow.width*0.12)*dp;
+        height: (mainWindow.height - settings.titleHeight-2)*dp;
+
+        background                                  : Rectangle {
+            anchors.fill                            : parent;
+            color                                   : settings.grigioLynxColor;
+            opacity                                 : 0.6;
+        }
+        SilingBar                  {
+            id                                      : silingToolar;
+            anchors.fill                            : parent;
+            scrollBarHeight                         : parent.height;
+        }
+    }
 
     /* App Settings */
     Settings    {

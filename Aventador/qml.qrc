@@ -3,5 +3,7 @@
         <file>UI/main.qml</file>
         <file>UI/TitleBar/TitleBar.qml</file>
         <file>UI/TitleBar/WindButton.qml</file>
+        <file>UI/SilingBar/SilingBar.qml</file>
+        <file>UI/Utils/ListItemBtn.qml</file>
     </qresource>
 </RCC>
