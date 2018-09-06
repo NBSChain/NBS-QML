@@ -13,7 +13,7 @@
 ![](https://img.shields.io/badge/QtQuick-2.2-green.svg)
 ![](https://img.shields.io/badge/C++-red.svg)
 
-A Dapp application based on NBS, QML, C++
+A Dapp application based on NBS Chain.
 
 ### 功能介绍
 基于NBS去中心化服务实现
