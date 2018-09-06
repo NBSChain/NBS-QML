@@ -6,5 +6,6 @@
         <file>UI/SilingBar/SilingBar.qml</file>
         <file>UI/Utils/ListItemBtn.qml</file>
         <file>UI/TitleBar/QuickLabelBtn.qml</file>
+        <file>UI/AddFile/TitleAddIcon.qml</file>
     </qresource>
 </RCC>

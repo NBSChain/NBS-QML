@@ -80,7 +80,7 @@ Button {
     }
 
     Component.onCompleted                           : {
-        qlbtnRoot.qlbtnClicked.connect(parent.qlbtnGroupClicked);
+        qlbtnRoot.qlbtnClicked.connect(qlbtnGroupClicked);
     }
 
 

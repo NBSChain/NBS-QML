@@ -50,13 +50,14 @@ Rectangle   {
         Rectangle   {
             id                                  : headerImgRect;
             Layout.fillWidth                    : true;
-            Layout.preferredHeight              : 120;
+            Layout.preferredHeight              : 140;
 //            anchors.top                         : parent.top;
             color                               : settings.neroHeleneColor;
 
             Image {
-                width                           : parent.width;
-                source                          : "qrc:/images/bg.png";
+                //width                           : parent.width;
+                height                          : parent.height;
+                source                          : "qrc:/images/nbs_header.png";
                 fillMode                        : Image.PreserveAspectFit;
             }
         }
@@ -73,10 +74,9 @@ Rectangle   {
             Controls_1_4.ScrollView {
                 id                              : silingScrollView;
                 width                           : parent.width;
-
-                height                          : (520-120)*dp;
+                height                          : (520-140)*dp;
                 horizontalScrollBarPolicy       : Qt.ScrollBarAlwaysOff;
-                verticalScrollBarPolicy         : Qt.ScrollBarAlwaysOn;
+                verticalScrollBarPolicy         : Qt.ScrollBarAsNeeded;
 
                 Column  {
                     id                          : colItems;
@@ -89,7 +89,7 @@ Rectangle   {
                         width                   : parent.width;
                         height                  : 28*dp;
                         anchors.left            : parent.left;
-                        anchors.leftMargin      : 10*dp;
+                        anchors.leftMargin      : 11*dp;
                         verticalAlignment       : Label.AlignVCenter;
                         text                    : qsTr("网络");
                         font.family             : aweFont.name;
@@ -136,7 +136,7 @@ Rectangle   {
                         width                   : parent.width;
                         height                  : 28*dp;
                         anchors.left            : parent.left;
-                        anchors.leftMargin      : 10*dp;
+                        anchors.leftMargin      : 11*dp;
                         verticalAlignment       : Label.AlignVCenter;
                         text                    : qsTr("系统");
                         font.family             : aweFont.name;
@@ -208,7 +208,7 @@ Rectangle   {
                              }
                              text               : "\uf2a1";
                              font.family        : aweFont.name;
-                             font.pixelSize     : 12*dp;
+                             font.pixelSize     : 11*dp;
                              color              : settings.foregroundColor;
 
                         }

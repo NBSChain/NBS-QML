@@ -26,7 +26,7 @@ Window {
     minimumWidth                                                : settings.winWidth;
     minimumHeight                                               : settings.winHeight;
     color                                                       : bgColor;
-    opacity                                                     : 0.90;
+    opacity                                                     : 0.95;
     //增加字体库
     FontLoader  {
        id                                           : aweFont;
@@ -95,9 +95,9 @@ Window {
 
     function resizeWin(){
         if(windState === Qt.WindowFullScreen){
-            silingToolar.setSilingScrollViewHeight((menuDrawer.height-120)*dp);
+            silingToolar.setSilingScrollViewHeight((menuDrawer.height-140)*dp);
         }else{
-            silingToolar.setSilingScrollViewHeight((520-120)*dp);
+            silingToolar.setSilingScrollViewHeight((520-142)*dp);
         }
 
 

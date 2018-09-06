@@ -1,7 +1,11 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
+import QtQuick.Controls 1.4 as Controls_1_4
+import QtQuick.Controls.Styles 1.4
 import QtQuick.Window 2.3
+
+import "../AddFile"
 
 /**
  * @file    TitleBar.qml
@@ -35,37 +39,111 @@ Rectangle {
     }
 
 
+    Rectangle {
+        id                                      : titleMidRectID;
+        anchors.centerIn                        : parent;
+        width                                   : 360*dp;
+        height                                  : parent.height;
+        color                                   : root.color;
 
-    //主程序ico
-    Image   {
-        id                                  : icon;
-        visible                             : (winMode !== Qt.Window);
-        width                               : 28*dp;
-        height                              : 28*dp;
-        source                              : "qrc:/logo.ico";
-        anchors {
-            left                            : parent.left;
-            leftMargin                      : 5*dp;
-            verticalCenter                  : parent.verticalCenter;
+        //搜索框
+        Rectangle   {
+            id                                  : searcherBar;
+            width                               : 320*dp;
+            height                              : 20*dp;
+            anchors {
+                left                            : parent.left;
+                leftMargin                      : 10*dp;
+                verticalCenter                  : parent.verticalCenter;
+            }
+            radius                              : 12*dp;
+            color                               : settings.neroHeleneColor;
+
+            Controls_1_4.TextField  {
+                id                              : searchText;
+                width                           : parent.width - 20*dp;
+                height                          : parent.height;
+                anchors.left                    : parent.left;
+                anchors.leftMargin              : 10*dp;
+
+                font.family                     : aweFont.name;
+                font.pixelSize                  : 12*dp;
+                verticalAlignment               : TextInput.AlignVCenter;
+                placeholderText                 : qsTr("输入hash58，回车搜索...");
+                textColor                       : settings.foregroundColor;
+                style                           : TextFieldStyle {
+                    placeholderTextColor        : settings.itemBtnForceFontColor;
+                    background                  : Rectangle {
+                        anchors.centerIn        : parent;
+                        id                      : searchFieldBg;
+                        implicitWidth           : searchText.width;
+                        implicitHeight          : searchText.height;
+                        color                   : settings.neroHeleneColor;
+                        Label   {
+
+                            id                  : searchPlusIcon;
+                            width               : 25*dp;
+                            anchors {
+                                right           : parent.right;
+                                rightMargin     : -5*dp;
+                                verticalCenter  : parent.verticalCenter;
+                            }
+                            font.family         : aweFont.name;
+                            font.pixelSize      : 16*dp;
+                            text                : "\uf00e";
+
+                            ToolTip {
+                                id              : searchTipID;
+                                visible         : false;
+                                delay           : 500;
+                                text            : qsTr("点击图标或回车搜索");
+                            }
+
+                            MouseArea   {
+                                anchors.fill    : parent;
+                                hoverEnabled    : true;
+                                cursorShape     : Qt.PointingHandCursor;
+
+                                onEntered       : {
+                                    searchTipID.visible     = true;
+                                    searchPlusIcon.color    = settings.foregroundColor;
+
+                                }
+
+                                onExited        : {
+                                    searchPlusIcon.color = settings.itemBtnForceFontColor;
+                                     searchTipID.visible     = false;
+                                }
+
+                                onClicked       : {
+
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+            }
+        }
+
+        //添加文件
+        TitleAddIcon   {
+            id                                  : quickAddRect;
+            height                              : parent.height;
+            anchors.left                        : searcherBar.right;
+            anchors.leftMargin                  : 10*dp;
+            anchors.verticalCenter              : parent.verticalCenter;
+            _normalBGColor                      : parent.color;
+            _activedBGColor                     : parent.color;
+            _normalFontColor                    : settings.itemBtnForceFontColor;
+            _activedFontColor                   : settings.rossoMarsColor;
+
+            iconText                            : "\uf196";
+            iconTipText                         : qsTr("添加文件到NBS网络");
         }
     }
 
-    Label    {
-        id                                  : appTitle;
-        anchors {
-            left                            : icon.right;
-            leftMargin                      : 5*dp;
-            verticalCenter                  : parent.verticalCenter;
-        }
-
-        font    {
-            family                          : aweFont.name;
-            pixelSize                       : 16*dp;
-            bold                            : true;
-        }
-        color                               : foregroundColor;
-        text                                : qsTr("NBS 客户端");
-    }
 
     /* 快捷操作 */
     function qlbResetAll(){
@@ -76,60 +154,86 @@ Rectangle {
     }
 
     function qlbtnGroupClicked (name){
-//         for(var i = 0;i<qlbtnGroup.buttons.length;++i){
-//             if(name !==qlbtnGroup.buttons[i].idName)
-//                 qlbtnGroup.buttons[i].reset();
-//         }
-//         settings.curStackView = name;
+         for(var i = 0;i<qlbtnGroup.buttons.length;++i){
+             if(name !==qlbtnGroup.buttons[i].idName)
+                 qlbtnGroup.buttons[i].reset();
+         }
+         settings.curStackView = name;
     }
-
     ButtonGroup {
         id                                      : qlbtnGroup;
     }
 
     Rectangle   {
-        id                                  : quickOperRect;
-        anchors.left                        : appTitle.right;
-        anchors.verticalCenter              : parent.verticalCenter;
-        width                               : 102*dp;
-        height                              : parent.height;
-        //color                               : settings.rossoMarsColor;
-        anchors  {
-            left                            : (winMode === Qt.Window) ? root.left : appTitle.right;
-            leftMargin                      : (winMode === Qt.Window) ? 0*dp : 20*dp;
-        }
-
-        QuickLabelBtn   {
-            id                              : homeQLBtn;
-            anchors.left                    : parent.left;
-            _normalBgColor                  : root.color;
-            width                           : (parent.width)/2;
-            idName                          : qsTr("INDEX");
-            labelText                       : "主页";
-            selected                        : true;
-            ButtonGroup.group               : qlbtnGroup;
-        }
-        QuickLabelBtn   {
-            id                              : imQLBtn;
-            anchors.left                    : homeQLBtn.right;
-            _normalBgColor                  : root.color;
-            width                           : (parent.width)/2;
-            idName                          : "IMMENU";
-            labelText                       : "聊天";
-            ButtonGroup.group               : qlbtnGroup;
-        }
-
-    }
-
-
-    Rectangle {
-        id                                      : titleMidRectID;
-        anchors.centerIn                        : parent;
-        width                                   : 300*dp;
+        id                                      : iconTitleRectID;
+        anchors.left                            : parent.left;
+        anchors.leftMargin                      : 0*dp;
         height                                  : parent.height;
-        color                                   : settings.rossoBiaColor;
-    }
 
+        //主程序ico
+        Image   {
+            id                                  : icon;
+            visible                             : (winMode !== Qt.Window);
+            width                               : 28*dp;
+            height                              : 28*dp;
+            source                              : "qrc:/logo.ico";
+            anchors {
+                left                            : parent.left;
+                leftMargin                      : 5*dp;
+                verticalCenter                  : parent.verticalCenter;
+            }
+        }
+
+        Label    {
+            id                                  : appTitle;
+            anchors {
+                left                            : icon.right;
+                leftMargin                      : 5*dp;
+                verticalCenter                  : parent.verticalCenter;
+            }
+
+            font    {
+                family                          : aweFont.name;
+                pixelSize                       : 16*dp;
+                bold                            : true;
+            }
+            color                               : foregroundColor;
+            text                                : qsTr("NBS 客户端");
+        }
+
+        Rectangle   {
+            id                                  : quickOperRect;
+            anchors.left                        : appTitle.right;
+            anchors.verticalCenter              : parent.verticalCenter;
+            width                               : 102*dp;
+            height                              : parent.height;
+            anchors  {
+                left                            : (winMode === Qt.Window) ? root.left : appTitle.right;
+                leftMargin                      : (winMode === Qt.Window) ? 0*dp : 20*dp;
+            }
+
+            QuickLabelBtn   {
+                id                              : homeQLBtn;
+                anchors.left                    : parent.left;
+                _normalBgColor                  : root.color;
+                width                           : (parent.width)/2;
+                idName                          : qsTr("INDEX");
+                labelText                       : "主页";
+                selected                        : true;
+                ButtonGroup.group               : qlbtnGroup;
+            }
+            QuickLabelBtn   {
+                id                              : imQLBtn;
+                anchors.left                    : homeQLBtn.right;
+                _normalBgColor                  : root.color;
+                width                           : (parent.width)/2;
+                idName                          : "IMMENU";
+                labelText                       : "聊天";
+                ButtonGroup.group               : qlbtnGroup;
+            }
+
+        }
+    }
 
     /* 窗口操作 */
     Rectangle {
