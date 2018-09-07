@@ -11,6 +11,7 @@ import "./PageViews"
 
 Window {
     id                                                          : mainWindow;
+    readonly property real      dpi2kMax                        : 2560.*dp;
     property real               windState                       : Qt.WindowNoState;
     property alias              dp                              : settings.dp;
     property alias              winMode                         : settings.winMode;
@@ -52,15 +53,15 @@ Window {
             Layout.preferredHeight                              : settings.titleHeight+2*dp;
             Layout.minimumHeight                                : settings.titleHeight+2*dp;
             Layout.maximumHeight                                : settings.titleHeight+2*dp;
-            Layout.fillWidth                                    :true;
+            Layout.fillWidth                                    : true;
             Layout.fillHeight                                   : true;
             color                                               : settings.grigioLynxColor;
 
             TitleBar    {
-                id                                                      : titleBar;
-                color                                                   : settings.silingBarBgColor;
-                height                                                  : settings.titleHeight;
-                width                                                   : parent.width;
+                id                                              : titleBar;
+                color                                           : settings.silingBarBgColor;
+                height                                          : settings.titleHeight;
+                width                                           : parent.width;
             }
             //skyline 分割线
             Rectangle   {
@@ -80,10 +81,11 @@ Window {
             color                                               : bgColor;
             Layout.fillHeight                                   : true;
             Layout.fillWidth                                    : true;
-            Layout.maximumHeight                                : 1000*dp;
+            Layout.maximumHeight                                : dpi2kMax;
             Layout.preferredHeight                              : settings.midMinHeight;
             Layout.minimumHeight                                : settings.midMinHeight;
             Layout.preferredWidth                               : settings.winWidth;
+            Layout.maximumWidth                                 : dpi2kMax;
             Loader  {
                 id                                              : midPageViewID;
                 anchors.fill                                    : parent;

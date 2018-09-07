@@ -17,7 +17,7 @@ import QtQuick.Layouts 1.3
     RowLayout   {
         id                                          : rootChatLayoutID;
         anchors.fill                                : parent;
-        spacing:2*dp;
+        spacing:0*dp;
 
 
         Rectangle   {
@@ -27,8 +27,9 @@ import QtQuick.Layouts 1.3
             Layout.fillHeight: true;
             Layout.minimumWidth: 260*dp;
             Layout.preferredWidth: 260*dp;
-            Layout.maximumWidth: 300*dp;
+            Layout.maximumWidth: dpi2kMax;
             Layout.minimumHeight: settings.midMinHeight*dp;
+            Layout.maximumHeight: dpi2kMax;
 
             Text    {
                 anchors.centerIn: parent;
@@ -39,11 +40,13 @@ import QtQuick.Layouts 1.3
             id                                      : rightMessageRectID;
             color   :"#0cc10f";
             Layout.fillWidth: true;
+            Layout.fillHeight: true;
             Layout.minimumWidth: 580*dp;
             Layout.preferredWidth: 580*dp;
-            Layout.maximumWidth: 800*dp;
+            Layout.maximumWidth: dpi2kMax;
             Layout.minimumHeight: settings.midMinHeight*dp;
-            Layout.fillHeight: true;
+            Layout.maximumHeight: dpi2kMax;
+
             Text    {
                 anchors.centerIn: parent;
                 text : parent.width+"px"+parent.height;
