@@ -42,14 +42,14 @@ Rectangle {
     Rectangle {
         id                                      : titleMidRectID;
         anchors.centerIn                        : parent;
-        width                                   : 360*dp;
+        width                                   : 320*dp;
         height                                  : parent.height;
         color                                   : root.color;
 
         //搜索框
         Rectangle   {
             id                                  : searcherBar;
-            width                               : 320*dp;
+            width                               : 280*dp;
             height                              : 20*dp;
             anchors {
                 left                            : parent.left;
@@ -82,7 +82,7 @@ Rectangle {
                         Label   {
 
                             id                  : searchPlusIcon;
-                            width               : 25*dp;
+                            width               : 20*dp;
                             anchors {
                                 right           : parent.right;
                                 rightMargin     : -5*dp;
@@ -158,7 +158,18 @@ Rectangle {
              if(name !==qlbtnGroup.buttons[i].idName)
                  qlbtnGroup.buttons[i].reset();
          }
-         settings.curStackView = name;
+         switch(name){
+         case "index":
+             mainViewRouter("qrc:/UI/PageViews/PageViews.qml",{});
+             settings.curStackView = name;
+             break;
+         case "chatMenu":
+             mainViewRouter("qrc:/UI/PageViews/ChatPage.qml",{});
+             settings.curStackView = name;
+             break;
+         default:
+             break;
+         }
     }
     ButtonGroup {
         id                                      : qlbtnGroup;
@@ -174,8 +185,8 @@ Rectangle {
         Image   {
             id                                  : icon;
             visible                             : (winMode !== Qt.Window);
-            width                               : 28*dp;
-            height                              : 28*dp;
+            width                               : 26*dp;
+            height                              : 26*dp;
             source                              : "qrc:/logo.ico";
             anchors {
                 left                            : parent.left;
@@ -198,7 +209,7 @@ Rectangle {
                 bold                            : true;
             }
             color                               : foregroundColor;
-            text                                : qsTr("NBS 客户端");
+            text                                : settings.appTitleName;
         }
 
         Rectangle   {
@@ -209,7 +220,7 @@ Rectangle {
             height                              : parent.height;
             anchors  {
                 left                            : (winMode === Qt.Window) ? root.left : appTitle.right;
-                leftMargin                      : (winMode === Qt.Window) ? 0*dp : 20*dp;
+                leftMargin                      : (winMode === Qt.Window) ? 0*dp : 10*dp;
             }
 
             QuickLabelBtn   {
@@ -217,7 +228,7 @@ Rectangle {
                 anchors.left                    : parent.left;
                 _normalBgColor                  : root.color;
                 width                           : (parent.width)/2;
-                idName                          : qsTr("INDEX");
+                idName                          : "index";
                 labelText                       : "主页";
                 selected                        : true;
                 ButtonGroup.group               : qlbtnGroup;
@@ -227,7 +238,7 @@ Rectangle {
                 anchors.left                    : homeQLBtn.right;
                 _normalBgColor                  : root.color;
                 width                           : (parent.width)/2;
-                idName                          : "IMMENU";
+                idName                          : "chatMenu";
                 labelText                       : "聊天";
                 ButtonGroup.group               : qlbtnGroup;
             }
@@ -253,8 +264,8 @@ Rectangle {
                 id                              : msgIcon;
                 anchors.verticalCenter          : parent.verticalCenter;
                 bgColor                         : root.color;
-                wBtnWidth                       : 21*dp;
-                wBtnHeight                      : 21*dp;
+                wBtnWidth                       : 20*dp;
+                wBtnHeight                      : 20*dp;
                 fontColor                       : "#ffffff";
                 wBtnText                        : "\uf535";      //消息
                 fontSize                        : 20*dp;

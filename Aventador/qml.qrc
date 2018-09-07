@@ -7,5 +7,10 @@
         <file>UI/Utils/ListItemBtn.qml</file>
         <file>UI/TitleBar/QuickLabelBtn.qml</file>
         <file>UI/AddFile/TitleAddIcon.qml</file>
+        <file>UI/PageViews/PageViews.qml</file>
+        <file>UI/BottomStatus/BottomStatus.qml</file>
+        <file>UI/PageViews/AboutPage.qml</file>
+        <file>UI/PageViews/ChatPage.qml</file>
+        <file>UI/PageViews/Developing.qml</file>
     </qresource>
 </RCC>

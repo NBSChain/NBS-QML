@@ -36,6 +36,27 @@ Rectangle   {
             if(itemBtnGroup.buttons[i].idName !== name)
                 itemBtnGroup.buttons[i].reset();
         }
+        switch(name){
+        case "aboutPageMenu":
+            if(currentViewName!==name)
+                mainViewRouter("qrc:/UI/PageViews/AboutPage.qml",{});
+            break;
+        case "chatMenu":
+            if(currentViewName!==name)
+                mainViewRouter("qrc:/UI/PageViews/ChatPage.qml",{});
+            break;
+        case "nodeMenu":
+        case "dataMenu":
+        case "dagMenu" :
+        case "settMenu":
+            if(currentViewName!==name)
+                mainViewRouter("qrc:/UI/PageViews/Developing.qml",{});
+            break;
+        default:
+            if(currentViewName!==name)
+                mainViewRouter("qrc:/UI/PageViews/Developing.qml",{});
+            break;
+        }
 
         currentViewName = name;
     }
@@ -110,22 +131,22 @@ Rectangle   {
 //                    }
                     ListItemBtn {
                         id                      : nodes;
-                        idName                  : "NODESMENU";
+                        idName                  : "nodeMenu";
                         symbolText              : "\uf1aa";
                         itemText                : "节点";
                         ButtonGroup.group       : itemBtnGroup;
 
                     }
                     ListItemBtn {
-                        id                      : im;
-                        idName                  : "IMMENU";
+                        id                      : chatMenu;
+                        idName                  : "chatMenu";
                         symbolText              : "\uf0c0";
                         itemText                : "聊天";
                         ButtonGroup.group       : itemBtnGroup;
                     }
                     ListItemBtn {
                         id                      : datasSilingBtn;
-                        idName                  : "DATASMENU";
+                        idName                  : "dataMenu";
                         symbolText              : "\uf20e";//\f20e;uf1b2
                         itemText                : "数据";
                         ButtonGroup.group       : itemBtnGroup;
@@ -147,29 +168,29 @@ Rectangle   {
 
                     ListItemBtn {
                         id                      : settMenu;
-                        idName                  : "CONFMENU";
+                        idName                  : "settMenu";
                         symbolText              : "\uf013";
                         itemText                : "设置";
                         ButtonGroup.group       : itemBtnGroup;
                     }
                     ListItemBtn {
-                        id                      : im3;
-                        idName                  : "IM3";
+                        id                      : aboutMenu;
+                        idName                  : "aboutPageMenu";
                         symbolText              : "\uf124";
                         itemText                : "关于";
                         ButtonGroup.group       : itemBtnGroup;
                     }
 
                     ListItemBtn {
-                        id                      : im4;
-                        idName                  : "IM4";
+                        id                      : dagMenu;
+                        idName                  : "dagMenu";
                         symbolText              : "\uf0c1";
                         itemText                : "DAG";
                         ButtonGroup.group       : itemBtnGroup;
                     }
                     ListItemBtn {
-                        id                      : im7;
-                        idName                  : "IM7";
+                        id                      : storeMenu;
+                        idName                  : "storeMenu";
                         symbolText              : "\uf1b3";
                         itemText                : "存储";
                         ButtonGroup.group       : itemBtnGroup;
