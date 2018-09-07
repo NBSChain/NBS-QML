@@ -8,6 +8,9 @@
 *.o
 *.obj
 
+# ignore libs
+
+
 # Precompiled Headers
 *.gch
 *.pch

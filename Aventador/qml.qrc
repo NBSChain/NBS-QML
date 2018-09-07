@@ -12,5 +12,6 @@
         <file>UI/PageViews/AboutPage.qml</file>
         <file>UI/PageViews/ChatPage.qml</file>
         <file>UI/PageViews/Developing.qml</file>
+        <file>UI/PageViews/ChatRect/ChatRect.qml</file>
     </qresource>
 </RCC>

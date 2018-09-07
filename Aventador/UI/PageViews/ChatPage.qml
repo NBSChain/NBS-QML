@@ -19,23 +19,24 @@ import QtQuick.Layouts 1.3
         anchors.fill                                : parent;
         spacing:0*dp;
 
-
+        /* Left */
         Rectangle   {
             id                                      : leftPeersRectID;
-            color   :"teal";
-            Layout.fillWidth: true;
-            Layout.fillHeight: true;
-            Layout.minimumWidth: 260*dp;
-            Layout.preferredWidth: 260*dp;
-            Layout.maximumWidth: dpi2kMax;
-            Layout.minimumHeight: settings.midMinHeight*dp;
-            Layout.maximumHeight: dpi2kMax;
+            color                                   : bgColor;
+            Layout.fillWidth                        : true;
+            Layout.fillHeight                       : true;
+            Layout.minimumWidth                     : 260*dp;
+            Layout.preferredWidth                   : 260*dp;
+            Layout.maximumWidth                     : dpi2kMax;
+            Layout.minimumHeight                    : settings.midMinHeight*dp;
+            Layout.maximumHeight                    : dpi2kMax;
 
             Text    {
                 anchors.centerIn: parent;
                 text : parent.width+"px";
             }
         }
+
         Rectangle   {
             id                                      : rightMessageRectID;
             color   :"#0cc10f";
