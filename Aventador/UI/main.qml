@@ -32,53 +32,69 @@ Window {
     opacity                                                     : 0.90;
     //增加字体库
     FontLoader  {
-       id                                           : aweFont;
-       source                                       : "qrc:/font/fontawesome-webfont.ttf";
+       id                                                       : aweFont;
+       source                                                   : "qrc:/font/fontawesome-webfont.ttf";
     }
     //用户titlebar
     FontLoader {
-       id                                           : icomoonFont;
-       source                                       : "qrc:/font/icomoon.ttf";
+       id                                                       : icomoonFont;
+       source                                                   : "qrc:/font/icomoon.ttf";
+    }
+    /* 布局开始 */
+    ColumnLayout   {
+        id                                                      : mainLayoutID;
+        anchors.fill                                            : parent;
+        spacing                                                 : 0;
+
+        Rectangle   {
+            id                                                  : topRectID;
+            height                                              : settings.titleHeight+2*dp;
+            Layout.preferredHeight                              : settings.titleHeight+2*dp;
+            Layout.minimumHeight                                : settings.titleHeight+2*dp;
+            Layout.maximumHeight                                : settings.titleHeight+2*dp;
+            Layout.fillWidth                                    :true;
+            Layout.fillHeight                                   : true;
+            color                                               : settings.grigioLynxColor;
+
+            TitleBar    {
+                id                                                      : titleBar;
+                color                                                   : settings.silingBarBgColor;
+                height                                                  : settings.titleHeight;
+                width                                                   : parent.width;
+            }
+            //skyline 分割线
+            Rectangle   {
+                id                                              : skyline;
+                anchors.top                                     : titleBar.bottom;
+                color                                           : settings.rossoBiaColor;
+                width                                           : parent.width;
+                height                                          : 2*dp;
+                anchors.left                                    : parent.left;
+                anchors.leftMargin                              : 1*dp;
+            }
+        }
+
+        /* 主展示区 */
+        Rectangle {
+            id                                                  : midRect;
+            color                                               : bgColor;
+            Layout.fillHeight                                   : true;
+            Layout.fillWidth                                    : true;
+            Layout.maximumHeight                                : 1000*dp;
+            Layout.preferredHeight                              : settings.midMinHeight;
+            Layout.minimumHeight                                : settings.midMinHeight;
+            Layout.preferredWidth                               : settings.winWidth;
+            Loader  {
+                id                                              : midPageViewID;
+                anchors.fill                                    : parent;
+                source                                          : "qrc:/UI/PageViews/PageViews.qml";
+            }
+        }
     }
 
-    TitleBar    {
-        id                                                      : titleBar;
-        color                                                   : settings.silingBarBgColor;
-        height                                                  : settings.titleHeight;
-        width                                                   : parent.width;
-    }
-    //skyline 分割线
-    Rectangle   {
-        id                                          : skyline;
-        anchors.top                                 : titleBar.bottom;
-        color                                       : settings.rossoBiaColor;
-        width                                       : parent.width;
-        height                                      : 2*dp;
-        anchors.left                                : parent.left;
-        anchors.leftMargin                          : 1*dp;
 
-    }
 
-    /* */
-    Loader  {
-        id                                          : midPageViewID;
-        anchors.top                                 : skyline.bottom;
-        width                                       : parent.width;
-        anchors.centerIn                            : parent;
-       // height                                      : (parent.height-titleBar.height-skyline.height)*dp;
-        source                                      : "qrc:/UI/PageViews/PageViews.qml";
-    }
-//    Loader  {
-//        id                                          : statusBarRectID;
-//        anchors.top                                 : midPageViewID.bottom;
-//        width                                       : parent.width;
-//        height                                      : settings.statusBarHeight;
-//        anchors.left                                : parent.left;
-
-//        source: "qrc:/UI/BottomStatus/BottomStatus.qml";
-//    }
-
-    /* 主窗口内容展示*/
+    /* 主窗口内容展示 */
     function mainViewRouter(url,properties){
         midPageViewID.setSource(url,properties);
     }
@@ -93,8 +109,8 @@ Window {
         edge                                        : Qt.RightEdge;
         closePolicy                                 : Popup.CloseOnEscape | Popup.CloseOnPressOutside;
 
-        width: (mainWindow.width*0.12)*dp;
-        height: (mainWindow.height - settings.titleHeight-2)*dp;
+        width                                       : (mainWindow.width*0.12)*dp;
+        height                                      : (mainWindow.height - settings.titleHeight-2)*dp;
 
         background                                  : Rectangle {
             anchors.fill                            : parent;
@@ -128,7 +144,7 @@ Window {
        readonly property real       winWidth                : 840.*dp;
        readonly property real       winHeight               : 520.*dp;
        readonly property real       statusBarHeight         : 26.*dp;
-
+       readonly property real       midMinHeight            : (520-32-2)*dp;
        readonly property real       prefectRate             : 0.618;
 
 

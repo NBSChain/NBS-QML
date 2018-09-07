@@ -13,7 +13,8 @@ import QtQuick.Window 2.3
  */
 Rectangle {
     id                                          : root;
-    anchors.centerIn                            : parent;
+    anchors.fill                                : parent;
+    color                                       : settings.neroHeleneColor;
     Label   {
         font    {
             family                              : aweFont.name

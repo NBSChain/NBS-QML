@@ -26,8 +26,8 @@ Label   {
     color                                   : foregroundColor;
     text                                    : qsTr("开发中,尽请期待...");
     background: Rectangle{
-        anchors.fill: parent;
-        color: "#777fff";
+        anchors.fill                        : parent;
+        color                               : parent.color;
     }
 
     verticalAlignment                       : Label.AlignVCenter;
