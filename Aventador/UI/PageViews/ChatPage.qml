@@ -22,18 +22,22 @@ import QtQuick.Layouts 1.3
         /* Left */
         Rectangle   {
             id                                      : leftPeersRectID;
-            color                                   : bgColor;
+            color                                   : Qt.lighter(bgColor);
             Layout.fillWidth                        : true;
             Layout.fillHeight                       : true;
-            Layout.minimumWidth                     : 260*dp;
-            Layout.preferredWidth                   : 260*dp;
-            Layout.maximumWidth                     : dpi2kMax;
+            Layout.minimumWidth                     : 240*dp;
+            Layout.preferredWidth                   : 240*dp;
+            Layout.maximumWidth                     : 240*dp;
             Layout.minimumHeight                    : settings.midMinHeight*dp;
             Layout.maximumHeight                    : dpi2kMax;
 
             Text    {
                 anchors.centerIn: parent;
                 text : parent.width+"px";
+            }
+            Image {
+                id: avatar
+                source: "http://www.lanbery.cn/client-lanbery.png"
             }
         }
 
@@ -42,8 +46,8 @@ import QtQuick.Layouts 1.3
             color   :"#0cc10f";
             Layout.fillWidth: true;
             Layout.fillHeight: true;
-            Layout.minimumWidth: 580*dp;
-            Layout.preferredWidth: 580*dp;
+            Layout.minimumWidth: 600*dp;
+            Layout.preferredWidth: 600*dp;
             Layout.maximumWidth: dpi2kMax;
             Layout.minimumHeight: settings.midMinHeight*dp;
             Layout.maximumHeight: dpi2kMax;

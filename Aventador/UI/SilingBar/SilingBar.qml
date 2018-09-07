@@ -67,19 +67,51 @@ Rectangle   {
 
     ColumnLayout    {
         anchors.fill                            : parent;
+        spacing                                 : 0;
 
-        Rectangle   {
+        /* header */
+        Label   {
             id                                  : headerImgRect;
             Layout.fillWidth                    : true;
-            Layout.preferredHeight              : 140;
-//            anchors.top                         : parent.top;
+            Layout.maximumWidth                 : 300*dp;
+            Layout.preferredHeight              : 120*dp;
+            Layout.maximumHeight                : 120*dp;
             color                               : settings.neroHeleneColor;
+            background                          : Rectangle   {
+                anchors.fill                    : parent;
+                color                           : parent.color;
+                Image {
+                    Layout.fillWidth                : true;
+                    height                          : parent.height;
+                    source                          : "qrc:/images/nbs_header.png";
+                    fillMode                        : Image.PreserveAspectFit;
+                    z                               : 2;
+                }
+            }
+            RowLayout  {
+                anchors.centerIn                        : parent;
+                spacing                                 : 10*dp;
+                Rectangle {
+                    id                                  : avatarRectID;
+                    width                               : 60*dp;
+                    height                              : 60*dp;
+                    color                               : Qt.lighter("#ffffff");
+                    radius                              : 30*dp;
+                    Image {
+                        anchors.fill                    : parent;
+                        source                          : "http://www.lanbery.cn/img/lamborghini_logo.png";
+                        fillMode                        : Image.PreserveAspectFit;
+                    }
+                }
+                Text    {
+                    text                                : "Lanbery";
+                    color                               : foregroundColor;
+                    font    {
+                        family                          : aweFont.name;
+                        pixelSize                       : 16*dp;
+                    }
 
-            Image {
-                //width                           : parent.width;
-                height                          : parent.height;
-                source                          : "qrc:/images/nbs_header.png";
-                fillMode                        : Image.PreserveAspectFit;
+                }
             }
         }
 
@@ -88,14 +120,14 @@ Rectangle   {
 //            anchors.top                         : headerImgRect.bottom;
             Layout.fillWidth                    : true;
             Layout.fillHeight                   : true;
-            Layout.preferredHeight              : (root.height-headerImgRect.height-10)*dp;
+            Layout.preferredHeight              : (root.height-headerImgRect.height)*dp;
 
-            height                              : (root.height-headerImgRect.height-10)*dp;
+            height                              : (root.height-headerImgRect.height)*dp;
             color                               : settings.silingBarBgColor;
             Controls_1_4.ScrollView {
                 id                              : silingScrollView;
                 width                           : parent.width;
-                height                          : (520-140)*dp;
+                height                          : (520-164)*dp;
                 horizontalScrollBarPolicy       : Qt.ScrollBarAlwaysOff;
                 verticalScrollBarPolicy         : Qt.ScrollBarAsNeeded;
 
@@ -111,6 +143,7 @@ Rectangle   {
                         height                  : 28*dp;
                         anchors.left            : parent.left;
                         anchors.leftMargin      : 11*dp;
+
                         verticalAlignment       : Label.AlignVCenter;
                         text                    : qsTr("网络");
                         font.family             : aweFont.name;
@@ -119,16 +152,6 @@ Rectangle   {
 
                     }
 
-//                    ListItemBtn {
-//                        id                      : home;
-//                        idName                  : "HOMEMENU";
-//                        symbolText              : "\uf015";
-//                        itemText                : "主页";
-//                        selected                : true;
-//                        ButtonGroup.group       : itemBtnGroup;
-
-//                       // Component.objectName    : home.firstSelected();
-//                    }
                     ListItemBtn {
                         id                      : nodes;
                         idName                  : "nodeMenu";

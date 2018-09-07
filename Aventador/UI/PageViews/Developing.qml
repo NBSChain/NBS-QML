@@ -10,27 +10,43 @@ import QtQuick.Controls 2.2
  * @author  lanbery
  * @section LICENSE Copyright (c) 2018 - 2025 lanbery,NBS Chain Co.
  */
-
-Label   {
-    id                                      : root;
-    height                                  : parent.height;
-    width: parent.width;
+Rectangle {
+    id                                          : root;
+    height                                      : parent.height;
+    width                                       : parent.width;
     anchors {
-        centerIn                            : parent;
+        centerIn                                : parent;
+    }
+    color                                       : bgColor;
+    Row {
+        anchors.centerIn                        : parent;
+        spacing: 26*dp;
+        Label   {
+            font    {
+                family                              : aweFont.name
+                pixelSize                           : 26*dp;
+            }
+            color                                   : foregroundColor;
+            text                                    : "\uf109";                         //\uf109;\uf108
+            verticalAlignment                       : Label.AlignVCenter;
+            horizontalAlignment                     : Label.AlignHCenter;
+        }
+
+        Label   {
+            font    {
+                family                              : aweFont.name
+                pixelSize                           : 24*dp;
+            }
+            color                                   : foregroundColor;
+            text                                    : qsTr("正在开发中,尽请期待...");
+            verticalAlignment                       : Label.AlignVCenter;
+            horizontalAlignment                     : Label.AlignHCenter;
+        }
+
     }
 
-    font    {
-        family                              : aweFont.name
-        pixelSize                           : 40*dp;
-    }
-    color                                   : foregroundColor;
-    text                                    : qsTr("开发中,尽请期待...");
-    background: Rectangle{
-        anchors.fill                        : parent;
-        color                               : bgColor;
-    }
 
-    verticalAlignment                       : Label.AlignVCenter;
-    horizontalAlignment                     : Label.AlignHCenter;
 }
+
+
 

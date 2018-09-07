@@ -13,5 +13,6 @@
         <file>UI/PageViews/ChatPage.qml</file>
         <file>UI/PageViews/Developing.qml</file>
         <file>UI/PageViews/ChatRect/ChatRect.qml</file>
+        <file>UI/DataModels/ContactPeerModel.qml</file>
     </qresource>
 </RCC>

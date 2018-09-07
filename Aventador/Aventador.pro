@@ -34,3 +34,5 @@ RC_ICONS = logo.ico
 
 DISTFILES += \
     images/logo.png
+
+include(SortFilterProxyModel/SortFilterProxyModel.pri)

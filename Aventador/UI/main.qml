@@ -128,9 +128,9 @@ Window {
 
     function resizeWin(){
         if(windState === Qt.WindowFullScreen){
-            silingToolar.setSilingScrollViewHeight((menuDrawer.height-140)*dp);
+            silingToolar.setSilingScrollViewHeight((menuDrawer.height-142)*dp);
         }else{
-            silingToolar.setSilingScrollViewHeight((520-142)*dp);
+            silingToolar.setSilingScrollViewHeight((520-164)*dp);
         }
     }
 
