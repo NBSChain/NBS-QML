@@ -163,6 +163,7 @@ Window {
        //font
        readonly property color      itemBtnForceFontColor   : "#B0B0AE";    //
        readonly property color      silingBarBgColor        : "#1A1B1F";    //
+       readonly property color      hoveredBgColorGray      : "#a9a9a9";
 
        property string              curStackView            : "";
 

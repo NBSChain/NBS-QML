@@ -17,6 +17,7 @@ import "../AddFile"
  */
 Rectangle {
     id                                      : root;
+    z                                       : 1;
     property color      titleColor          : foregroundColor;
 
     MouseArea   {

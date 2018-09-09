@@ -7,7 +7,7 @@ import "../../DataModels"
 
 Rectangle {
     id                                      : root;
-    color                                   : Qt.lighter(settings.silingBarBgColor);
+    color                                   : settings.silingBarBgColor;
 
     ContactPeerModel    {
         id                                  : peersModel;
@@ -61,7 +61,7 @@ Rectangle {
         spacing                                                 : 0;
         SearchBar   {
             id                                                  : searchBar;
-            normalBgColor                                       : settings.grigioLynxColor;
+            normalBgColor                                       : Qt.lighter(settings.grigioLynxColor);
             Layout.fillWidth                                    : true;
             z                                                   : 1;
         }
@@ -73,9 +73,17 @@ Rectangle {
             Layout.fillHeight                                   : true;
 
             model                                               : proxyModel;
-            delegate                                            : PeerDelegate {}
+            delegate                                            : PeerDelegate {id:delegate;bgColor: color;normalbgColor: color;}
 
-            //ScrollBar.vertical                                  :
+            focus                                               : true;
+
+            highlight   : Rectangle {
+                color                                           : Qt.lighter(settings.grigioLynxColor);
+                opacity                                         : 0.35;
+                z                                               : peersListView.z +2;
+            }
+
         }
+
     }
 }

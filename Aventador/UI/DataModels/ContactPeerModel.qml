@@ -28,7 +28,7 @@ ListModel {
         ip4             : "35.4.23.66";
         locations       : "中国*加州";
         svrTypes        : "store,search";
-        avatar          : "http://www.lanbery.cn/client-lanbery.png";
+        avatar          : "";
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
@@ -41,7 +41,7 @@ ListModel {
         ip4             : "35.4.23.66";
         locations       : "美国*加州";
         svrTypes        : "store,search";
-        avatar          : "http://www.lanbery.cn/client-lanbery.png";
+        avatar          : "http://www.lanbery.cn/img/iphone.png";
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
@@ -54,7 +54,7 @@ ListModel {
         ip4             : "35.4.23.66";
         locations       : "德国*斯图加特";
         svrTypes        : "store,search";
-        avatar          : "http://www.lanbery.cn/client-lanbery.png";
+        avatar          : "http://www.lanbery.cn/img/macbook-pro.png";
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "风中飘零...";
@@ -67,7 +67,7 @@ ListModel {
         ip4             : "35.4.23.66";
         locations       : "未知";
         svrTypes        : "store,search";
-        avatar          : "http://www.lanbery.cn/client-lanbery.png";
+        avatar          : "http://www.lanbery.cn/img/fuchen.png";
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "you have ...";
@@ -106,7 +106,7 @@ ListModel {
         ip4             : "35.4.23.66";
         locations       : "美国*加州";
         svrTypes        : "store,search";
-        avatar          : "http://www.lanbery.cn/client-lanbery.png";
+        avatar          : "https://www.lamborghini.com/themes/custom/lambo/img/base/logo.png";
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
@@ -197,7 +197,7 @@ ListModel {
         ip4             : "35.4.23.66";
         locations       : "美国*加州";
         svrTypes        : "store,search";
-        avatar          : "http://www.lanbery.cn/client-lanbery.png";
+        avatar          : "";
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
@@ -223,7 +223,7 @@ ListModel {
         ip4             : "35.4.23.66";
         locations       : "美国*加州";
         svrTypes        : "store,search";
-        avatar          : "http://www.lanbery.cn/client-lanbery.png";
+        avatar          : "";
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";

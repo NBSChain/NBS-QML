@@ -22,9 +22,9 @@ RowLayout   {
         id                                      : leftPeersRectID;
         Layout.fillWidth                        : true;
         Layout.fillHeight                       : true;
-        Layout.minimumWidth                     : 240*dp;
-        Layout.preferredWidth                   : 240*dp;
-        Layout.maximumWidth                     : 240*dp;
+        Layout.minimumWidth                     : 260*dp;
+        Layout.preferredWidth                   : 260*dp;
+        Layout.maximumWidth                     : 260*dp;
         Layout.minimumHeight                    : settings.midMinHeight*dp;
         Layout.maximumHeight                    : dpi2kMax;
 
