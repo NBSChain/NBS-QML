@@ -230,7 +230,7 @@ Rectangle {
                 width                           : (parent.width)/2;
                 idName                          : "index";
                 labelText                       : "主页";
-                selected                        : true;
+
                 ButtonGroup.group               : qlbtnGroup;
             }
             QuickLabelBtn   {
@@ -240,6 +240,7 @@ Rectangle {
                 width                           : (parent.width)/2;
                 idName                          : "chatMenu";
                 labelText                       : "聊天";
+                selected                        : true;
                 ButtonGroup.group               : qlbtnGroup;
             }
 

@@ -33,6 +33,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RC_ICONS = logo.ico
 
 DISTFILES += \
-    images/logo.png
+    images/logo.png 
 
 include(SortFilterProxyModel/SortFilterProxyModel.pri)

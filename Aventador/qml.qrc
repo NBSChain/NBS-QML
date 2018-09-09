@@ -12,7 +12,10 @@
         <file>UI/PageViews/AboutPage.qml</file>
         <file>UI/PageViews/ChatPage.qml</file>
         <file>UI/PageViews/Developing.qml</file>
-        <file>UI/PageViews/ChatRect/ChatRect.qml</file>
         <file>UI/DataModels/ContactPeerModel.qml</file>
+        <file>UI/PageViews/ChatRect/ContactPeersList.qml</file>
+        <file>UI/PageViews/ChatRect/SearchBar.qml</file>
+        <file>UI/PageViews/ChatRect/LeftPeerViewRect.qml</file>
+        <file>UI/PageViews/ChatRect/PeerDelegate.qml</file>
     </qresource>
 </RCC>

@@ -19,6 +19,7 @@ Window {
     property color              foregroundColor                 : settings.foregroundColor;             //主前景色
     property color              activedForeFontColor            : settings.rossoMarsColor;              //activedForeFontColor
     property color              noramlFontColor                 : settings.itemBtnForceFontColor;
+    property color              normalBgColor                   : settings.grigioLynxColor;
     property string             currentViewName                 : "index";
 
     visible                                                     : true;    
@@ -89,7 +90,7 @@ Window {
             Loader  {
                 id                                              : midPageViewID;
                 anchors.fill                                    : parent;
-                source                                          : "qrc:/UI/PageViews/PageViews.qml";
+                source                                          : "qrc:/UI/PageViews/ChatPage.qml";
             }
         }
     }

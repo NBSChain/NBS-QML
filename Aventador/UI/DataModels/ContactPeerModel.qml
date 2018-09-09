@@ -20,6 +20,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
         lastMessage     : "";
+        favorite        : false;
     }
     ListElement {
         hash58          : "QmcLX4ofXTHgTQwHdByhrSfWiLeQ81sZHKRFhjRaTgDiiU";
@@ -32,6 +33,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
         lastMessage     : "";
+        favorite        : false;
     }
     ListElement {
         hash58          : "QmdYDwQaszJRVcfizAuzWvn2JHxH2vwVwwGqqbtUw2uFc5";
@@ -44,6 +46,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
         lastMessage     : "";
+        favorite        : false;
     }
     ListElement {
         hash58          : "QmeomHUtQyAnwLJn1CzdomHQsT6YZTj5id4hqSWSztn5Su";
@@ -56,6 +59,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "风中飘零...";
         lastMessage     : "";
+        favorite        : false;
     }
     ListElement {
         hash58          : "Qmd4C4wgxPqBW2Sm8dWobXhJYn6wGWVuNCHrZSZkE67wrZ";
@@ -68,6 +72,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "you have ...";
         lastMessage     : "";
+        favorite        : false;
     }
     ListElement {
         hash58          : "QmNM614Tvu6pVnPyGwb2VxFvAeW5tACb2EUbPydbFyjjcW";
@@ -80,6 +85,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
         lastMessage     : "";
+        favorite        : false;
     }
     ListElement {
         hash58          : "QmNM614Tvu6pVnPyGwb2VxFvAeW5tACb2EUbPydbFyjjcW";
@@ -92,6 +98,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
         lastMessage     : "";
+        favorite        : false;
     }
     ListElement {
         hash58          : "QmbHeEjbrzgzXbnsJu7tHi7ao3ArHTQyecp2tq9qxzr5h5";
@@ -104,6 +111,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
         lastMessage     : "";
+        favorite        : false;
     }
     ListElement {
         hash58          : "QmZMxNdpMkewiVZLMRxaNxUeZpDUb34pWjZ1kZvsd16Zic";
@@ -116,6 +124,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
         lastMessage     : "";
+        favorite        : false;
     }
     ListElement {
         hash58          : "QmNM614Tvu6pVnPyGwb2VxFvAeW5tACb2EUbPydbFyjjcW";
@@ -128,6 +137,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
         lastMessage     : "";
+        favorite        : false;
     }
     ListElement {
         hash58          : "QmaVH3SYVAv5MUE2A61Fqw1RJVM1rMNVKWDT7Hy4Hc2R38";
@@ -140,6 +150,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
         lastMessage     : "";
+        favorite        : false;
     }
     ListElement {
         hash58          : "QmNM614Tvu6pVnPyGwb2VxFvAeW5tACb2EUbPydbFyjjcW";
@@ -152,6 +163,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
         lastMessage     : "";
+        favorite        : false;
     }
     ListElement {
         hash58          : "QmZY7MtK8ZbG1suwrxc7xEYZ2hQLf1dAWPRHhjxC8rjq8E";
@@ -164,6 +176,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
         lastMessage     : "";
+        favorite        : false;
     }
     ListElement {
         hash58          : "QmauUi2GmmdiMVxk9dBDJHFPBSzNrWKy39Kh9ByjZcF6RM";
@@ -176,6 +189,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
         lastMessage     : "";
+        favorite        : false;
     }
     ListElement {
         hash58          : "QmbiAM7dduzfyF3idCXXRLn8VoMy4aAi4pMUMHQWxVdTtf";
@@ -188,6 +202,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
         lastMessage     : "";
+        favorite        : false;
     }
     ListElement {
         hash58          : "Qmc2KjLQEu5Utsf2bu7WcuNhAgHvwoxwrRJcgC63pdtGsm";
@@ -200,6 +215,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
         lastMessage     : "";
+        favorite        : false;
     }
     ListElement {
         hash58          : "Qmah4qBbbwDeuPexUyhNpMQFd2APSSj4vuZjei5dPK4JEL";
@@ -212,6 +228,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
         lastMessage     : "";
+        favorite        : false;
     }
     ListElement {
         hash58          : "QmbHeEjbrzgzXbnsJu7tHi7ao3ArHTQyecp2tq9qxzr5h5";
@@ -224,6 +241,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
         lastMessage     : "";
+        favorite        : false;
     }
     ListElement {
         hash58          : "QmbP7FJ4aNhqifELN3MdY3JzeK3mFRAm2DAe9PeP4oVTHK";
@@ -236,6 +254,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
         lastMessage     : "";
+        favorite        : false;
     }
     ListElement {
         hash58          : "QmagicfabQHRLAbJC99HdCXrK3CZBpM3FtvTXLkbU2ZaXm";
@@ -248,6 +267,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
         lastMessage     : "";
+        favorite        : false;
     }
 
 }
