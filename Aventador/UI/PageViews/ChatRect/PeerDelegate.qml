@@ -64,7 +64,7 @@ ItemDelegate {
            // anchors.fill                        : parent;
             Layout.fillWidth                        : true;
             Layout.fillHeight                       : true;
-            spacing                                 : 2*dp;
+            spacing                                 : 5*dp;
 
             Text    {
                 id                              : hash58Label;
@@ -95,6 +95,7 @@ ItemDelegate {
                     family                      : aweFont.name;
                     pixelSize                   : 12*dp;
                 }
+                verticalAlignment               : Text.AlignVCenter;
             }
 
         }

@@ -73,7 +73,7 @@ Rectangle   {
         Label   {
             id                                  : headerImgRect;
             Layout.fillWidth                    : true;
-            Layout.maximumWidth                 : 300*dp;
+            Layout.maximumWidth                 : 320*dp;
             Layout.preferredHeight              : 120*dp;
             Layout.maximumHeight                : 120*dp;
             color                               : settings.neroHeleneColor;
@@ -88,29 +88,45 @@ Rectangle   {
                     z                               : 2;
                 }
             }
-            RowLayout  {
-                anchors.centerIn                        : parent;
-                spacing                                 : 10*dp;
-                Rectangle {
+            ColumnLayout  {
+                anchors.fill                            : parent;
+                spacing                                 : 0*dp;
+                Label   {
                     id                                  : avatarRectID;
-                    width                               : 60*dp;
-                    height                              : 60*dp;
-                    color                               : Qt.lighter("#ffffff");
-                    radius                              : 30*dp;
-                    Image {
-                        anchors.fill                    : parent;
-                        source                          : "http://www.lanbery.cn/img/lamborghini_logo.png";
-                        fillMode                        : Image.PreserveAspectFit;
+                    Layout.fillWidth                    : true;
+                    Layout.fillHeight                   : true;
+                    Layout.minimumHeight                : 80*dp;
+                    Layout.maximumHeight                : 80*dp;
+                    Layout.preferredHeight              : 80*dp;
+
+                    background:  Rectangle {
+                        anchors.centerIn                    : parent;
+                        height                              : 60*dp;
+                        width                               : 60*dp;
+                        color                               : Qt.lighter("#ffffff");
+                        radius                              : 30*dp;
+                        Image {
+                            anchors.fill                    : parent;
+                            source                          : "http://www.lanbery.cn/img/lamborghini_logo.png";
+                            fillMode                        : Image.PreserveAspectFit;
+                        }
                     }
                 }
+
+
                 Text    {
-                    text                                : "Lanbery";
+                    Layout.fillHeight                   : true;
+                    Layout.fillWidth                    : true;
+                    Layout.minimumHeight                : 36*dp;
+                    Layout.preferredHeight              : 36*dp;
+                    text                                : "Lanbery cai";
                     color                               : foregroundColor;
+                    wrapMode                            : Text.Wrap;
                     font    {
                         family                          : aweFont.name;
                         pixelSize                       : 16*dp;
                     }
-
+                    horizontalAlignment                 : Text.AlignHCenter;
                 }
             }
         }

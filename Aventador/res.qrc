@@ -6,6 +6,7 @@
         <file>images/logo.png</file>
         <file>logo.ico</file>
         <file>images/nbs_header.png</file>
-	<file>qtquickcontrols2.conf</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>nbs.icns</file>
     </qresource>
 </RCC>

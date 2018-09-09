@@ -31,6 +31,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 #Set Icon
 RC_ICONS = logo.ico
+# OS icon
+ICON = nbs.icns
 
 DISTFILES += \
     images/logo.png 
