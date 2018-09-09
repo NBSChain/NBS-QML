@@ -17,5 +17,6 @@
         <file>UI/PageViews/ChatRect/SearchBar.qml</file>
         <file>UI/PageViews/ChatRect/LeftPeerViewRect.qml</file>
         <file>UI/PageViews/ChatRect/PeerDelegate.qml</file>
+        <file>UI/PageViews/ListScrollBar.qml</file>
     </qresource>
 </RCC>

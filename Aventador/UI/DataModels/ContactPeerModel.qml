@@ -154,11 +154,11 @@ ListModel {
     }
     ListElement {
         hash58          : "QmNM614Tvu6pVnPyGwb2VxFvAeW5tACb2EUbPydbFyjjcW";
-        nickName        : "Huracan Rosso";
+        nickName        : "Lamborghini Huracan Rosso";
         ip4             : "35.4.23.66";
         locations       : "美国*加州";
         svrTypes        : "store,search";
-        avatar          : "http://www.lanbery.cn/client-lanbery.png";
+        avatar          : "http://www.v3wall.com//wallpaper/1920_1200/1209/1920_1200_20120903012355780942.jpg";
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
@@ -240,7 +240,7 @@ ListModel {
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
-        lastMessage     : "";
+        lastMessage     : "http://www.lanbery.cn/img/wp.png";
         favorite        : false;
     }
     ListElement {
@@ -262,7 +262,7 @@ ListModel {
         ip4             : "35.4.23.66";
         locations       : "美国*加州";
         svrTypes        : "store,search";
-        avatar          : "http://www.lanbery.cn/client-lanbery.png";
+        avatar          : "";
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";

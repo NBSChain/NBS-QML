@@ -71,10 +71,9 @@ Rectangle {
             id                                                  : peersListView;
             Layout.fillWidth                                    : true;
             Layout.fillHeight                                   : true;
-
+            clip                                                : true;
             model                                               : proxyModel;
             delegate                                            : PeerDelegate {id:delegate;bgColor: color;normalbgColor: color;}
-
             focus                                               : true;
 
             highlight   : Rectangle {
@@ -82,6 +81,10 @@ Rectangle {
                 opacity                                         : 0.35;
                 z                                               : peersListView.z +2;
             }
+
+//            ScrollBar.vertical: {
+
+//            }
 
         }
 
