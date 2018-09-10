@@ -23,4 +23,13 @@ Rectangle {
         color                                   : foregroundColor;
         text                                    : qsTr("PageViews");
     }
+    Text {
+        anchors {
+            right: parent.right;
+            bottom: parent.bottom;
+        }
+
+        color : "white";
+        text: "parent.h="+parent.height+";mainH="+mainWindow.height+";my="+root.height;
+    }
 }

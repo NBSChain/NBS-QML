@@ -2,6 +2,9 @@ import QtQuick 2.11
 import QtQuick.Controls 2.2
 import QtQuick.Controls.Material 2.2
 import QtQuick.Layouts 1.3
+import QtQuick.Controls.Material 2.2
+
+import "../Components"
 
 /**
  * @file    RightChatRect.qml
@@ -14,9 +17,13 @@ import QtQuick.Layouts 1.3
  * fa-history \f1da;fa-phone \f095;
  */
 ColumnLayout {
-
+    property color      editorRectColor             : "#222222";
     id                                              : root;
     anchors.fill                                    : parent;
+    spacing                                         : 0;
+
+    Material.elevation                              : 1;
+    Material.background                             : Qt.lighter(settings.neroHeleneColor);
 
 //    ListView {
 //        id                                          : msgListView;
@@ -30,66 +37,110 @@ ColumnLayout {
         Layout.fillHeight                           : true;
         Layout.fillWidth                            : true;
 
-        color: "#762200";
+        color: editorRectColor; //Qt.lighter("#222222");
+        Text {
+            color: "white";
+            anchors.verticalCenter: parent.verticalCenter;
+            text : root.height+";"+parent.height+";mainWindow"+mainWindow.height;
+        }
     }
 
-    ColumnLayout {
-        id                                          : editPane;
-        Layout.fillHeight                           : true;
+    Rectangle   {
+        id                                          : midPanel;
+        height                                      : 30*dp;
         Layout.fillWidth                            : true;
-        Layout.minimumHeight                        : 192*dp;
-        Layout.maximumHeight                        : 192*dp;
-        Layout.preferredHeight                      : 192*dp;
+        color                                       : Qt.lighter(settings.silingBarBgColor);
 
-        /**/
-        RowLayout {
+        /* 编辑操作区 */
+        Row   {
             id                                      : operatorPane;
-            Layout.fillWidth                        : true;
-            Layout.preferredHeight                  : 32*dp;
-            Layout.minimumHeight                    : 32*dp;
-            Layout.maximumHeight                    : 32*dp;
-            spacing : 1*dp;
-            Text {
+            anchors.fill                            : parent;
+            anchors.left                            : parent.left;
+            anchors.leftMargin                      : 10*dp;
+            spacing                                 : 10*dp;
+
+            OperatedTextIcon    {
                 id                                  : emojiIcon;
-                height                              : parent.height;
-                Layout.fillHeight                   : true;
-                color       : "white";
-                font {
-                    family              : aweFont.name;
-                    pixelSize           : 20*dp;
-                }
-
-                text    : qsTr("\uf118");
+                text                                : qsTr("\uf118");
+                normalColor                         : noramlFontColor;
+                hoveredColor                        : foregroundColor;
             }
-            Text {
+            OperatedTextIcon    {
                 id                                  : folderIcon;
-                height                              : parent.height;
-                Layout.fillHeight                   : true;
-                color       : "white";
-                font {
-                    family              : aweFont.name;
-                    pixelSize           : 20*dp;
-                }
+                text                                : qsTr("\uf114");
+                normalColor                         : noramlFontColor;
+                hoveredColor                        : foregroundColor;
 
-                text    : qsTr("\uf114");
             }
-            Text {
+            OperatedTextIcon    {
                 id                                  : cutIcon;
-                height                              : parent.height;
-                Layout.fillHeight                   : true;
-                color       : "white";
-                font {
-                    family              : aweFont.name;
-                    pixelSize           : 20*dp;
-                }
-
-                text    : qsTr("\uf0c4");
+                text                                : qsTr("\uf0c4");
+                normalColor                         : noramlFontColor;
+                hoveredColor                        : foregroundColor;
             }
+        }
+    }
+
+    /* */
+    Rectangle   {
+        id                                          : bottomEidtor;
+        Layout.fillWidth                            : true;
+        Layout.preferredHeight                      : 110*dp;
+        Layout.minimumHeight                        : 110*dp;
+        Layout.maximumHeight                        : 110*dp;
+        color                                       : editorRectColor
+
+        RowLayout {
+            anchors.fill                                : parent;
+
+            Rectangle   {
+                Layout.fillWidth:true;
+                Layout.fillHeight: true;
+                //Layout.margins: 5*dp;
+                //color: "red";
+
+                TextEdit {
+                    width                           : parent.width;
+                    height                          : 90*dp;
+                    wrapMode                        : TextEdit.Wrap;
+
+                    id                              : textEditID;
+                    color                           : "white";
+                    focus                           : true;
+                    anchors.fill: parent;
+
+                    anchors {
+                        leftMargin: 10*dp;
+                        topMargin: 10*dp;
+                        bottomMargin: 10*dp;
+                        rightMargin: 10*dp;
+                    }
+                }
+            }
+
+            Rectangle   {
+                //Layout.fillWidth:true;
+                Layout.fillHeight: true;
+                Layout.minimumWidth: 65*dp;
+                Layout.preferredWidth: 65*dp;
+                color: editorRectColor;
+
+                Button {
+                    text : qsTr("发  送");
+                    anchors {
+                        right: parent.right;
+                        rightMargin:10*dp;
+                        leftMargin: 5*dp;
+                        bottom: parent.bottom;
+                        bottomMargin: 20*dp;
+                    }
+                }
+            }
+
         }
 
 
 
+
     }
-
-
 }

@@ -25,9 +25,6 @@ RowLayout   {
         Layout.minimumWidth                     : 260*dp;
         Layout.preferredWidth                   : 260*dp;
         Layout.maximumWidth                     : 260*dp;
-        Layout.minimumHeight                    : settings.midMinHeight*dp;
-        Layout.maximumHeight                    : dpi2kMax;
-
     }
 
     Rectangle   {
@@ -37,14 +34,10 @@ RowLayout   {
         Layout.fillHeight: true;
         Layout.minimumWidth: 580*dp;
         Layout.preferredWidth: 580*dp;
-        Layout.maximumWidth: dpi2kMax;
-        Layout.minimumHeight: settings.midMinHeight*dp;
-        Layout.maximumHeight: dpi2kMax;
 
-        Text    {
-            anchors.centerIn: parent;
-            color: foregroundColor;
-            text : parent.width+"px"+parent.height;
+        RightChatRect   {
+            id                                  : rightLayoutRect;
+            anchors.fill                        : parent;
         }
     }
 }

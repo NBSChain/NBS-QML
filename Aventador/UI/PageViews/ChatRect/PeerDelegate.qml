@@ -42,6 +42,7 @@ ItemDelegate {
                 anchors.fill                        : parent;
                 source                              : (model.avatar !== "") ? model.avatar : "qrc:/images/logo.png";
                 fillMode                            : Image.PreserveAspectFit;
+
             }
 
             Rectangle   {
@@ -49,14 +50,16 @@ ItemDelegate {
                 anchors.fill                        : parent;
                 radius                              : 10*dp;
                 visible                             : true;
+                clip                                : true;
             }
 
             OpacityMask {
                 anchors.fill                        : avatarRect;
                 source                              : avatarView;
                 maskSource                          : imageMask;
-                visible: true;
-                antialiasing: true;
+                visible                             : true;
+                antialiasing                        : true;
+                clip                                : true;
             }
         }
 

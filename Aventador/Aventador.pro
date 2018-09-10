@@ -35,6 +35,6 @@ RC_ICONS = logo.ico
 ICON = nbs.icns
 
 DISTFILES += \
-    images/logo.png 
+    images/logo.png
 
 include(SortFilterProxyModel/SortFilterProxyModel.pri)
