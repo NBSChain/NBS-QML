@@ -35,14 +35,15 @@ RowLayout   {
         color                                   : Qt.lighter(bgColor);
         Layout.fillWidth: true;
         Layout.fillHeight: true;
-        Layout.minimumWidth: 600*dp;
-        Layout.preferredWidth: 600*dp;
+        Layout.minimumWidth: 580*dp;
+        Layout.preferredWidth: 580*dp;
         Layout.maximumWidth: dpi2kMax;
         Layout.minimumHeight: settings.midMinHeight*dp;
         Layout.maximumHeight: dpi2kMax;
 
         Text    {
             anchors.centerIn: parent;
+            color: foregroundColor;
             text : parent.width+"px"+parent.height;
         }
     }

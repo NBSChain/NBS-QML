@@ -31,7 +31,7 @@ Window {
     minimumWidth                                                : settings.winWidth;
     minimumHeight                                               : settings.winHeight;
     color                                                       : bgColor;
-    opacity                                                     : 0.90;
+    opacity                                                     : 0.95;
     //增加字体库
     FontLoader  {
        id                                                       : aweFont;

@@ -140,7 +140,7 @@ Rectangle {
             _normalFontColor                    : settings.itemBtnForceFontColor;
             _activedFontColor                   : settings.rossoMarsColor;
 
-            iconText                            : "\uf196";
+            iconText                            : qsTr("\uf196");
             iconTipText                         : qsTr("添加文件到NBS网络");
         }
     }
