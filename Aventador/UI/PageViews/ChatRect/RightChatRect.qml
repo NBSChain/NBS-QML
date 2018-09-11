@@ -27,7 +27,6 @@ ColumnLayout {
 
     MsgScrollViewEx {
         id                                          : msgScrollRect;
-        //anchors.fill: parent;
         Layout.fillHeight: true;
         Layout.fillWidth: true;
         color: editorRectColor;

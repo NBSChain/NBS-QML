@@ -23,11 +23,13 @@ Rectangle {
 
     ScrollView  {
         anchors.fill                        : parent;
-        Layout.fillHeight: true;
-        Layout.fillWidth: true;
-        Layout.leftMargin: 10*dp;
+//        Layout.fillHeight: true;
+//        Layout.fillWidth: true;
+//        Layout.leftMargin: 10*dp;
+
         ListView    {
             anchors.fill                    : parent;
+            Layout.fillWidth: true;
             id                              : msgListViewID;
             clip                            : true;
             spacing: 2*dp;

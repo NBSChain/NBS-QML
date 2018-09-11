@@ -26,10 +26,9 @@ ItemDelegate {
     rightPadding                                                : 0*dp;
 
     Rectangle {
-        anchors.fill: parent;
+        anchors.centerIn: parent;
         Layout.fillWidth: true;
-        Layout.leftMargin: 15*dp;
-        Layout.rightMargin:25*dp;
+        anchors.right: parent.right;
         RowLayout  {
             id                                                      : itemContentRowID;
             //anchors.centerIn                                            : parent;
@@ -45,6 +44,8 @@ ItemDelegate {
                 Layout.preferredHeight: 36*dp;
                 Layout.minimumWidth: 36*dp;
                 Layout.maximumWidth: 36*dp;
+                Layout.leftMargin: 10*dp;
+                Layout.rightMargin: 10*dp;
                 //Layout.alignment: parent.right;
                 //visible : self ? false : true;
                 Image   {
@@ -81,24 +82,30 @@ ItemDelegate {
                 Label {
                     id              : timeLabelID;
                     Layout.fillWidth: true;
+                    Layout.leftMargin: self ? 65*dp : 0;
+                    Layout.rightMargin: self ? 0:10*dp;
                     color: "white";
+                    font{
+                        family: aweFont.name;
+                        pixelSize           : 10*dp;
+                    }
+
                     text : sendTime;
-                    //horizontalAlignment: self ? Label.right : Label.left;
+                    horizontalAlignment: self ? Text.AlignRight: Text.AlignLeft;
                 }
+
                 Label {
                     id              : contentLabelID;
                     Layout.fillWidth: true;
                     Layout.fillHeight: true;
+                    Layout.leftMargin: self ? 65*dp : 0 ;
+                    Layout.rightMargin: self ? 0 : 10*dp;
                     color: "white";
                     text : content;
                     wrapMode: Text.Wrap;
-                    //horizontalAlignment: self ? Label.right : Label.left;
+                    horizontalAlignment: self ? Text.AlignRight: Text.AlignLeft;
                 }
-    //            Label{
-    //                Layout.fillWidth: true;
-    //                color: "red"
-    //                text: root.height +"*" +root.width +";"+itemContentRowID.width+";L="+contentLabelID.width;
-    //            }
+
 
             }
 
