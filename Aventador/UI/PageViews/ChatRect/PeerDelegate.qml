@@ -35,21 +35,22 @@ ItemDelegate {
             id                                      : avatarRect;
             height                                  : delegate.height;
             width                                   : height;
-            color                                   : Qt.lighter(bgColor);
+            color                                   : bgColor;
 
             Image   {
                 id                                  : avatarView;
                 anchors.fill                        : parent;
                 source                              : (model.avatar !== "") ? model.avatar : "qrc:/images/logo.png";
                 fillMode                            : Image.PreserveAspectFit;
-
+                visible: false;
             }
 
             Rectangle   {
                 id                                  : imageMask;
+                color                               : bgColor;
                 anchors.fill                        : parent;
-                radius                              : 10*dp;
-                visible                             : true;
+                radius                              : 12*dp;
+                visible                             : false;
                 clip                                : true;
             }
 

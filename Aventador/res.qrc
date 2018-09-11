@@ -8,9 +8,7 @@
         <file>images/nbs_header.png</file>
         <file>qtquickcontrols2.conf</file>
         <file>nbs.icns</file>
-        <file>../../../../../Applications/QQ.app/Contents/Resources/balloon_file_left_grey_press.png</file>
-        <file>../../../../../Applications/QQ.app/Contents/Resources/balloon_file_left_grey@2x.png</file>
-        <file>../../../../../Applications/QQ.app/Contents/Resources/balloon_file_right_green_press.png</file>
-        <file>../../../../../Applications/QQ.app/Contents/Resources/balloon_file_right_green@2x.png</file>
+        <file>images/left_bubble_grey.png</file>
+        <file>images/right_bubble_green.png</file>
     </qresource>
 </RCC>

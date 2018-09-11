@@ -16,23 +16,32 @@ Rectangle {
     property alias      color               : rootMsgRect.color;
     id                                      : rootMsgRect;
 
+    //anchors.fill                            : parent;
     MessageListModel {
         id                                  : messageList;
     }
 
-
-
     ScrollView  {
         anchors.fill                        : parent;
-
+        Layout.fillHeight: true;
+        Layout.fillWidth: true;
+        Layout.leftMargin: 10*dp;
         ListView    {
+            anchors.fill                    : parent;
             id                              : msgListViewID;
             clip                            : true;
+            spacing: 2*dp;
 
             model                           : messageList;
 
             delegate                        : MessageDelegateRectangle {
                 id                          : messageDelegate;
+
+                content                     : model.content;
+                avatarUrl                   : model.avatar;
+                sendTime                    : model.sendTime;
+                self                        : model.self;
+                msgid                       : model.msgid;
             }
 
         }

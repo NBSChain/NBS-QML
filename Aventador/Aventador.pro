@@ -35,6 +35,7 @@ RC_ICONS = logo.ico
 ICON = nbs.icns
 
 DISTFILES += \
-    images/logo.png
+    images/logo.png \
+    UI/DataModels/MessageListModel.qml
 
 include(SortFilterProxyModel/SortFilterProxyModel.pri)
