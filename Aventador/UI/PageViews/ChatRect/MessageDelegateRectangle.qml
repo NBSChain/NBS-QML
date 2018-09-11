@@ -10,6 +10,31 @@ import QtQuick.Layouts 1.3
  * @author  lanbery
  * @section LICENSE Copyright (c) 2018 - 2025 lanbery,NBS Chain Co.
  */
-Component {
+ItemDelegate {
+    property color      bgColor                                 : settings.silingBarBgColor;
+    property bool       isSelf                                  : model.self | false;
+    id                                                          : root;
+
+    width                                                       : parent ? parent.width : 0;
+
+    leftPadding                                                 : 2*dp;
+    rightPadding                                                : 2*dp;
+
+    contentItem : RowLayout {
+        spacing                                                 : 5*dp;
+
+        Rectangle {
+            id                                                  : textRect;
+
+            Text {
+                color   : "white";
+                text    : model.content | "";
+            }
+        }
+
+
+    }
+
+
 
 }

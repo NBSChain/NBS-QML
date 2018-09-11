@@ -23,5 +23,6 @@
         <file>UI/DataModels/MessageListModel.qml</file>
         <file>UI/PageViews/ChatRect/MsgScrollViewEx.qml</file>
         <file>UI/PageViews/ChatRect/MessageDelegateRectangle.qml</file>
+        <file>UI/PageViews/ChatRect/LeftMessageItem.qml</file>
     </qresource>
 </RCC>
