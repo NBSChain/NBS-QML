@@ -25,26 +25,15 @@ ColumnLayout {
     Material.elevation                              : 1;
     Material.background                             : Qt.lighter(settings.neroHeleneColor);
 
-//    ListView {
-//        id                                          : msgListView;
-//        Layout.fillHeight                           : true;
-//        Layout.fillWidth                            : true;
-
-
-//    }
-    Rectangle {
-        id  : upP;
+    MsgScrollViewEx {
+        id                                          : msgScrollRect;
         Layout.fillHeight                           : true;
         Layout.fillWidth                            : true;
+        color: editorRectColor;
 
-        color: editorRectColor; //Qt.lighter("#222222");
-        Text {
-            color: "white";
-            anchors.verticalCenter: parent.verticalCenter;
-            text : root.height+";"+parent.height+";mainWindow"+mainWindow.height;
-        }
     }
 
+    /* 消息输入区 */
     Rectangle   {
         id                                          : midPanel;
         height                                      : 30*dp;
@@ -94,20 +83,25 @@ ColumnLayout {
             anchors.fill                                : parent;
 
             Rectangle   {
+                id                                  : editorFrameID;
                 Layout.fillWidth:true;
                 Layout.fillHeight: true;
                 //Layout.margins: 5*dp;
-                //color: "red";
+                color: bottomEidtor.color;
 
                 TextEdit {
-                    width                           : parent.width;
+                    id                              : textEditID;
+                    anchors.fill                    : parent;
+                    width                           : parent.width - editScrollBar.width;
                     height                          : 90*dp;
                     wrapMode                        : TextEdit.Wrap;
+                    y                               : -editScrollBar.position*textEditID.height;
 
-                    id                              : textEditID;
                     color                           : "white";
                     focus                           : true;
-                    anchors.fill: parent;
+                    selectByKeyboard                : true;
+                    selectByMouse                   : true;
+
 
                     anchors {
                         leftMargin: 10*dp;
@@ -115,7 +109,27 @@ ColumnLayout {
                         bottomMargin: 10*dp;
                         rightMargin: 10*dp;
                     }
+                    font    {
+                        family                      : aweFont.name;
+                        pixelSize                   : 12*dp;
+                    }
                 }
+
+                ScrollBar {
+                    id              : editScrollBar;
+                    hoverEnabled    : true;
+                    active: hovered||pressed;
+                    orientation: Qt.Vertical;
+                    size : editorFrameID.height /textEditID.height;
+                    width: 5*dp;
+
+                    anchors {
+                        top :parent.top;
+                        right: parent.right;
+                        bottom: parent.bottom;
+                    }
+                }
+
             }
 
             Rectangle   {

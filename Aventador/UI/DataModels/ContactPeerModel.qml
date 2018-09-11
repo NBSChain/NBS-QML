@@ -15,7 +15,7 @@ ListModel {
         ip4             : "35.4.23.66";
         locations       : "美国*加州";
         svrTypes        : "store,search";
-        avatar          : "http://www.lanbery.cn/client-lanbery.png";
+        avatar          : "http://image.nbd.com.cn/uploads/avatars/537149/avatar.jpg";
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
@@ -28,7 +28,7 @@ ListModel {
         ip4             : "35.4.23.66";
         locations       : "中国*加州";
         svrTypes        : "store,search";
-        avatar          : "";
+        avatar          : "http://image.nbd.com.cn/uploads/avatars/563750/avatar.jpg";
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
@@ -80,7 +80,7 @@ ListModel {
         ip4             : "35.4.23.66";
         locations       : "美国*加州";
         svrTypes        : "store,search";
-        avatar          : "http://www.lanbery.cn/client-lanbery.png";
+        avatar          : "https://avatar.csdn.net/1/0/E/3_shado_walker.jpg";
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
@@ -89,11 +89,11 @@ ListModel {
     }
     ListElement {
         hash58          : "QmNM614Tvu6pVnPyGwb2VxFvAeW5tACb2EUbPydbFyjjcW";
-        nickName        : "Huracan Rosso";
+        nickName        : "老头鱼";
         ip4             : "35.4.23.66";
         locations       : "美国*加州";
         svrTypes        : "store,search";
-        avatar          : "http://www.lanbery.cn/client-lanbery.png";
+        avatar          : "http://ipfs.lanbery.cn/ipfs/QmbaSKFW8kzFQfYXitiasNi9UmqEKve9zh4cCmMLVePnE1";
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
@@ -119,7 +119,7 @@ ListModel {
         ip4             : "35.4.23.66";
         locations       : "美国*加州";
         svrTypes        : "store,search";
-        avatar          : "http://www.lanbery.cn/client-lanbery.png";
+        avatar          : "qrc:/images/logo.png";
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
@@ -132,7 +132,7 @@ ListModel {
         ip4             : "35.4.23.66";
         locations       : "美国*加州";
         svrTypes        : "store,search";
-        avatar          : "http://www.lanbery.cn/client-lanbery.png";
+        avatar          : "https://avatar.csdn.net/C/9/6/1_lanbery.jpg";
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
@@ -141,11 +141,11 @@ ListModel {
     }
     ListElement {
         hash58          : "QmaVH3SYVAv5MUE2A61Fqw1RJVM1rMNVKWDT7Hy4Hc2R38";
-        nickName        : "Cai langbeu";
+        nickName        : "Cai langbeu IPFS.io";
         ip4             : "35.4.23.66";
         locations       : "美国*加州";
         svrTypes        : "store,search";
-        avatar          : "http://www.lanbery.cn/client-lanbery.png";
+        avatar          : "https://ipfs.io/ipfs/QmbaSKFW8kzFQfYXitiasNi9UmqEKve9zh4cCmMLVePnE1";
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
@@ -197,7 +197,7 @@ ListModel {
         ip4             : "35.4.23.66";
         locations       : "美国*加州";
         svrTypes        : "store,search";
-        avatar          : "";
+        avatar          : "https://avatar.csdn.net/C/9/6/1_lanbery.jpg";
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
@@ -210,7 +210,7 @@ ListModel {
         ip4             : "35.4.23.66";
         locations       : "美国*加州";
         svrTypes        : "store,search";
-        avatar          : "http://www.lanbery.cn/client-lanbery.png";
+        avatar          : "qrc:/images/logo.png";
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
@@ -223,7 +223,7 @@ ListModel {
         ip4             : "35.4.23.66";
         locations       : "美国*加州";
         svrTypes        : "store,search";
-        avatar          : "";
+        avatar          : "http://p6.sinaimg.cn/1213168125/180/34741308163772";
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
@@ -240,7 +240,7 @@ ListModel {
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
-        lastMessage     : "http://www.lanbery.cn/img/wp.png";
+        lastMessage     : "";
         favorite        : false;
     }
     ListElement {
@@ -262,7 +262,7 @@ ListModel {
         ip4             : "35.4.23.66";
         locations       : "美国*加州";
         svrTypes        : "store,search";
-        avatar          : "";
+        avatar          : "https://avatar.csdn.net/C/9/6/1_lanbery.jpg";
         provStorgeSize  : "10GB";
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";

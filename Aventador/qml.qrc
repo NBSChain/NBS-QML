@@ -20,5 +20,8 @@
         <file>UI/PageViews/ListScrollBar.qml</file>
         <file>UI/PageViews/ChatRect/RightChatRect.qml</file>
         <file>UI/PageViews/Components/OperatedTextIcon.qml</file>
+        <file>UI/DataModels/MessageListModel.qml</file>
+        <file>UI/PageViews/ChatRect/MsgScrollViewEx.qml</file>
+        <file>UI/PageViews/ChatRect/MessageDelegateRectangle.qml</file>
     </qresource>
 </RCC>

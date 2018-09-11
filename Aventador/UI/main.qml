@@ -82,11 +82,10 @@ Window {
             color                                               : bgColor;
             Layout.fillHeight                                   : true;
             Layout.fillWidth                                    : true;
-            Layout.maximumHeight                                : dpi2kMax;
             Layout.preferredHeight                              : settings.midMinHeight;
             Layout.minimumHeight                                : settings.midMinHeight;
             Layout.preferredWidth                               : settings.winWidth;
-            Layout.maximumWidth                                 : dpi2kMax;
+
             Loader  {
                 id                                              : midPageViewID;
                 anchors.fill                                    : parent;
