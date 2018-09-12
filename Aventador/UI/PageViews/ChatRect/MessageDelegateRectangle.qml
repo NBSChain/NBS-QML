@@ -20,7 +20,7 @@ ItemDelegate {
     property string     sendTime;
     id                                                          : root;
 
-    height                                                      : 100*dp;
+    height                                                      : 80*dp;
 
     leftPadding                                                 : 0*dp;
     rightPadding                                                : 0*dp;
@@ -112,39 +112,6 @@ ItemDelegate {
 
 
             }
-
-
-//            Item    {
-//                id : rootAvatarIDR;
-//                Layout.minimumHeight: 36*dp;
-//                Layout.maximumHeight: 36*dp;
-//                Layout.preferredHeight: 36*dp;
-//                Layout.minimumWidth: 36*dp;
-//                Layout.maximumWidth: 36*dp;
-//                visible                 : false;//self ;
-//                Image   {
-//                    id  : avatarImageR;
-//                    source: avatar;
-//                    smooth: true;
-//                    sourceSize: Qt.size(rootAvatarIDR.width,rootAvatarIDR.height);
-//                    visible: false;
-//                }
-
-//                Rectangle {
-//                    id                  : avatarMaskR;
-//                    anchors.fill        : parent;
-//                    color               : "white";
-//                    radius              : rootAvatarIDR.height/2;
-//                    visible: false;
-//                }
-
-//                OpacityMask {
-//                    anchors.fill: rootAvatarIDR;
-//                    source: avatarImageR;
-//                    maskSource: avatarMaskR;
-//                }
-
-//            }
 
         }
 
