@@ -46,6 +46,9 @@ Rectangle   {
                 mainViewRouter("qrc:/UI/PageViews/ChatPage.qml",{});
             break;
         case "nodeMenu":
+            if(currentViewName!==name)
+                mainViewRouter("qrc:/UI/PageViews/NodeIndexPage.qml",{});
+            break;
         case "dataMenu":
         case "dagMenu" :
             if(currentViewName!==name)

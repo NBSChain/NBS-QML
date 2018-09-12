@@ -89,7 +89,7 @@ Window {
             Loader  {
                 id                                              : midPageViewID;
                 anchors.fill                                    : parent;
-                source                                          : "qrc:/UI/PageViews/DappSettingPage.qml";//"qrc:/UI/PageViews/ChatPage.qml";
+                source                                          : "qrc:/UI/PageViews/ChatPage.qml";
             }
         }
     }

@@ -5,6 +5,7 @@ import QtQuick.Controls.Material 2.2
 
 import "../Utils"
 import "./SettingsPage"
+import "../DataModels"
 
 /**
  * @file    DappSettingPage.qml
@@ -53,21 +54,39 @@ ColumnLayout {
             Layout.preferredWidth               : 200*dp;
         }
 
-        ListModel {
-            id          : bootstrapModels;
-            ListElement {addr : "/ip4/47.52.172.234/tcp/4001/ipfs/QmcZ7vMAKR6PpZKSDmYnTstue1Ep1PAxVD7ZE24EyZ6dDv"};
-            ListElement {addr : "/ip4/93.108.33.59/tcp/4001/ipfs/QmeUTyuWTNL3NGyQUZ1WisL59z9rkJnXTXDViJEZLfjNgn"};
-            ListElement {addr : "/ip4/95.179.139.23/tcp/34171/ipfs/QmPENzaWtRZh5KMUpnxjeMFfRW7VbeNPJrJnj1Bmk621Ej"};
-            ListElement {addr : "/dnsaddr/bootstrap.libp2p.io/ipfs/QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN"};
-            ListElement {addr : "/dnsaddr/bootstrap.libp2p.io/ipfs/QmcZf59bWwK5XFi76CZX8cbJ4BhTzzA3gU1ZjYZcYW3dwt"};
-            ListElement {addr : "/ip4/104.236.179.241/tcp/4001/ipfs/QmSoLPppuBtQSGwKDZT2M73ULpjvfd3aZ6ha4oFGL1KrGM"};
+        BootstrapAddrModel {
+            id                                  : addrsModel;
         }
 
+
         ScrollView {
-            anchors.fill: parnt;
+            anchors.fill: parent;
 
             ListView {
+                anchors.fill                    : parent;
+                clip                            : true;
+                spacing                         : 1*dp;
+                model : addrsModel;
+                delegate: Component {
 
+                    RowLayout {
+                        //anchors.fill: parent;
+                        spacing: 20*dp;
+                        Label {
+                            Layout.fillWidth: true;
+                            text : model.address;
+
+                        }
+
+                        Label {
+                            Layout.minimumWidth             : 40*dp;
+                            Layout.maximumWidth: 40*dp;
+                            Layout.preferredWidth: 40*dp;
+                            text : "删除";
+                            color : "red";
+                        }
+                    }
+                }
             }
         }
     }

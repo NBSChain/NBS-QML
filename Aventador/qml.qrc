@@ -30,5 +30,11 @@
         <file>UI/Utils/TextFieldBoz.qml</file>
         <file>UI/PageViews/SettingsPage/DappBaseConfigBoz.qml</file>
         <file>UI/PageViews/SettingsPage/NbsNodeBaseConfigBoz.qml</file>
+        <file>UI/DataModels/BootstrapAddrModel.qml</file>
+        <file>UI/DataModels/NodeInfoModel.qml</file>
+        <file>UI/PageViews/NodeIndexPage.qml</file>
+        <file>UI/PageViews/NodesPage/LeftNodesView.qml</file>
+        <file>UI/PageViews/NodesPage/SearcherBar.qml</file>
+        <file>UI/PageViews/NodesPage/NodeInFoDelegate.qml</file>
     </qresource>
 </RCC>
