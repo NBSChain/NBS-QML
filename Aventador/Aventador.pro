@@ -36,6 +36,8 @@ ICON = nbs.icns
 
 DISTFILES += \
     images/logo.png \
-    UI/DataModels/MessageListModel.qml
+    UI/DataModels/MessageListModel.qml \
+    UI/PageViews/DappSettingPage.qml \
+    UI/PageViews/DappSettingPage.qml
 
 include(SortFilterProxyModel/SortFilterProxyModel.pri)

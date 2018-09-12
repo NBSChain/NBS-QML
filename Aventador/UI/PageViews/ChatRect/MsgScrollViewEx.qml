@@ -16,23 +16,26 @@ Rectangle {
     property alias      color               : rootMsgRect.color;
     id                                      : rootMsgRect;
 
+    Layout.topMargin: 10*dp;
     //anchors.fill                            : parent;
     MessageListModel {
         id                                  : messageList;
     }
-
+    //border.color: "red";
     ScrollView  {
         anchors.fill                        : parent;
+
 //        Layout.fillHeight: true;
 //        Layout.fillWidth: true;
 //        Layout.leftMargin: 10*dp;
 
         ListView    {
             anchors.fill                    : parent;
-            Layout.fillWidth: true;
+            Layout.fillWidth                : true;
+            Layout.fillHeight               : true;
             id                              : msgListViewID;
             clip                            : true;
-            spacing: 2*dp;
+            spacing                         : 5*dp;
 
             model                           : messageList;
 

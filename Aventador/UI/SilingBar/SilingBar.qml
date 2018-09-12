@@ -48,9 +48,12 @@ Rectangle   {
         case "nodeMenu":
         case "dataMenu":
         case "dagMenu" :
-        case "settMenu":
             if(currentViewName!==name)
                 mainViewRouter("qrc:/UI/PageViews/Developing.qml",{});
+            break;
+        case "settMenu":
+            if(currentViewName!==name)
+                mainViewRouter("qrc:/UI/PageViews/DappSettingPage.qml",{});
             break;
         default:
             if(currentViewName!==name)

@@ -2,7 +2,7 @@ import QtQuick 2.11
 import QtQuick.Controls 2.2
 import QtQuick.Controls.Material 2.2
 import QtQuick.Layouts 1.3
-import QtQuick.Controls.Material 2.2
+//import QtQuick.Controls.Material 2.2
 
 import "../Components"
 
@@ -20,6 +20,7 @@ ColumnLayout {
     property color      editorRectColor             : "#222222";
     id                                              : root;
     anchors.fill                                    : parent;
+    Layout.fillWidth                                : true;
     spacing                                         : 0;
 
     Material.elevation                              : 1;
@@ -27,8 +28,9 @@ ColumnLayout {
 
     MsgScrollViewEx {
         id                                          : msgScrollRect;
-        Layout.fillHeight: true;
-        Layout.fillWidth: true;
+        Layout.fillHeight                           : true;
+        Layout.fillWidth                            : true;
+        Layout.preferredWidth                       : root.width;
         color: editorRectColor;
 
     }
@@ -39,6 +41,7 @@ ColumnLayout {
         height                                      : 30*dp;
         Layout.fillWidth                            : true;
         color                                       : Qt.lighter(settings.silingBarBgColor);
+        //border.color: "red";
 
         /* 编辑操作区 */
         Row   {

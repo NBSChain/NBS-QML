@@ -20,15 +20,18 @@ ItemDelegate {
     property string     sendTime;
     id                                                          : root;
 
-    //height: 120*dp;
+    height                                                      : 100*dp;
 
     leftPadding                                                 : 0*dp;
     rightPadding                                                : 0*dp;
+    Layout.fillWidth: true;
 
     Rectangle {
-        anchors.centerIn: parent;
+        anchors.fill: parent;
         Layout.fillWidth: true;
         anchors.right: parent.right;
+        color: "white";
+        border.color: "red"
         RowLayout  {
             id                                                      : itemContentRowID;
             //anchors.centerIn                                            : parent;
@@ -48,6 +51,7 @@ ItemDelegate {
                 Layout.rightMargin: 10*dp;
                 //Layout.alignment: parent.right;
                 //visible : self ? false : true;
+
                 Image   {
                     id  : avatarImage;
                     source: avatar;
@@ -110,37 +114,37 @@ ItemDelegate {
             }
 
 
-            Item    {
-                id : rootAvatarIDR;
-                Layout.minimumHeight: 36*dp;
-                Layout.maximumHeight: 36*dp;
-                Layout.preferredHeight: 36*dp;
-                Layout.minimumWidth: 36*dp;
-                Layout.maximumWidth: 36*dp;
-                visible                 : false;//self ;
-                Image   {
-                    id  : avatarImageR;
-                    source: avatar;
-                    smooth: true;
-                    sourceSize: Qt.size(rootAvatarIDR.width,rootAvatarIDR.height);
-                    visible: false;
-                }
+//            Item    {
+//                id : rootAvatarIDR;
+//                Layout.minimumHeight: 36*dp;
+//                Layout.maximumHeight: 36*dp;
+//                Layout.preferredHeight: 36*dp;
+//                Layout.minimumWidth: 36*dp;
+//                Layout.maximumWidth: 36*dp;
+//                visible                 : false;//self ;
+//                Image   {
+//                    id  : avatarImageR;
+//                    source: avatar;
+//                    smooth: true;
+//                    sourceSize: Qt.size(rootAvatarIDR.width,rootAvatarIDR.height);
+//                    visible: false;
+//                }
 
-                Rectangle {
-                    id                  : avatarMaskR;
-                    anchors.fill        : parent;
-                    color               : "white";
-                    radius              : rootAvatarIDR.height/2;
-                    visible: false;
-                }
+//                Rectangle {
+//                    id                  : avatarMaskR;
+//                    anchors.fill        : parent;
+//                    color               : "white";
+//                    radius              : rootAvatarIDR.height/2;
+//                    visible: false;
+//                }
 
-                OpacityMask {
-                    anchors.fill: rootAvatarIDR;
-                    source: avatarImageR;
-                    maskSource: avatarMaskR;
-                }
+//                OpacityMask {
+//                    anchors.fill: rootAvatarIDR;
+//                    source: avatarImageR;
+//                    maskSource: avatarMaskR;
+//                }
 
-            }
+//            }
 
         }
 

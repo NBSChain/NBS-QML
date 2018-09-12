@@ -24,5 +24,11 @@
         <file>UI/PageViews/ChatRect/MsgScrollViewEx.qml</file>
         <file>UI/PageViews/ChatRect/MessageDelegateRectangle.qml</file>
         <file>UI/PageViews/ChatRect/LeftMessageItem.qml</file>
+        <file>UI/PageViews/DappSettingPage.qml</file>
+        <file>UI/Utils/TextLabelRight.qml</file>
+        <file>UI/Utils/GrpBozLabel.qml</file>
+        <file>UI/Utils/TextFieldBoz.qml</file>
+        <file>UI/PageViews/SettingsPage/DappBaseConfigBoz.qml</file>
+        <file>UI/PageViews/SettingsPage/NbsNodeBaseConfigBoz.qml</file>
     </qresource>
 </RCC>

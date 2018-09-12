@@ -29,11 +29,11 @@ RowLayout   {
 
     Rectangle   {
         id                                      : rightMessageRectID;
-        color                                   : Qt.lighter(bgColor);
+        color                                   : "#222222";
         Layout.fillWidth: true;
         Layout.fillHeight: true;
-        Layout.minimumWidth: 580*dp;
-        Layout.preferredWidth: 580*dp;
+       // Layout.minimumWidth: 580*dp;
+       // Layout.preferredWidth: 580*dp;
 
         RightChatRect   {
             id                                  : rightLayoutRect;
