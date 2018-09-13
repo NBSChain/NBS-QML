@@ -38,7 +38,7 @@ Rectangle {
                 pixelSize                           : 24*dp;
             }
             color                                   : foregroundColor;
-            text                                    : qsTr("正在开发中,尽请期待...");
+            text                                    : qsTr("正在设计中,尽请期待...");
             verticalAlignment                       : Label.AlignVCenter;
             horizontalAlignment                     : Label.AlignHCenter;
         }

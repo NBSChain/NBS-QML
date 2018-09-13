@@ -39,7 +39,8 @@ Rectangle   {
         switch(name){
         case "aboutPageMenu":
             if(currentViewName!==name)
-                mainViewRouter("qrc:/UI/PageViews/AboutPage.qml",{});
+                //mainViewRouter("qrc:/UI/PageViews/AboutPage.qml",{});
+                mainViewRouter("qrc:/UI/PageViews/Developing.qml",{});
             break;
         case "chatMenu":
             if(currentViewName!==name)

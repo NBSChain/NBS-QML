@@ -16,21 +16,21 @@ Rectangle {
     property alias      color               : rootMsgRect.color;
     id                                      : rootMsgRect;
 
-    Layout.topMargin: 10*dp;
+    Layout.topMargin                        : 10*dp;
     //anchors.fill                            : parent;
     MessageListModel {
         id                                  : messageList;
     }
     //border.color: "red";
     ScrollView  {
+        //Layout.fillWidth: true;
         anchors.fill                        : parent;
 
 //        Layout.fillHeight: true;
-//        Layout.fillWidth: true;
-//        Layout.leftMargin: 10*dp;
 
         ListView    {
-            anchors.fill                    : parent;
+            //id                              : listView;
+            //anchors.fill                    : parent;
             Layout.fillWidth                : true;
             Layout.fillHeight               : true;
             id                              : msgListViewID;
@@ -41,12 +41,14 @@ Rectangle {
 
             delegate                        : MessageDelegateRectangle {
                 id                          : messageDelegate;
-
+                Layout.fillWidth            : true;
+                width                       : 0*dp;   //guanjian
                 content                     : model.content;
                 avatarUrl                   : model.avatar;
                 sendTime                    : model.sendTime;
                 self                        : model.self;
                 msgid                       : model.msgid;
+
             }
 
         }

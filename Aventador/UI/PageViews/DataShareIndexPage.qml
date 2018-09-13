@@ -31,7 +31,7 @@ ColumnLayout {
         Layout.fillWidth: true;
         Layout.fillHeight: true;
         color   :bgColor;
-        border.color: "red";
+        //border.color: "red";
     }
 
 }

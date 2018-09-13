@@ -24,7 +24,7 @@ ItemDelegate {
 
     leftPadding                                                 : 0*dp;
     rightPadding                                                : 0*dp;
-    Layout.fillWidth: true;
+    Layout.fillWidth                                            : true;
 
     Rectangle {
         anchors.fill: parent;
