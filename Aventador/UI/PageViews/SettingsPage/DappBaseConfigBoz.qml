@@ -1,6 +1,7 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
+import QtQuick.Dialogs 1.2
 
 import "../../Utils"
 
@@ -30,8 +31,9 @@ GroupBox    {
         }
 
         TextLabelRight {
+            id                              : downloadFolderLabel;
             Layout.preferredWidth           : 200*dp;
-            Layout.fillWidth: true;
+            Layout.fillWidth                : true;
             text                            : "F:/Downloads";
             Layout.columnSpan               : 2;
             isRight                         : false;
@@ -43,6 +45,25 @@ GroupBox    {
             font {
                 family                      : aweFont.name;
                 pixelSize                   : 12*dp;
+            }
+            onClicked   : {
+                dappDlFolderDialog.open();
+            }
+        }
+
+        FileDialog {
+            id                              : dappDlFolderDialog;
+            title                           : qsTr("文件下载路径选择");
+            folder                          : shortcuts.documents;
+            selectExisting                  : true;
+            selectFolder                    : true;
+            //fileUrl                         : downloadFolderLabel.text;
+            selectMultiple                  : false;
+            onAccepted                      : {
+                downloadFolderLabel.text = dappDlFolderDialog.fileUrl;
+            }
+            onRejected                      : {
+
             }
         }
 
@@ -62,7 +83,7 @@ GroupBox    {
             RadioButton {
                 id                          : remoteNBSNode;
                 text                        : qsTr("NBS 网络节点");
-                ButtonGroup.group           :nbsInterGrp;
+                ButtonGroup.group           : nbsInterGrp;
             }
         }
 
@@ -76,6 +97,7 @@ GroupBox    {
             id                              : apiHostVolID;
             text                            : qsTr("127.0.0.1");
             placeholderText                 : qsTr("请输入域名或IP");
+
         }
         TextLabelRight {
             Layout.preferredWidth           : 200*dp;
@@ -87,6 +109,7 @@ GroupBox    {
                 id                          : apiPortVolID;
                 text                        : qsTr("5001");
                 placeholderText             : qsTr("请输入端口");
+                validator                   : IntValidator{ bottom: 2000;top : 60000;}
             }
 
             Button {

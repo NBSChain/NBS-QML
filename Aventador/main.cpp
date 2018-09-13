@@ -13,6 +13,15 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationName("NBS Dapp");
     QCoreApplication::setApplicationVersion("v0.0.1");
 
+    /* DataBase */
+//    QSqlDatabase db = QSqlDatabase::addDataBase("QSQLITE");
+//    QString baseDir = QDir::currentPath();
+    //QDir dir;
+    //dir.mkdir("app.data");
+
+
+
+
     QQmlApplicationEngine engine;
     engine.load(QUrl(QStringLiteral("qrc:/UI/main.qml")));
     if (engine.rootObjects().isEmpty())

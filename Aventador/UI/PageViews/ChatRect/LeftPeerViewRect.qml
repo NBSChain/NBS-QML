@@ -75,6 +75,7 @@ Rectangle {
             model                                               : proxyModel;
             delegate                                            : PeerDelegate {id:delegate;bgColor: color;normalbgColor: color;}
             focus                                               : true;
+            cacheBuffer                                         : 20;
 
             highlight   : Rectangle {
                 color                                           : Qt.lighter(settings.grigioLynxColor);

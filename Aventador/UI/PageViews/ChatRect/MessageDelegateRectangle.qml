@@ -49,11 +49,11 @@ ItemDelegate {
                 Layout.maximumWidth: 36*dp;
                 Layout.leftMargin: 10*dp;
                 Layout.rightMargin: 10*dp;
-                //Layout.alignment: parent.right;
-                //visible : self ? false : true;
+
 
                 Image   {
                     id  : avatarImage;
+                    cache: true;
                     source: avatar;
                     smooth: true;
                     sourceSize: Qt.size(rootAvatarIDL.width,rootAvatarIDL.height);

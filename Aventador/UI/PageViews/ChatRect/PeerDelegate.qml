@@ -39,6 +39,7 @@ ItemDelegate {
 
             Image   {
                 id                                  : avatarView;
+                cache                               : true;
                 anchors.fill                        : parent;
                 source                              : (model.avatar !== "") ? model.avatar : "qrc:/images/logo.png";
                 fillMode                            : Image.PreserveAspectFit;

@@ -56,7 +56,7 @@ GroupBox    {
 
         TextLabelRight {
             Layout.preferredWidth           : 10*dp;
-            text                            : "GB";
+            text                            : "H";
             isRight                         : false;
         }
     }

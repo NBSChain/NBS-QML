@@ -50,6 +50,9 @@ Rectangle   {
                 mainViewRouter("qrc:/UI/PageViews/NodeIndexPage.qml",{});
             break;
         case "dataMenu":
+            if(currentViewName !== name)
+                mainViewRouter("qrc:/UI/PageViews/DataShareIndexPage.qml",{});
+            break;
         case "dagMenu" :
             if(currentViewName!==name)
                 mainViewRouter("qrc:/UI/PageViews/Developing.qml",{});

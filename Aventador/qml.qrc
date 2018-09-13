@@ -36,5 +36,7 @@
         <file>UI/PageViews/NodesPage/LeftNodesView.qml</file>
         <file>UI/PageViews/NodesPage/SearcherBar.qml</file>
         <file>UI/PageViews/NodesPage/NodeInFoDelegate.qml</file>
+        <file>UI/PageViews/DataShareIndexPage.qml</file>
+        <file>UI/PageViews/DatasPage/DataSearcherBar.qml</file>
     </qresource>
 </RCC>
