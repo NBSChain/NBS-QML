@@ -77,8 +77,9 @@ Pane {
             Layout.preferredWidth                       : 26*dp;
             horizontalAlignment                         : Label.AlignHCenter;
             verticalAlignment                           : Label.AlignVCenter;
-            color                                       : foregroundColor;
+            color                                       : filterStorage ? foregroundColor : Qt.lighter(bgColor,1.2);
             background                                  : Rectangle {
+                id                                      : storageIconBGID;
                 anchors.fill                            : parent;
                 color                                   : normalBgColor;
             }
@@ -86,7 +87,7 @@ Pane {
                 family                                  : aweFont.name;
                 pixelSize                               : 12*dp;
             }
-            text                                        : filterStorage ? qsTr("\uf005") : qsTr("\uf006");
+            text                                        : qsTr("\uf1b2") ;//filterStorage ?  : qsTr("\uf006");
 
             MouseArea   {
                 anchors.fill                            : parent;
@@ -95,23 +96,24 @@ Pane {
 
                 onEntered   : {
                     if(!filterStorage){
-                        storageIcon.text = qsTr("\uf005");
+                        //storageIcon.text = qsTr("\uf005");
+
                     }
                 }
 
                 onExited    : {
                     if(!filterStorage){
-                        storageIcon.text = qsTr("\uf006");
+                        //storageIcon.text = qsTr("\uf006");
                     }
                 }
 
                 onClicked   : {
                     if(!filterStorage){
                         filterStorage = true;
-                        storageIcon.text = qsTr("\uf005");
+                        //storageIcon.text = qsTr("\uf005");
                     }else{
                         filterStorage = false;
-                        storageIcon.text = qsTr("\uf006");
+                        //storageIcon.text = qsTr("\uf006");
                     }
                 }
             }

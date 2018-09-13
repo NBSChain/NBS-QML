@@ -237,21 +237,21 @@ Rectangle   {
                         id                      : storeMenu;
                         idName                  : "storeMenu";
                         symbolText              : "\uf1b3";
-                        itemText                : "存储";
+                        itemText                : "存储市场";
                         ButtonGroup.group       : itemBtnGroup;
                     }
 
                     ListItemBtn {
                         id                      : im6;
-                        idName                  : "IM6";
+                        idName                  : "searchMarket";
                         symbolText              : "\uf2dc";
-                        itemText                : "mmm";
+                        itemText                : "检索市场";
                         ButtonGroup.group       : itemBtnGroup;
                     }
 
                     ListItemBtn {
                         id                      : im2;
-                        idName                  : "IM2";
+                        idName                  : "IMXXX";
                         symbolText              : "\uf1a3";
                         itemText                : "huracan";
                         ButtonGroup.group       : itemBtnGroup;
