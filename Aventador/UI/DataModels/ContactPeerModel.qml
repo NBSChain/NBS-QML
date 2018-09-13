@@ -111,7 +111,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
         lastMessage     : "";
-        favorite        : false;
+        favorite        : true;
     }
     ListElement {
         hash58          : "QmZMxNdpMkewiVZLMRxaNxUeZpDUb34pWjZ1kZvsd16Zic";
@@ -241,7 +241,7 @@ ListModel {
         freeStorgeSize  : "6.72GB";
         mottoSign       : "你就像坨屎，摊在那......";
         lastMessage     : "";
-        favorite        : false;
+        favorite        : true;
     }
     ListElement {
         hash58          : "QmbP7FJ4aNhqifELN3MdY3JzeK3mFRAm2DAe9PeP4oVTHK";
