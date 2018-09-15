@@ -1,4 +1,4 @@
-QT += qml quick
+QT += sql qml quick
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
@@ -15,6 +15,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
 #    cpp/appmodel.cpp
+    cpp/appmodel.cpp
 
 RESOURCES += qml.qrc \
     res.qrc
@@ -43,3 +44,4 @@ include(SortFilterProxyModel/SortFilterProxyModel.pri)
 
 HEADERS += \
  #   cpp/appmodel.h
+    cpp/appmodel.h

@@ -1,6 +1,14 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
+/**
+ * @file
+ * @version 1.0
+ * @brief
+ * @date    2018-08-16
+ * @author  lanbery
+ * @section LICENSE Copyright (c) 2018 - 2025 lanbery,NBS Chain Co.
+ */
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -10,15 +18,8 @@ int main(int argc, char *argv[])
     /* Developer Info */
     QCoreApplication::setOrganizationName("NBS Aventador");
     QCoreApplication::setOrganizationDomain("nbsio.net");
-    QCoreApplication::setApplicationName("NBS Dapp");
+    QCoreApplication::setApplicationName("NBSDapp");
     QCoreApplication::setApplicationVersion("v0.0.1");
-
-    /* DataBase */
-//    QSqlDatabase db = QSqlDatabase::addDataBase("QSQLITE");
-//    QString baseDir = QDir::currentPath();
-    //QDir dir;
-    //dir.mkdir("app.data");
-
 
 
 
