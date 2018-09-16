@@ -38,5 +38,6 @@
         <file>UI/PageViews/NodesPage/NodeInFoDelegate.qml</file>
         <file>UI/PageViews/DataShareIndexPage.qml</file>
         <file>UI/PageViews/DatasPage/DataSearcherBar.qml</file>
+        <file>UI/DataModels/DataFileListModel.qml</file>
     </qresource>
 </RCC>

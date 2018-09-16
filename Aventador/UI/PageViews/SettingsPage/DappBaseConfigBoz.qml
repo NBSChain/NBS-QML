@@ -74,6 +74,7 @@ GroupBox    {
         }
         Row {
             Layout.columnSpan               : 3;
+            spacing                         : 20*dp;
             RadioButton {
                 id                          : localNBSNode;
                 checked                     : true;
@@ -121,6 +122,27 @@ GroupBox    {
                 }
             }
 
+        }
+
+        /* row 3*/
+        TextLabelRight {
+            Layout.preferredWidth           : 200*dp;
+            text                            : "wrap-with-directory ：";
+        }
+        Row {
+            Layout.columnSpan               : 3;
+            spacing                         : 20*dp;
+            RadioButton {
+                id                          : defWarp;
+                checked                     : true;
+                text                        : qsTr("False");
+                 ButtonGroup.group          : addFileWarpWithDirectory;
+            }
+            RadioButton {
+                id                          : noWarp;
+                text                        : qsTr("True");
+                ButtonGroup.group           : addFileWarpWithDirectory;
+            }
         }
     }
 }

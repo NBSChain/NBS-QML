@@ -15,6 +15,7 @@ GroupBox    {
     property bool   editabled               : false;   //
     id                                      : root;
     label: GrpBozLabel {
+
         anchors.left                        : parent.left;
         anchors.leftMargin                  : 15*dp;
         text                                : qsTr("NBS NODE 设置");

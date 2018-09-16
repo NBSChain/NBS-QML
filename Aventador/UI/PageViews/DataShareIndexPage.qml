@@ -1,8 +1,10 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.2
+import QtQuick.Controls 1.4 as Controls_1_4
 import QtQuick.Layouts 1.3
 
 import "./DatasPage"
+import "../DataModels"
 
 /**
  * @file    DataShareIndexPage.qml
@@ -27,11 +29,32 @@ ColumnLayout {
         Layout.maximumHeight                    : 32*dp;
     }
 
-    Rectangle {
-        Layout.fillWidth: true;
-        Layout.fillHeight: true;
-        color   :bgColor;
-        //border.color: "red";
+//    Rectangle {
+//        Layout.fillWidth: true;
+//        Layout.fillHeight: true;
+//        color   :bgColor;
+//        //border.color: "red";
+//    }
+
+    Controls_1_4.TableView   {
+        id                                      : tableView;
+        Layout.fillWidth                        : true;
+        Layout.fillHeight                       : true;
+        frameVisible                            : false;
+
+        model                                   : DataFileListModel {id:dataFiles;}
+
+//        headerDelegate      : Component {
+//            id              : headerDelegate;
+//            Rectangle   {
+//                id              : headTitleRect;
+//                Text    {
+//                    anchors.centerIn: parent;
+
+//                }
+//            }
+//        }
+
     }
 
 }

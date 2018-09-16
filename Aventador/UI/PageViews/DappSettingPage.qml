@@ -7,6 +7,7 @@ import "../Utils"
 import "./SettingsPage"
 import "../DataModels"
 
+
 /**
  * @file    DappSettingPage.qml
  * @version 1.0
@@ -26,6 +27,10 @@ ColumnLayout {
 
     ButtonGroup {
         id                                      : nbsInterGrp;
+    }
+
+    ButtonGroup {
+        id                                      : addFileWarpWithDirectory;
     }
 
     /* Dapp 设置 */
@@ -48,10 +53,34 @@ ColumnLayout {
         Layout.fillHeight                       : true;
         Layout.margins                          : 5*dp;
         label   :  GrpBozLabel {
+            width                               : parent.width-30*dp;
             text                                : qsTr("Bootstrap 设置");
             anchors.left                        : parent.left;
             anchors.leftMargin                  : 15*dp;
-            Layout.preferredWidth               : 200*dp;
+            //Layout.preferredWidth               : 200*dp;
+
+            background  : Rectangle {
+                color : bgColor;
+                anchors.fill: parent;
+                Text {
+                    id                          : btAddIcon;
+                    anchors.right               : parent.right;
+                    anchors.rightMargin         : 5*dp;
+                    color                       : noramlFontColor;
+                    text:qsTr("\uf055");
+                    font {
+                        family                  : aweFont.name;
+                        pixelSize               : 18*dp;
+                    }
+                    MouseArea {
+                        hoverEnabled            : true;
+                        anchors.fill            : parent;
+                        cursorShape             : Qt.PointingHandCursor;
+
+
+                    }
+                }
+            }
         }
 
         BootstrapAddrModel {
