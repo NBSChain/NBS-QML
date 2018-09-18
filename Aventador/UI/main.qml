@@ -9,6 +9,7 @@ import "./SilingBar"
 import "./BottomStatus"
 import "./PageViews"
 
+
 Window {
     id                                                          : mainWindow;
     readonly property real      dpi2kMax                        : 2560.*dp;
@@ -24,7 +25,6 @@ Window {
 
     visible                                                     : true;    
     flags                                                       : settings.winMode;
-
 
     width                                                       : settings.winWidth;
     height                                                      : settings.winHeight;
@@ -42,6 +42,8 @@ Window {
        id                                                       : icomoonFont;
        source                                                   : "qrc:/font/icomoon.ttf";
     }
+
+
     /* 布局开始 */
     ColumnLayout   {
         id                                                      : mainLayoutID;
@@ -89,7 +91,7 @@ Window {
             Loader  {
                 id                                              : midPageViewID;
                 anchors.fill                                    : parent;
-                source                                          : "qrc:/UI/PageViews/ChatPage.qml";
+                source                                          : "qrc:/UI/PageViews/IndexPage.qml";
             }
         }
     }

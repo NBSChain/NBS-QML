@@ -1,43 +1,45 @@
 <RCC>
     <qresource prefix="/">
         <file>UI/main.qml</file>
+        <file>UI/DataModels/BootstrapAddrModel.qml</file>
+        <file>UI/DataModels/NodeInfoModel.qml</file>
+        <file>UI/DataModels/DataFileListModel.qml</file>
+        <file>UI/DataModels/MessageListModel.qml</file>
+        <file>UI/DataModels/ContactPeerModel.qml</file>
+        <file>UI/AddFile/TitleAddIcon.qml</file>
+        <file>UI/BottomStatus/BottomStatus.qml</file>
         <file>UI/TitleBar/TitleBar.qml</file>
         <file>UI/TitleBar/WindButton.qml</file>
-        <file>UI/SilingBar/SilingBar.qml</file>
-        <file>UI/Utils/ListItemBtn.qml</file>
         <file>UI/TitleBar/QuickLabelBtn.qml</file>
-        <file>UI/AddFile/TitleAddIcon.qml</file>
+        <file>UI/SilingBar/SilingBar.qml</file>
         <file>UI/PageViews/PageViews.qml</file>
-        <file>UI/BottomStatus/BottomStatus.qml</file>
+        <file>UI/PageViews/IndexPage.qml</file>
         <file>UI/PageViews/AboutPage.qml</file>
         <file>UI/PageViews/ChatPage.qml</file>
         <file>UI/PageViews/Developing.qml</file>
-        <file>UI/DataModels/ContactPeerModel.qml</file>
         <file>UI/PageViews/ChatRect/ContactPeersList.qml</file>
         <file>UI/PageViews/ChatRect/SearchBar.qml</file>
         <file>UI/PageViews/ChatRect/LeftPeerViewRect.qml</file>
         <file>UI/PageViews/ChatRect/PeerDelegate.qml</file>
-        <file>UI/PageViews/ListScrollBar.qml</file>
-        <file>UI/PageViews/ChatRect/RightChatRect.qml</file>
-        <file>UI/PageViews/Components/OperatedTextIcon.qml</file>
-        <file>UI/DataModels/MessageListModel.qml</file>
         <file>UI/PageViews/ChatRect/MsgScrollViewEx.qml</file>
         <file>UI/PageViews/ChatRect/MessageDelegateRectangle.qml</file>
         <file>UI/PageViews/ChatRect/LeftMessageItem.qml</file>
+        <file>UI/PageViews/ListScrollBar.qml</file>
+        <file>UI/PageViews/ChatRect/RightChatRect.qml</file>
+        <file>UI/PageViews/Components/OperatedTextIcon.qml</file>
         <file>UI/PageViews/DappSettingPage.qml</file>
-        <file>UI/Utils/TextLabelRight.qml</file>
-        <file>UI/Utils/GrpBozLabel.qml</file>
-        <file>UI/Utils/TextFieldBoz.qml</file>
         <file>UI/PageViews/SettingsPage/DappBaseConfigBoz.qml</file>
         <file>UI/PageViews/SettingsPage/NbsNodeBaseConfigBoz.qml</file>
-        <file>UI/DataModels/BootstrapAddrModel.qml</file>
-        <file>UI/DataModels/NodeInfoModel.qml</file>
         <file>UI/PageViews/NodeIndexPage.qml</file>
         <file>UI/PageViews/NodesPage/LeftNodesView.qml</file>
         <file>UI/PageViews/NodesPage/SearcherBar.qml</file>
         <file>UI/PageViews/NodesPage/NodeInFoDelegate.qml</file>
         <file>UI/PageViews/DataShareIndexPage.qml</file>
         <file>UI/PageViews/DatasPage/DataSearcherBar.qml</file>
-        <file>UI/DataModels/DataFileListModel.qml</file>
+        <file>UI/Utils/ListItemBtn.qml</file>
+        <file>UI/Utils/TextLabelRight.qml</file>
+        <file>UI/Utils/GrpBozLabel.qml</file>
+        <file>UI/Utils/TextFieldBoz.qml</file>
+        <file>UI/PageViews/IndexPage/NBSNetSystem.qml</file>
     </qresource>
 </RCC>

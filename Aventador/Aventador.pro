@@ -1,5 +1,12 @@
-QT += sql qml quick
-CONFIG += c++11
+
+QT += sql qml quick\
+    concurrent \
+    3dextras \
+    3dcore 3drender 3dinput \
+    3dquick 3dquickrender 3dquickinput 3dquickextras \
+    network
+CONFIG += c++11 \
+        resources_big
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked deprecated (the exact warnings
@@ -14,8 +21,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-#    cpp/appmodel.cpp
-    cpp/appmodel.cpp
+    cpp/appmodel.cpp \
+    cpp/networkcontroller.cpp
 
 RESOURCES += qml.qrc \
     res.qrc
@@ -37,11 +44,12 @@ RC_ICONS = logo.ico
 ICON = nbs.icns
 
 DISTFILES += \
-    images/logo.png \
+    images/logo.png
 
 
 include(SortFilterProxyModel/SortFilterProxyModel.pri)
 
 HEADERS += \
  #   cpp/appmodel.h
-    cpp/appmodel.h
+    cpp/appmodel.h \
+    cpp/networkcontroller.h

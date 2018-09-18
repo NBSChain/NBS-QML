@@ -10,5 +10,16 @@
         <file>nbs.icns</file>
         <file>images/left_bubble_grey.png</file>
         <file>images/right_bubble_green.png</file>
+        <file>images/stars/earth.png</file>
+        <file>images/stars/jupiter.png</file>
+        <file>images/stars/mars.png</file>
+        <file>images/stars/mercury.png</file>
+        <file>images/stars/neptune.png</file>
+        <file>images/stars/saturn.png</file>
+        <file>images/stars/sun.png</file>
+        <file>images/stars/uranus.png</file>
+        <file>images/stars/venus.png</file>
+        <file>main.cpp</file>
+        <file>UI/PageViews/IndexPage/planets.js</file>
     </qresource>
 </RCC>

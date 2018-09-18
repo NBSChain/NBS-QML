@@ -161,7 +161,7 @@ Rectangle {
          }
          switch(name){
          case "index":
-             mainViewRouter("qrc:/UI/PageViews/PageViews.qml",{});
+             mainViewRouter("qrc:/UI/PageViews/IndexPage.qml",{});
              settings.curStackView = name;
              break;
          case "chatMenu":
@@ -231,7 +231,7 @@ Rectangle {
                 width                           : (parent.width)/2;
                 idName                          : "index";
                 labelText                       : "主页";
-
+                selected                        : true;
                 ButtonGroup.group               : qlbtnGroup;
             }
             QuickLabelBtn   {
@@ -241,7 +241,7 @@ Rectangle {
                 width                           : (parent.width)/2;
                 idName                          : "chatMenu";
                 labelText                       : "聊天";
-                selected                        : true;
+
                 ButtonGroup.group               : qlbtnGroup;
             }
 
@@ -361,6 +361,7 @@ Rectangle {
                 toolTip                         : qsTr("关闭");
 
                 btnClicked                      : function(){
+ //                   mainWindow.close();
                     Qt.quit();
                 }
             }

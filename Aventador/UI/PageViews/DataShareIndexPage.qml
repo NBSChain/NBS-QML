@@ -44,16 +44,16 @@ ColumnLayout {
 
         model                                   : DataFileListModel {id:dataFiles;}
 
-//        headerDelegate      : Component {
-//            id              : headerDelegate;
-//            Rectangle   {
-//                id              : headTitleRect;
-//                Text    {
-//                    anchors.centerIn: parent;
+        headerDelegate      : Component {
+            id              : headerDelegate;
+            Rectangle   {
+                id              : headTitleRect;
+                Text    {
+                    anchors.centerIn: parent;
 
-//                }
-//            }
-//        }
+                }
+            }
+        }
 
     }
 
