@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     format.setStencilBufferSize(8);
     format.setSamples(4);
 
-    //NetworkController networkController;
+    NetworkController networkController;
     QScreen *screen = app.screens()[0];
     int scrW = screen->size().width();
     int scrH = screen->size().height();
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 
 
     viewer.setFormat(format);
-    //viewer.rootContext()->setContextProperty("networkController",&networkController);
+    viewer.rootContext()->setContextProperty("networkController",&networkController);
     viewer.setResizeMode(QQuickView::SizeRootObjectToView);
     viewer.setSource(QUrl(mainQmlApp));
 
