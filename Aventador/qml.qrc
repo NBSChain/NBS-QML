@@ -41,5 +41,7 @@
         <file>UI/Utils/GrpBozLabel.qml</file>
         <file>UI/Utils/TextFieldBoz.qml</file>
         <file>UI/PageViews/IndexPage/NBSNetSystem.qml</file>
+        <file>UI/PageViews/IndexPage/InfoSheet.qml</file>
+        <file>UI/PageViews/IndexPage/NbsNetStarModel.qml</file>
     </qresource>
 </RCC>
