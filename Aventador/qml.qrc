@@ -49,5 +49,7 @@
         <file>UI/PageViews/IndexPage/SunEffect.qml</file>
         <file>UI/PageViews/IndexPage/ShadowEffect.qml</file>
         <file>UI/PageViews/IndexPage/PlanetMaterial.qml</file>
+        <file>UI/PageViews/IndexPage/Planet.qml</file>
+        <file>UI/PageViews/IndexPage/Ring.qml</file>
     </qresource>
 </RCC>

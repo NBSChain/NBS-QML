@@ -37,7 +37,7 @@ Entity {
     property vector3d   tiltAxis                    : Qt.vector3d(0,0,1);
     property vector3d   rollAxis                    : Qt.vector3d(0,1,0);
 
-    property real       cameraDistance: 1;
+    property real       cameraDistance              : 1;
     property vector3d   oldCameraPosition;
     property vector3d   oldFocusedPlanetPosition;
 
@@ -63,6 +63,7 @@ Entity {
     property int        day                         : 1;
 
     /*时间尺度*/
+    // Time scale formula based on http://www.stjarnhimlen.se/comp/ppcomp.html
     property real       startD                      : 367*year - 7*(year+(month+9)/12)/4 + 275*month/9+day-730530;
     property real       oldTimeD                    : startD;
     property real       currTimeD                   : startD;
@@ -101,9 +102,7 @@ Entity {
         viewCenter              : Qt.vector3d(xLookAtOffset,yLookAtOffset,zLookAtOffset);
     }
 
-    FirstPersonCameraController {
-        camera: camera
-    }
+    FirstPersonCameraController {camera: camera; }
 
     components: [
         PlanetFrameGraph {
@@ -165,19 +164,27 @@ Entity {
         //push in the correct order
         planets.push(sun);
         planets.push(mercury);
-        planets.push();
-        planets.push();
-        planets.push();
-        planets.push();
-        planets.push();
-        planets.push();
-        planets.push();
-        planets.push();
-        planets.push();
-        planets.push();
+        planets.push(venus);
+        planets.push(earth);
+        planets.push(mars);
+        planets.push(jupiter);
+        planets.push(saturn);
+        planets.push(uranus);
+        planets.push(neptune);
+        planets.push(moon);
 
+        saturnRingOuterRadius = planetData[Planets.SATURN].radius + Planets.saturnOuterRadius;
+        saturnRingInnerRadius = planetData[Planets.SATURN].radius + 6.630;
+        uranusRingOuterRadius = planetData[Planets.URANUS].radius + Planets.uranusOuterRadius;
+        uranusRingInnerRadius = planetData[Planets.URANUS].radius + 2;
+
+        ready = true;
+        changeScale(1200);
+        changeSpeed(0.2);
+        setLookAtOffset(Planets.SUN);
     }
     //![2]
+
 
     //![0]
     QQ2.NumberAnimation {
@@ -476,6 +483,7 @@ Entity {
         camera.upVector = defautUp;
     }
 
+    /* StartField */
     Entity {
         id                          : starfieldEntity;
 
@@ -485,9 +493,438 @@ Entity {
         }
 
         PlanetMaterial {
-
+            id                      : materialStarfield;
+            effect                  : effectD;
+            ambientLight            : ambientStrengthStarfield;
+            specularColor           : Qt.rgba(0.0,0.0,0.0,1.0);
+            diffuseMap              : "";  //TODO
+            shininess               : 1000000.0;
         }
+        property Transform transformStarfield: Transform {
+            scale                   : 8500000;
+            translation             : Qt.vector3d(0,0,0);
+        }
+        components : [starfield,materialStarfield,transformStarfield ]
     }
 
+    /* SUN */
+    Entity {
+        id                          : sunEntity;
+        Planet {
+            id                      : sun;
+            tilt                    : planetData[Planets.SUN].tilt;
+        }
 
+        PlanetMaterial {
+            id                      : materialSun;
+            effect                  : sunEffect;
+            ambientLight            : ambientStrengthSun;
+            diffuseMap              : "";//TODO
+        }
+
+        property Transform transformSun : Transform {
+            matrix : {
+                var m = Qt.matrix4x4();
+                m.translate(Qt.vector3d(sun.x,sun.y,sun.z));
+                m.rotate(sun.tilt,tiltAxis);
+                m.rotate(sun.roll,rollAxis);
+                m.scale(sun.r);
+                return m;
+            }
+        }
+
+        components: [sun,materialSun,transformSun ]
+    }
+
+    /*Planets*/
+    /* MERCURY */
+    Entity {
+        id                          : mercuryEntity;
+
+        Planet {
+            id                      : mercury;
+            tilt                    : planetData[Planets.MERCURY].tilt
+        }
+
+        PlanetMaterial {
+            id                      : materialMercury;
+            effect                  : effectDB;
+            ambientLight            : ambientStrengthPlanet;
+            specularColor           : Qt.rgba(0.2,0.2,0.2,1.0);
+            diffuseMap              : "";//TODO
+            normalMap               : "";//TODO
+            shininess               : shininessSpecularMap;
+        }
+
+        property Transform transformMercury : Transform {
+            matrix: {
+                var m = Qt.matrix4x4();
+                m.translate(Qt.vector3d(mercury.x,mercury.y,mercury.z));
+                m.rotate(mercury.tilt,tiltAxis);
+                m.rotate(mercury.roll,rollAxis);
+                m.scale(mercury.r);
+                return m;
+            }
+        }
+        components: [mercury,materialMercury,transformMercury ]
+    }
+
+    /* VENUS */
+    Entity {
+        id                          : venusEntity;
+        Planet {
+            id                      : venus;
+            tilt                    : planetData[Planets.VENUS].tilt
+        }
+
+        PlanetMaterial {
+            id                      : materialVenus;
+            effect                  : effectDB;
+            ambientLight            : ambientStrengthPlanet;
+            specularColor           : Qt.rgba(0.2,0.2,0.2,1.0);
+            diffuseMap              : "";//
+            normalMap               : "";//
+            shininess               : shininessSpecularMap;
+        }
+
+        property Transform transformVenus: Transform {
+            matrix: {
+                var m = Qt.matrix4x4();
+                m.translate(Qt.vector3d(venus.x,venus.y,venus.z));
+                m.rotate(venus.tilt,tiltAxis);
+                m.rotate(venus.roll,rollAxis);
+                m.scale(venus.r);
+                return m;
+            }
+        }
+
+        components: [venus,materialVenus,transformVenus ]
+    }
+
+    /* EARTH */
+    Entity {
+        id                          : earthEntity;
+
+        Planet {
+            id                      : earth;
+            tilt                    : planetData[Planets.EARTH].tilt;
+        }
+
+        PlanetMaterial {
+            id                      : materialEarth;
+            effect                  : effectDSB;
+            ambientLight            : ambientStrengthPlanet;
+            diffuseMap              : ""; //TODO
+            specularMap             : ""; //
+            normalMap               : "";
+            shininess               : shininessSpecularMap;
+        }
+
+        property Transform transformEarth: Transform {
+            matrix: {
+                var m = Qt.matrix4x4();
+                m.translate(Qt.vector3d(earth.x,earth.y,earth.z));
+                m.rotate(earth.tilt,tiltAxis);
+                m.rotate(earth.roll,rollAxis);
+                m.scale(earth.r);
+                return m;
+            }
+        }
+
+        components: [earth,materialEarth,transformEarth]
+    }
+
+    /* EARTH CLOUDS */
+    Entity {
+        id                          : earthCloudsEntity;
+
+        Planet {
+            id                      : earthClouds;
+            tilt                    : planetData[Planets.EARTH].tilt
+        }
+
+        PlanetMaterial  {
+            id                      : materialEarthClouds;
+            effect                  : cloudEffect;
+            ambientLight            : ambientStrengthClouds;
+            diffuseMap              : ""; //
+            specularMap             : ""; //
+            shininess               : shininessClouds;
+            opacity                 : 0.2;
+        }
+
+        property Transform transformEarthClouds : Transform {
+            matrix: {
+                var m = Qt.matrix4x4();
+                m.translate(Qt.vector3d(earth.x,earth.y,earth.z));
+                m.rotate(earth.tilt,tiltAxis);
+                m.rotate(earth.roll/2,rollAxis);
+                m.scale(earthClouds.r);
+                return m;
+            }
+        }
+
+        components: [earthClouds,materialEarthClouds,transformEarthClouds];
+    }
+
+    /* MOON */
+    Entity {
+        id                          : moonEntity;
+
+        Planet {
+            id                      : moon;
+            tilt                    : planetData[Planets.MOON].tilt;
+        }
+
+        PlanetMaterial {
+            id                      : materialMoon;
+            effect                  : effectDB;
+            ambientLight            : ambientStrengthPlanet;
+            specularColor           : Qt.rgba(0.2,0.2,0.2,1.0);
+            diffuseMap              : "";//
+            normalMap               : "";//
+            shininess               : shininessSpecularMap;
+        }
+
+        property Transform transformMoon: Transform {
+            matrix: {
+                var m = Qt.matrix4x4();
+                m.translate(Qt.vector3d(moon.x,moon.y,moon.z));
+                m.rotate(moon.tilt,tiltAxis);
+                m.rotate(moon.roll,rollAxis);
+                m.scale(moon.r);
+                return m;
+            }
+        }
+
+        components: [moon,materialMoon,transformMoon ]
+    }
+
+    /* MARS */
+    Entity {
+        id                          : marsEntity;
+
+        Planet {
+            id                      : mars;
+            tilt                    : planetData[Planets.MARS].tilt;
+        }
+
+        PlanetMaterial {
+            id                      : materialMars;
+            effect                  : effectDB;
+            ambientLight            : ambientStrengthPlanet;
+            specularColor           : Qt.rgba(0.2,0.2,0.2,1.0);
+            diffuseMap              : "";
+            normalMap               : "";
+            shininess               : shininessSpecularMap;
+        }
+
+        property Transform transformMars: Transform {
+            matrix: {
+                var m = Qt.matrix4x4();
+                m.translate(Qt.vector3d(mars.x,mars.y,mars.z));
+                m.rotate(mars.tilt,tiltAxis);
+                m.rotate(mars.roll,rollAxis);
+                m.scale(mars.r);
+                return m;
+            }
+        }
+
+        components: [mars,materialMars,transformMars]
+    }
+
+    /* JUPITER */
+    Entity {
+        id                      : jupiterEntity;
+
+        Planet {
+            id                  : jupiter;
+            tilt                : planetData[Planets.JUPITER].tilt;
+        }
+
+        PlanetMaterial {
+            id                  : materialJupiter;
+            effect              : effectD;
+            ambientLight        : ambientStrengthPlanet;
+            specularColor       : Qt.rgba(0.2,0.2,0.2,1.0);
+            diffuseMap          : "";//
+            shininess           : shininessBasic;
+        }
+
+        property Transform transformJupiter: Transform {
+            matrix: {
+                var m = Qt.matrix4x4();
+                m.translate(Qt.vector3d(jupiter.x,jupiter.y,jupiter.z));
+                m.rotate(jupiter.tilt,tiltAxis);
+                m.rotate(jupiter.roll,rollAxis);
+                m.scale(jupiter.r);
+                return m;
+            }
+        }
+
+        components: [jupiter,materialJupiter,transformJupiter];
+    }
+
+    /* SATURN */
+    Entity {
+        id                      : saturnEntity;
+
+        Planet {
+            id                  : saturn;
+            tilt                : planetData[Planets.URANUS].tilt;
+        }
+
+        PlanetMaterial {
+            id                  : materialSaturn;
+            effect              : shadowMapEffect;
+            ambientLight        : ambientStrengthPlanet;
+            specularColor       : Qt.rgba(0.2,0.2,0.2,1.0);
+            diffuseMap          : "";//
+            shininess           : shininessBasic;
+        }
+
+        property Transform transformSaturn: Transform {
+            matrix: {
+                var m = Qt.matrix4x4();
+                m.translate(Qt.vector3d(saturn.x,saturn.y,saturn.z));
+                m.rotate(saturn.tilt,tiltAxis);
+                m.rotate(saturn.roll,rollAxis);
+                m.scale(saturn.r);
+                return m;
+            }
+        }
+
+        components: [saturn,materialSaturn,transformSaturn];
+    }
+
+    //saturn ring
+    Entity {
+        id                      : saturnRingEntity;
+
+        Ring {
+            id                  : saturnRing;
+            innerRadius         : saturnRingInnerRadius;
+            outerRadius         : saturnRingOuterRadius;
+        }
+
+        PlanetMaterial {
+            id                  : materialSaturnRing;
+            effect              : shadowMapEffect;
+            ambientLight        : ambientStrengthRing;
+            specularColor       : Qt.rgba(0.01,0.01,0.01,1.0);
+            diffuseMap          : "";//
+            shininess           : shininessBasic;
+            opacity             : 0.4;
+        }
+
+        property Transform transformSaturnRing: Transform {
+            matrix: {
+                var m = Qt.matrix4x4();
+                m.translate(Qt.vector3d(saturn.x,saturn.y,saturn.z));
+                m.rotate(saturn.tilt,tiltAxis);
+                m.rotate(saturn.roll/10,rollAxis);
+                m.scale((saturnRing.innerRadius + saturnRing.outerRadius) / 1.75);
+                return m;
+            }
+        }
+
+        components: [saturnRing,materialSaturnRing,transformSaturnRing];
+    }
+
+    /* URANUS*/
+    Entity {
+        id                      : uranusEntity;
+
+        Planet {
+            id                  : uranus;
+            tilt                : planetData[Planets.URANUS].tilt;
+        }
+
+        PlanetMaterial {
+            id                  : materialUranus;
+            effect              : shadowMapEffect;
+            ambientLight        : ambientStrengthPlanet;
+            specularColor       : Qt.rgba(0.2,0.2,0.2,1.0);
+            diffuseMap          : "";//
+            shininess           : shininessBasic;
+        }
+
+        property Transform transformUranus: Transform {
+            matrix: {
+                var m = Qt.matrix4x4();
+                m.translate(Qt.vector3d(uranus.x,uranus.y,uranus.z));
+                m.rotate(uranus.tilt,tiltAxis);
+                m.rotate(uranus.roll,rollAxis);
+                m.scale(uranus.r);
+                return m;
+            }
+        }
+
+        components: [uranus,materialUranus,transformUranus]
+    }
+
+    //uranus ring
+    Entity {
+        id                      : uranusRingEntity;
+
+        Ring {
+            id                  : uranusRing;
+            innerRadius         : uranusRingInnerRadius;
+            outerRadius         : uranusRingOuterRadius;
+        }
+
+        PlanetMaterial {
+            id                  : materialUranusRing;
+            effect              : shadowMapEffect;
+            ambientLight        : ambientStrengthRing;
+            specularColor       : Qt.rgba(0.01,0.01,0.01,1.0);
+            diffuseMap          : "";//
+            shininess           : shininessBasic;
+            opacity             : 0.4;
+        }
+
+        property Transform transformUranusRing : Transform {
+            matrix: {
+                var m = Qt.matrix4x4();
+                m.translate(Qt.vector3d(uranus.x,uranus.y,uranus.z));
+                m.rotate(uranus.tilt,tiltAxis);
+                m.rotate(uranus.roll/10,rollAxis);
+                m.scale((uranusRing.innerRadius + uranusRing.outerRadius)/1.75)
+                return m;
+            }
+        }
+        components: [uranusRing,materialUranusRing,transformUranusRing]
+    }
+
+    //NEPTUNE
+    Entity {
+        id                      : neptuneEntity;
+
+        Planet {
+            id                  : neptune;
+            tilt                : planetData[Planets.NEPTUNE].tilt;
+        }
+
+        PlanetMaterial {
+            id                  : materialNeptune;
+            effect              : effectD;
+            ambientLight        : ambientStrengthPlanet;
+            specularColor       : Qt.rgba(0.2,0.2,0.2,1.0);
+            diffuseMap          : "";//
+            shininess           : shininessBasic;
+        }
+
+        property Transform transformNeptune: Transform {
+            matrix: {
+                var m = Qt.matrix4x4();
+                m.translate(Qt.vector3d(neptune.x,neptune.y,neptune.z));
+                m.rotate(neptune.tilt,tiltAxis);
+                m.rotate(neptune.roll,rollAxis);
+                m.scale(neptune.r);
+                return m;
+            }
+        }
+
+        components: [neptune,materialNeptune,transformNeptune]
+    }
 }

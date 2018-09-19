@@ -8,7 +8,7 @@ import Qt3D.Render 2.0
  * @author  lanbery
  * @section LICENSE Copyright (c) 2018 - 2025 lanbery,NBS Chain Co.
  */
-Entity {
+Effect {
     id                                                  : root;
     property        Texture2D       shadowTexture;
     property        PlanetsLight    light;
@@ -17,7 +17,7 @@ Entity {
         Parameter { name: "lightViewProjection"; value : root.light.lightViewProjection },
         Parameter { name: "lightPosition";       value : root.light.lightPosition },
         Parameter { name: "lightIntensity";      value : root.light.lightIntensity },
-        Parameter { name: "shadowMapTexture"     value : root.shadowTexture }
+        Parameter { name: "shadowMapTexture";    value : root.shadowTexture }
     ]
 
     FilterKey { id : desktopkey;    name : "name";  value : "Desktop"}

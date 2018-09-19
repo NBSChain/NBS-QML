@@ -93,9 +93,15 @@ Material {
                     source                  : normalMap !== "" ? normalMap : "qrc:/images/solarsystemscope/uranusmap.jpg"
                 }
             }
-        },//TODO
-
-
+        },
+        Parameter {
+            name    : "textCoordScale";
+            value   : textureScale;
+        },
+        Parameter {
+            name    : "opacity";
+            value   : opacity;
+        }
     ]
 
 }
