@@ -21,5 +21,27 @@
         <file>images/stars/venus.png</file>
         <file>main.cpp</file>
         <file>UI/PageViews/IndexPage/planets.js</file>
+        <file>UI/PageViews/IndexPage/shaders/es2/planetD.frag</file>
+        <file>UI/PageViews/IndexPage/shaders/es2/planetD.vert</file>
+        <file>UI/PageViews/IndexPage/shaders/es2/planetDB.frag</file>
+        <file>UI/PageViews/IndexPage/shaders/es2/planetDB.vert</file>
+        <file>UI/PageViews/IndexPage/shaders/es2/planetDS.frag</file>
+        <file>UI/PageViews/IndexPage/shaders/es2/planetDSB.frag</file>
+        <file>UI/PageViews/IndexPage/shaders/es2/sun.frag</file>
+        <file>UI/PageViews/IndexPage/shaders/es2/sun.vert</file>
+        <file>UI/PageViews/IndexPage/shaders/gl3/planetD.frag</file>
+        <file>UI/PageViews/IndexPage/shaders/gl3/planetD.vert</file>
+        <file>UI/PageViews/IndexPage/shaders/gl3/planetDB.frag</file>
+        <file>UI/PageViews/IndexPage/shaders/gl3/planetDB.vert</file>
+        <file>UI/PageViews/IndexPage/shaders/gl3/planetDS.frag</file>
+        <file>UI/PageViews/IndexPage/shaders/gl3/planetDSB.frag</file>
+        <file>UI/PageViews/IndexPage/shaders/gl3/planetDShadow.frag</file>
+        <file>UI/PageViews/IndexPage/shaders/gl3/planetDShadow.vert</file>
+        <file>UI/PageViews/IndexPage/shaders/gl3/shadowmap.frag</file>
+        <file>UI/PageViews/IndexPage/shaders/gl3/shadowmap.vert</file>
+        <file>UI/PageViews/IndexPage/shaders/gl3/sun.frag</file>
+        <file>UI/PageViews/IndexPage/shaders/gl3/sun.vert</file>
+        <file>UI/PageViews/IndexPage/meshes/ring.obj</file>
+        <file>UI/PageViews/IndexPage/meshes/starfield.obj</file>
     </qresource>
 </RCC>

@@ -43,5 +43,11 @@
         <file>UI/PageViews/IndexPage/NBSNetSystem.qml</file>
         <file>UI/PageViews/IndexPage/InfoSheet.qml</file>
         <file>UI/PageViews/IndexPage/NbsNetStarModel.qml</file>
+        <file>UI/PageViews/IndexPage/PlanetsLight.qml</file>
+        <file>UI/PageViews/IndexPage/PlanetFrameGraph.qml</file>
+        <file>UI/PageViews/IndexPage/PlanetEffect.qml</file>
+        <file>UI/PageViews/IndexPage/SunEffect.qml</file>
+        <file>UI/PageViews/IndexPage/ShadowEffect.qml</file>
+        <file>UI/PageViews/IndexPage/PlanetMaterial.qml</file>
     </qresource>
 </RCC>
