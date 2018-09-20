@@ -87,7 +87,7 @@ Item {
     Text {
         id: infoText
         anchors.top: planetText.bottom
-        anchors.horizontalCenter: parent.verticalCenter
+        //anchors.horizontalCenter: parent.horizontalCenter
 
         property string radius: ""
         property string temperature: ""

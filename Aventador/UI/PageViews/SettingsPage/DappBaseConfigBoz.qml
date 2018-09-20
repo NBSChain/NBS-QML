@@ -34,7 +34,7 @@ GroupBox    {
             id                              : downloadFolderLabel;
             Layout.preferredWidth           : 200*dp;
             Layout.fillWidth                : true;
-            text                            : "F:/Downloads";
+            text                            : "F:///Downloads";
             Layout.columnSpan               : 2;
             isRight                         : false;
             color                           : "white";
