@@ -51,9 +51,9 @@ int main(int argc, char *argv[])
 
     viewer.setPosition((scrW-viewer.width())/2,(scrH-viewer.height())/2);//居中显示
     viewer.show();
-    viewer.rootContext()->setContextProperty("mainWindow",&viewer);
-
+    viewer.rootContext()->setContextProperty("mainView",&viewer);
     QObject::connect(viewer.engine(),SIGNAL(quit()),qApp,SLOT(quit()));
+
 
 
 
@@ -63,6 +63,7 @@ int main(int argc, char *argv[])
 
 //    QQmlApplicationEngine engine;
 //    engine.load(QUrl(mainQmlApp));
+
 //    if (engine.rootObjects().isEmpty())
 //        return -1;
 

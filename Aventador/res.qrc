@@ -10,39 +10,7 @@
         <file>nbs.icns</file>
         <file>images/left_bubble_grey.png</file>
         <file>images/right_bubble_green.png</file>
-        <file>images/stars/earth.png</file>
-        <file>images/stars/jupiter.png</file>
-        <file>images/stars/mars.png</file>
-        <file>images/stars/mercury.png</file>
-        <file>images/stars/neptune.png</file>
-        <file>images/stars/saturn.png</file>
-        <file>images/stars/sun.png</file>
-        <file>images/stars/uranus.png</file>
-        <file>images/stars/venus.png</file>
         <file>main.cpp</file>
-        <file>UI/PageViews/IndexPage/planets.js</file>
-        <file>UI/PageViews/IndexPage/shaders/es2/planetD.frag</file>
-        <file>UI/PageViews/IndexPage/shaders/es2/planetD.vert</file>
-        <file>UI/PageViews/IndexPage/shaders/es2/planetDB.frag</file>
-        <file>UI/PageViews/IndexPage/shaders/es2/planetDB.vert</file>
-        <file>UI/PageViews/IndexPage/shaders/es2/planetDS.frag</file>
-        <file>UI/PageViews/IndexPage/shaders/es2/planetDSB.frag</file>
-        <file>UI/PageViews/IndexPage/shaders/es2/sun.frag</file>
-        <file>UI/PageViews/IndexPage/shaders/es2/sun.vert</file>
-        <file>UI/PageViews/IndexPage/shaders/gl3/planetD.frag</file>
-        <file>UI/PageViews/IndexPage/shaders/gl3/planetD.vert</file>
-        <file>UI/PageViews/IndexPage/shaders/gl3/planetDB.frag</file>
-        <file>UI/PageViews/IndexPage/shaders/gl3/planetDB.vert</file>
-        <file>UI/PageViews/IndexPage/shaders/gl3/planetDS.frag</file>
-        <file>UI/PageViews/IndexPage/shaders/gl3/planetDSB.frag</file>
-        <file>UI/PageViews/IndexPage/shaders/gl3/planetDShadow.frag</file>
-        <file>UI/PageViews/IndexPage/shaders/gl3/planetDShadow.vert</file>
-        <file>UI/PageViews/IndexPage/shaders/gl3/shadowmap.frag</file>
-        <file>UI/PageViews/IndexPage/shaders/gl3/shadowmap.vert</file>
-        <file>UI/PageViews/IndexPage/shaders/gl3/sun.frag</file>
-        <file>UI/PageViews/IndexPage/shaders/gl3/sun.vert</file>
-        <file>UI/PageViews/IndexPage/meshes/ring.obj</file>
-        <file>UI/PageViews/IndexPage/meshes/starfield.obj</file>
-        <file>images/solarsystemscope/uranusmap.jpg</file>
+        
     </qresource>
 </RCC>

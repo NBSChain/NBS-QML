@@ -8,89 +8,119 @@ import QtQml.Models 2.3
  * @section LICENSE Copyright (c) 2018 - 2025 lanbery,NBS Chain Co.
  */
 ListModel {
+
+
     ListElement {
-        nnsType                 : "NBS Chain";
-        avatarIamgeSource       : "";
-        nnsNo                   : 100;
+        name                    : "Core";
+        planetImageSource       : "http://nbsio.net/image/nbs_circle.png";
+        planetNumber            : 0;
+        hash58                  : "QmbZHNEgipahPYMbugdfFbLVEdXDmxGLLy3vYC4WP98Lqi";
+        storageSize             : "12.59 TB";
+        onlineNums              : "899 Peers";
+        descriptions            : "NBS 星际文件系统核心";
+    }
+
+    ListElement {
+        name                    : "Mercury";
+        planetImageSource       : "qrc:/images/stars/mercury.png";
+        planetNumber            : 1;
+        hash58                  : "QmbZHNEgipahPYMbugdfFbLVEdXDmxGLLy3vYC4WP98Lqi";
+        nickName                : "";//暂未用到
+        storageSize             : "10.0 GB";
+        locations               : "水星";
+        onlineNums              : "899 Peers";
+        gcperiod                : "1 h";
         descriptions            : "";
     }
     ListElement {
-        nnsType                 : "Sun";
-        avatarIamgeSource       : "qrc:/images/stars/sun.png";
-        nnsNo                   : 0;
-        nnsStorageCapacity      : "311.579TB";
-        nnsNodesTotal           : 30972;
+        name                    : "Venus";
+        planetImageSource       : "qrc:/images/stars/venus.png";
+        planetNumber            : 2;
+        hash58                  : "QmYHk2VWWNAbc4zU5oyemfadBYMtNmutqXHjSDV8hm5E7g";
+        nickName                : "";//暂未用到
+        storageSize             : "12.59 GB";
+        locations               : "金星";
+        onlineNums              : "899 Peers";
+        gcperiod                : "12 h";
+        descriptions            : "";
     }
     ListElement {
-        nnsType                 : "Mercury";
-        avatarIamgeSource       : "qrc:/images/stars/mercury.png";
-        nnsNo                   : 1;
-        storageSize             : "10GB";
-        blockGCPeriod           : "1h";
-        contributed             : "209 NBS";
-        locations               : "Berlin, Germany";
+        name                    : "Earth";
+        planetImageSource       : "qrc:/images/stars/earth.png";
+        planetNumber            : 3;
+        hash58                  : "QmbZHNEgipahPYMbugdfFbLVEdXDmxGLLy3vYC4WP98Lqi";
+        nickName                : "";//暂未用到
+        storageSize             : "3.0 GB";
+        locations               : "";
+        onlineNums              : "899 Peers";
+        gcperiod                : "10 h";
+        descriptions            : "";
     }
     ListElement {
-        nnsType                 : "Venus";
-        avatarIamgeSource       : "qrc:/images/stars/venus.png";
-        nnsNo                   : 2;
-        storageSize             : "4GB";
-        blockGCPeriod           : "12h";
-        contributed             : "87 NBS";
-        locations               : "Japan Nagoya";
+        name                    : "Mars";
+        planetImageSource       : "qrc:/images/stars/mars.png";
+        planetNumber            : 4;
+        hash58                  : "QmbZHNEgipahPYMbugdfFbLVEdXDmxGLLy3vYC4WP98Lqi";
+        nickName                : "";//暂未用到
+        storageSize             : "5 GB";
+        locations               : "火星";
+        onlineNums              : "76 Peers";
+        gcperiod                : "24 h";
+        descriptions            : "";
     }
     ListElement {
-        nnsType                 : "Earth";
-        avatarIamgeSource       : "qrc:/images/stars/earth.png";
-        nnsNo                   : 3;
-        storageSize             : "10GB";
-        blockGCPeriod           : "24h";
-        contributed             : "3109 NBS";
-        locations               : "中国 北京";
+        name                    : "Jupiter";
+        planetImageSource       : "qrc:/images/stars/jupiter.png";
+        planetNumber            : 5;
+        hash58                  : "QmbZHNEgipahPYMbugdfFbLVEdXDmxGLLy3vYC4WP98Lqi";
+        nickName                : "";//暂未用到
+        storageSize             : "2 GB";
+        locations               : "木星";
+        onlineNums              : "899 Peers";
+        gcperiod                : "100 h";
+        descriptions            : "";
     }
     ListElement {
-        nnsType                 : "Mars";
-        avatarIamgeSource       : "qrc:/images/stars/mars.png";
-        nnsNo                   : 4;
-        storageSize             : "10GB";
-        blockGCPeriod           : "1h";
-        contributed             : "29 NBS";
-        locations               : "中国 北京";
+        name                    : "Saturn";
+        planetImageSource       : "qrc:/images/stars/saturn.png";
+        planetNumber            : 6
+        hash58                  : "QmbZHNEgipahPYMbugdfFbLVEdXDmxGLLy3vYC4WP98Lqi";
+        nickName                : "";//暂未用到
+        storageSize             : "10 GB";
+        locations               : "土星";
+        onlineNums              : "899 Peers";
+        gcperiod                : "1 h";
+        descriptions            : "";
     }
     ListElement {
-        nnsType                 : "Jupiter";
-        avatarIamgeSource       : "qrc:/images/stars/jupiter.png";
-        nnsNo                   : 5;
-        storageSize             : "100GB";
-        blockGCPeriod           : "1h";
-        contributed             : "2197 NBS";
-        locations               : "unknow";
+        name                    : "Uranus";
+        planetImageSource       : "qrc:/images/stars/uranus.png";
+        planetNumber            : 7;
+        hash58                  : "QmbZHNEgipahPYMbugdfFbLVEdXDmxGLLy3vYC4WP98Lqi";
+        nickName                : "";//暂未用到
+        storageSize             : "2.59 GB";
+        locations               : "天王星";
+        onlineNums              : "22 Peers";
+        gcperiod                : "1 h";
+        descriptions            : "";
     }
     ListElement {
-        nnsType                 : "Saturn";
-        avatarIamgeSource       : "qrc:/images/stars/saturn.png";
-        nnsNo                   : 6;
-        storageSize             : "100GB";
-        blockGCPeriod           : "1h";
-        contributed             : "2197 NBS";
-        locations               : "unknow";
+        name                    : "Neptune";
+        planetImageSource       : "qrc:/images/stars/neptune.png";
+        planetNumber            : 8;
+        hash58                  : "QmbZHNEgipahPYMbugdfFbLVEdXDmxGLLy3vYC4WP98Lqi";
+        nickName                : "";//暂未用到
+        storageSize             : "10.0 GB";
+        locations               : "海王星";
+        onlineNums              : "22 Peers";
+        gcperiod                : "84 h";
+        descriptions            : "";
     }
+
+
     ListElement {
-        nnsType                 : "Jupiter";
-        avatarIamgeSource       : "qrc:/images/stars/jupiter.png";
-        nnsNo                   : 7;
-        storageSize             : "100GB";
-        blockGCPeriod           : "1h";
-        contributed             : "2197 NBS";
-        locations               : "unknow";
-    }
-    ListElement {
-        nnsType                 : "Jupiter";
-        avatarIamgeSource       : "qrc:/images/stars/jupiter.png";
-        nnsNo                   : 8;
-        storageSize             : "100GB";
-        blockGCPeriod           : "1h";
-        contributed             : "2197 NBS";
-        locations               : "unknow";
+        name                    : "NBS Chain";
+        planetImageSource       : "";
+        planetNumber            : 100;
     }
 }

@@ -497,7 +497,7 @@ Entity {
             effect                  : effectD;
             ambientLight            : ambientStrengthStarfield;
             specularColor           : Qt.rgba(0.0,0.0,0.0,1.0);
-            diffuseMap              : "";  //TODO
+            diffuseMap              : "qrc:/images/solarsystemscope/galaxy_starfield.jpg";
             shininess               : 1000000.0;
         }
         property Transform transformStarfield: Transform {
@@ -519,7 +519,7 @@ Entity {
             id                      : materialSun;
             effect                  : sunEffect;
             ambientLight            : ambientStrengthSun;
-            diffuseMap              : "";//TODO
+            diffuseMap              : "qrc:/images/solarsystemscope/sunmap.jpg";
         }
 
         property Transform transformSun : Transform {
@@ -551,8 +551,8 @@ Entity {
             effect                  : effectDB;
             ambientLight            : ambientStrengthPlanet;
             specularColor           : Qt.rgba(0.2,0.2,0.2,1.0);
-            diffuseMap              : "";//TODO
-            normalMap               : "";//TODO
+            diffuseMap              : "qrc:/images/solarsystemscope/mercurymap.jpg";
+            normalMap               : "qrc:/images/solarsystemscope/mercurynormal.jpg";
             shininess               : shininessSpecularMap;
         }
 
@@ -582,8 +582,8 @@ Entity {
             effect                  : effectDB;
             ambientLight            : ambientStrengthPlanet;
             specularColor           : Qt.rgba(0.2,0.2,0.2,1.0);
-            diffuseMap              : "";//
-            normalMap               : "";//
+            diffuseMap              : "qrc:/images/solarsystemscope/venusmap.jpg";
+            normalMap               : "qrc:/images/solarsystemscope/venusnormal.jpg";
             shininess               : shininessSpecularMap;
         }
 
@@ -614,9 +614,9 @@ Entity {
             id                      : materialEarth;
             effect                  : effectDSB;
             ambientLight            : ambientStrengthPlanet;
-            diffuseMap              : ""; //TODO
-            specularMap             : ""; //
-            normalMap               : "";
+            diffuseMap              : "qrc:/images/solarsystemscope/earthmap2k.jpg"; //
+            specularMap             : "qrc:/images/solarsystemscope/earthspec2k.jpg"; //
+            normalMap               : "qrc:/images/solarsystemscope/earthnormal2k.jpg";
             shininess               : shininessSpecularMap;
         }
 
@@ -647,8 +647,8 @@ Entity {
             id                      : materialEarthClouds;
             effect                  : cloudEffect;
             ambientLight            : ambientStrengthClouds;
-            diffuseMap              : ""; //
-            specularMap             : ""; //
+            diffuseMap              : "qrc:/images/solarsystemscope/earthcloudmapcolortrans.png"; //
+            specularMap             : "qrc:/images/solarsystemscope/earthcloudmapspec.jpg"; //
             shininess               : shininessClouds;
             opacity                 : 0.2;
         }
@@ -681,8 +681,8 @@ Entity {
             effect                  : effectDB;
             ambientLight            : ambientStrengthPlanet;
             specularColor           : Qt.rgba(0.2,0.2,0.2,1.0);
-            diffuseMap              : "";//
-            normalMap               : "";//
+            diffuseMap              : "qrc:/images/solarsystemscope/moonmap2k.jpg";//
+            normalMap               : "qrc:/images/solarsystemscope/moonnormal2k.jpg";//
             shininess               : shininessSpecularMap;
         }
 
@@ -714,8 +714,8 @@ Entity {
             effect                  : effectDB;
             ambientLight            : ambientStrengthPlanet;
             specularColor           : Qt.rgba(0.2,0.2,0.2,1.0);
-            diffuseMap              : "";
-            normalMap               : "";
+            diffuseMap              : "qrc:/images/solarsystemscope/marsmap2k.jpg";
+            normalMap               : "qrc:/images/solarsystemscope/marsnormal2k.jpg";
             shininess               : shininessSpecularMap;
         }
 
@@ -747,7 +747,7 @@ Entity {
             effect              : effectD;
             ambientLight        : ambientStrengthPlanet;
             specularColor       : Qt.rgba(0.2,0.2,0.2,1.0);
-            diffuseMap          : "";//
+            diffuseMap          : "qrc:/images/solarsystemscope/jupitermap.jpg";//
             shininess           : shininessBasic;
         }
 
@@ -779,7 +779,7 @@ Entity {
             effect              : shadowMapEffect;
             ambientLight        : ambientStrengthPlanet;
             specularColor       : Qt.rgba(0.2,0.2,0.2,1.0);
-            diffuseMap          : "";//
+            diffuseMap          : "qrc:/images/solarsystemscope/sunmap.jpg";//
             shininess           : shininessBasic;
         }
 
@@ -812,7 +812,7 @@ Entity {
             effect              : shadowMapEffect;
             ambientLight        : ambientStrengthRing;
             specularColor       : Qt.rgba(0.01,0.01,0.01,1.0);
-            diffuseMap          : "";//
+            diffuseMap          : "qrc:/images/solarsystemscope/saturnringcolortrans.png";//
             shininess           : shininessBasic;
             opacity             : 0.4;
         }
@@ -845,7 +845,7 @@ Entity {
             effect              : shadowMapEffect;
             ambientLight        : ambientStrengthPlanet;
             specularColor       : Qt.rgba(0.2,0.2,0.2,1.0);
-            diffuseMap          : "";//
+            diffuseMap          : "qrc:/images/solarsystemscope/uranusmap.jpg";//
             shininess           : shininessBasic;
         }
 

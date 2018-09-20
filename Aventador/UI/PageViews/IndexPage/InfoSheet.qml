@@ -10,18 +10,19 @@ import QtQuick.Layouts 1.3
  */
 Item {
     id                                          : root;
-    width                                       : 200*dp;
+    width                                       : 400*dp;
     height                                      : 450*dp;
     anchors.verticalCenter                      : parent.verticalCenter;
     property color  fontColor                   : foregroundColor;
-    property alias  planet                      : planetText.planet;
-    property alias  coreInfo                    : infoText.coreInfo;
-    property alias  hash58                      : infoText.hash58;
+    property alias  planet                      : planetText.planet;  // 名称 name
+    property alias  hash58                      : infoText.hash58;    //
     property alias  nickName                    : infoText.nickName;
-    property alias  locations                   : infoText.locations;
-    property alias  storageSize                 : infoText.storageSize;
-    property alias  descriptions                : infoText.descriptions;
-    property alias  onlineNums                  : infoText.objectName;
+    property alias  locations                   : infoText.locations; //位置
+    property alias  storageSize                 : infoText.storageSize; //
+    property alias  descriptions                : infoText.descriptions; //sys
+    property alias  onlineNums                  : infoText.onlineNums;  //在线节点数
+    property alias  gcperiod                    : infoText.gcperiod;  //回收周期
+
 
 
 
@@ -29,55 +30,60 @@ Item {
         PropertyAnimation {}
     }
 
-    ColumnLayout {
-        anchors.fill                            : parent;
-        spacing                                 : 10*dp;
-        Text {
-            property string     planet          : "";
-            id                                  : planetText;
-            Layout.fillWidth                    : true;
-            Layout.topMargin                    : 20*dp;
-            color                               : fontColor;
+    Text {
+        id: planetText
+        anchors.top: parent.top
+        anchors.topMargin: 20
+        anchors.horizontalCenter: parent.horizontalCenter
 
-            font {
-                family                          : aweFont.name;
-                weight                          : Font.Light;
+        property string planet: ""
+
+        font.family: "Helvetica"
+        font.pixelSize: 32
+        font.weight: Font.Light
+        color: "white"
+
+        text: "<p>" + planet + "</p>"
+    }
+
+    Text {
+        id: infoText
+        anchors.top: planetText.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+
+        property string storageSize: ""
+        property string locations: ""
+        property string onlineNums: ""
+        property string hash58 : ""
+        property string nickName : ""
+        property string descriptions: "";
+        property string gcperiod: ""
+
+        font.family: "Helvetica"
+        font.pixelSize: 18
+        font.weight: Font.Light
+        lineHeight: 1.625 * 18
+        lineHeightMode: Text.FixedHeight
+        color: "white"
+
+        text: {
+            if (planet == "NBS Chain") {
+                "<p>" + descriptions + "</p>"
+            } else if (planet == "Core") {
+                "<h1><font color=\"blue\">NBS Chain Core Network</font></h1></br>"
+                + "<p>总容量: " + storageSize + "</p></br>"
+                + "<p>节点数量: " + onlineNums + "</p>"
+                + "<p>" + descriptions + "</p>"
+            } else {
+                "<p>HASH :</p>" + hash58 + "</p></br>"
+                + "<p>容量 :" + storageSize + "</p></br>"
+                + "<p>位置 :" + locations + "</p></br>"
+                + "<p>回收周期: " + gcperiod + "</p></br>"
+                + "<p>" + descriptions + "</p>"
             }
-            text                                : qsTr("<p>"+planet+"</p>");
-
         }
 
-        Text {
-            id                                  : infoText;
-            Layout.fillWidth                    : true;
-            Layout.fillHeight                   : true;
-            property string     coreInfo        : "";
-            property string     hash58          : "";
-            property string     locations       : "unknow";
-            property string     storageSize     : "";
-            property string     nickName        : "";//
-            property string     descriptions    : "";
-            property string     onlineNums      : "";
-
-            text    : {
-                if(planet == "NBS Chain"){
-                    "<p>NBS NET SYSTEM NODES :</p></br><p>"+onlineNums+"</p></br>"
-                    + "<p>" + descriptions +"</p>";
-                }else if(planet == "Sun"){
-                    "<p>Node PeerID:</p><p>"+hash58+"</p></br>"
-                    + "<p>NBS Core:</p><p>"+coreInfo+"</p></br>"
-                    + "<p>Locations:</p><p>"+locations+"</p></br>"
-                    + "<p>NBS Nodes :</p><p>"+onlineNums+"</p></br>";
-                }else {
-                    "<p>Node PeerID:</p><p>"+hash58+"</p></br>"
-                    + "<p>name:  </p><p>"+nickName+"</p></br>"
-                    + "<p>NBS Core:</p><p>"+coreInfo+"</p></br>"
-                    + "<p>Locations:</p><p>"+locations+"</p></br>";
-                }
-            }
-
-            onLinkActivated: Qt.openUrlExternally(link);
-        }
+        onLinkActivated: Qt.openUrlExternally(link)
     }
 
 }

@@ -12,13 +12,16 @@ Mesh {
     property        real        innerRadius;
     property        real        outerRadius;
 
-    property        real        ringSegments;
     /*
+    property        real        ringSegments;
+
     property        var         vertices                : [];
     property        var         faces                   : [];
     property        var         faceVertexUvs           : [];
     */
 
-    source                                              : "";//TODO;
+    source                                              : "qrc:/UI/PageViews/IndexPage/meshes/ring.obj";
+
+
 
 }
