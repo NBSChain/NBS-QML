@@ -1,12 +1,13 @@
 #!include( ../qt3d/examples.pri ) {
 #    error( "Couldn't find the examples.pri file!" )
 #}
-QT += sql qml quick\
+QT += sql qml quick\    
     concurrent \
     3dcore 3drender 3dinput \
+    3dextras \
     3dquick 3dquickrender 3dquickinput 3dquickextras \
     network
-CONFIG += c++11
+CONFIG += c++11 resources_big
 
 
 # The following define makes your compiler emit warnings if you use
@@ -22,12 +23,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-    cpp/networkcontroller.cpp
+#    cpp/networkcontroller.cpp
 
 RESOURCES += qml.qrc \
     res.qrc \
-    planets.qrc \
-    planets-res.qrc
+#    planets.qrc \
+#    planets-res.qrc
 
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
@@ -54,4 +55,4 @@ include(SortFilterProxyModel/SortFilterProxyModel.pri)
 
 
 HEADERS += \
-    cpp/networkcontroller.h
+#    cpp/networkcontroller.h

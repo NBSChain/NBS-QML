@@ -3,7 +3,7 @@
 #include <QQuickView>
 #include <QQmlContext>
 #include <QOpenGLContext>
-#include "cpp/networkcontroller.h"
+
 #include <QScreen>
 
 
@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     format.setStencilBufferSize(8);
     format.setSamples(4);
 
-    NetworkController networkController;
+
     QScreen *screen = app.screens()[0];
     int scrW = screen->size().width();
     int scrH = screen->size().height();
@@ -42,9 +42,10 @@ int main(int argc, char *argv[])
     viewer.setFlags(Qt::FramelessWindowHint);
     viewer.setColor(QColor(Qt::transparent));
 
+//    NetworkController networkController;
 
+//    viewer.rootContext()->setContextProperty("networkController",&networkController);
     viewer.setFormat(format);
-    viewer.rootContext()->setContextProperty("networkController",&networkController);
     viewer.setResizeMode(QQuickView::SizeRootObjectToView);
     viewer.setSource(QUrl(mainQmlApp));
 
@@ -57,10 +58,10 @@ int main(int argc, char *argv[])
 
 
 
-    //qmlRegisterType<NetworkController>("NbsIo",1,0,"NetworkController");
+
 
     /* main view settings */
-
+//    qmlRegisterType<NetworkController>("NbsIo",1,0,"NetworkController");
 //    QQmlApplicationEngine engine;
 //    engine.load(QUrl(mainQmlApp));
 
