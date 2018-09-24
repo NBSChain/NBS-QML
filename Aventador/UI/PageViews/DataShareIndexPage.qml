@@ -29,32 +29,33 @@ ColumnLayout {
         Layout.maximumHeight                    : 32*dp;
     }
 
-//    Rectangle {
-//        Layout.fillWidth: true;
-//        Layout.fillHeight: true;
-//        color   :bgColor;
-//        //border.color: "red";
-//    }
-
-    Controls_1_4.TableView   {
-        id                                      : tableView;
-        Layout.fillWidth                        : true;
-        Layout.fillHeight                       : true;
-        frameVisible                            : false;
-
-        model                                   : DataFileListModel {id:dataFiles;}
-
-        headerDelegate      : Component {
-            id              : headerDelegate;
-            Rectangle   {
-                id              : headTitleRect;
-                Text    {
-                    anchors.centerIn: parent;
-
-                }
-            }
-        }
-
+    Rectangle {
+        Layout.fillWidth: true;
+        Layout.fillHeight: true;
+        color   :bgColor;
+        //border.color: "red";
     }
+
+//    Controls_1_4.TableView   {
+//        id                                      : tableView;
+//        Layout.fillWidth                        : true;
+//        Layout.fillHeight                       : true;
+//        frameVisible                            : false;
+
+//        model                                   : DataFileListModel {id:dataFiles;}
+
+//        headerDelegate      : Component {
+//            id              : headerDelegate;
+//            Rectangle   {
+//                id              : headTitleRect;
+//                color           : "#000000";
+//                Text    {
+//                    anchors.centerIn: parent;
+
+//                }
+//            }
+//        }
+
+//    }
 
 }

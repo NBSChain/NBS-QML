@@ -161,7 +161,8 @@ Rectangle {
          }
          switch(name){
          case "index":
-             mainViewRouter("qrc:/UI/PageViews/IndexPage.qml",{});
+            // mainViewRouter("qrc:/PlanetsMain.qml",{});
+             mainViewRouter("qrc:/PlanetsIndex.qml",{});
              settings.curStackView = name;
              break;
          case "chatMenu":

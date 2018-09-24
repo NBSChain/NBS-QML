@@ -1,6 +1,7 @@
 /****************************************************************************
 **
-** Copyright (C) 2016 The Qt Company Ltd.
+** Copyright (C) 2014 Klaralvdalens Datakonsult AB (KDAB).
+** Copyright (C) 2017 The Qt Company Ltd.
 ** Contact: https://www.qt.io/licensing/
 **
 ** This file is part of the Qt3D module of the Qt Toolkit.
@@ -48,64 +49,53 @@
 **
 ****************************************************************************/
 
-#include "networkcontroller.h"
+#version 150 core
 
-NetworkController::NetworkController(QObject *parent) :
-    QObject(parent)
+in vec3 vertexPosition;
+in vec3 vertexNormal;
+in vec2 vertexTexCoord;
+in vec4 vertexTangent;
+
+out vec3 lightDir;
+out vec3 viewDir;
+out vec2 texCoord;
+
+uniform mat4 viewMatrix;
+uniform mat4 modelMatrix;
+uniform mat4 modelView;
+uniform mat3 modelViewNormal;
+uniform mat4 mvp;
+
+uniform float texCoordScale;
+
+uniform vec3 lightPosition;
+
+void main()
 {
-    QObject::connect(&m_server, &QTcpServer::newConnection, this, &NetworkController::newConnection);
+    // Pass through texture coordinates
+    texCoord = vertexTexCoord * texCoordScale;
 
-    if (!m_server.listen(QHostAddress::Any, 52011)) {
-        qDebug() << "Failed to run http server";
-    }
-}
+    // Transform position, normal, and tangent to eye coords
+    vec3 normal = normalize(modelViewNormal * vertexNormal);
+    vec3 tangent = normalize(modelViewNormal * vertexTangent.xyz);
+    vec3 position = vec3(modelView * vec4(vertexPosition, 1.0));
 
-void NetworkController::newConnection()
-{
-    QTcpSocket *socket = m_server.nextPendingConnection();
+    // Calculate binormal vector
+    vec3 binormal = normalize(cross(normal, tangent));
 
-    if (!socket)
-        return;
+    // Construct matrix to transform from eye coords to tangent space
+    mat3 tangentMatrix = mat3 (
+        tangent.x, binormal.x, normal.x,
+        tangent.y, binormal.y, normal.y,
+        tangent.z, binormal.z, normal.z);
 
-    QObject::connect(socket, &QAbstractSocket::disconnected, this, &NetworkController::disconnected);
-    QObject::connect(socket, &QIODevice::readyRead, this, &NetworkController::readyRead);
-}
+    // Transform light direction and view direction to tangent space
+    vec3 s = lightPosition - position;
+    lightDir = normalize(tangentMatrix * vec3(viewMatrix * vec4(s, 1.0)));
 
-void NetworkController::disconnected()
-{
-    QTcpSocket *socket = qobject_cast<QTcpSocket *>(sender());
-    if (!socket)
-        return;
+    vec3 v = -position;
+    viewDir = normalize(tangentMatrix * v);
 
-    socket->disconnect();
-    socket->deleteLater();
-}
-
-void NetworkController::readyRead()
-{
-    QTcpSocket *socket = qobject_cast<QTcpSocket *>(sender());
-    if (!socket || socket->state() == QTcpSocket::ClosingState)
-        return;
-
-    QString requestData = socket->readAll();
-    QStringList list = requestData.split(' ');
-    QString path = list[1];
-    list = path.split('/');
-
-    QByteArray reply;
-    if (list.count() == 3) {
-        socket->write("HTTP/1.1 200 OK\r\n");
-        reply = QStringLiteral("Command accepted: %1 %2").arg(list[1], list[2]).toUtf8();
-        emit commandAccepted(list[1], list[2]);
-    } else {
-        socket->write("HTTP/1.1 404 Not Found\r\n");
-        reply = "Command rejected";
-    }
-
-    socket->write("Content-Type: text/plain\r\n");
-    socket->write(QStringLiteral("Content-Length: %1\r\n").arg(reply.size()).toUtf8());
-    socket->write("Connection: close\r\n");
-    socket->write("\r\n");
-    socket->write(reply);
-    socket->disconnectFromHost();
+    // Calculate vertex position in clip coordinates
+    gl_Position = mvp * vec4(vertexPosition, 1.0);
 }

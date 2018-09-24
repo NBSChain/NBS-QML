@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Ring.qml</file>
+        <file>PlanetsLight.qml</file>
+        <file>PlanetsMain.qml</file>
+        <file>PlanetButton.qml</file>
+        <file>AppleTVInput.qml</file>
+        <file>FpsDisplay.qml</file>
+        <file>InfoSheet.qml</file>
+        <file>PlanetsIndex.qml</file>
+        <file>SolarSystem.qml</file>
+        <file>PlanetEffect.qml</file>
+        <file>PlanetMaterial.qml</file>
+        <file>PlanetFrameGraph.qml</file>
+        <file>Planet.qml</file>
+        <file>ShadowEffect.qml</file>
+        <file>StyledSlider.qml</file>
+        <file>SunEffect.qml</file>
+    </qresource>
+</RCC>

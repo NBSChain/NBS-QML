@@ -5,7 +5,7 @@
 #include <QOpenGLContext>
 
 #include <QScreen>
-
+#include "cpp/networkcontroller.h"
 
 /**
  * @file
@@ -42,9 +42,9 @@ int main(int argc, char *argv[])
     viewer.setFlags(Qt::FramelessWindowHint);
     viewer.setColor(QColor(Qt::transparent));
 
-//    NetworkController networkController;
+    NetworkController networkController;
 
-//    viewer.rootContext()->setContextProperty("networkController",&networkController);
+    viewer.rootContext()->setContextProperty("networkController",&networkController);
     viewer.setFormat(format);
     viewer.setResizeMode(QQuickView::SizeRootObjectToView);
     viewer.setSource(QUrl(mainQmlApp));
@@ -52,16 +52,14 @@ int main(int argc, char *argv[])
 
     viewer.setPosition((scrW-viewer.width())/2,(scrH-viewer.height())/2);//居中显示
     viewer.show();
-    viewer.rootContext()->setContextProperty("mainView",&viewer);
+    viewer.rootContext()->setContextProperty("viewer",&viewer);
     QObject::connect(viewer.engine(),SIGNAL(quit()),qApp,SLOT(quit()));
-
-
-
 
 
 
     /* main view settings */
 //    qmlRegisterType<NetworkController>("NbsIo",1,0,"NetworkController");
+//    QSurfaceFormat::setDefaultFormat(format);
 //    QQmlApplicationEngine engine;
 //    engine.load(QUrl(mainQmlApp));
 

@@ -1,6 +1,7 @@
 /****************************************************************************
 **
-** Copyright (C) 2016 The Qt Company Ltd.
+** Copyright (C) 2014 Klaralvdalens Datakonsult AB (KDAB).
+** Copyright (C) 2017 The Qt Company Ltd.
 ** Contact: https://www.qt.io/licensing/
 **
 ** This file is part of the Qt3D module of the Qt Toolkit.
@@ -48,64 +49,55 @@
 **
 ****************************************************************************/
 
-#include "networkcontroller.h"
+uniform highp mat4 viewMatrix;
 
-NetworkController::NetworkController(QObject *parent) :
-    QObject(parent)
+uniform highp vec3 lightPosition;
+uniform highp vec3 lightIntensity;
+
+uniform highp vec3 ka;            // Ambient reflectivity
+uniform highp vec3 ks;            // Specular reflectivity
+uniform highp float shininess;    // Specular shininess factor
+uniform highp float opacity;      // Alpha channel
+
+uniform sampler2D diffuseTexture;
+uniform sampler2D normalTexture;
+
+varying highp vec4 positionInLightSpace;
+
+varying highp vec3 lightDir;
+varying highp vec3 viewDir;
+varying highp vec2 texCoord;
+
+highp vec3 dbModel(const highp vec3 norm, const highp vec2 flipYTexCoord)
 {
-    QObject::connect(&m_server, &QTcpServer::newConnection, this, &NetworkController::newConnection);
+    // Reflection of light direction about normal
+    highp vec3 r = reflect(-lightDir, norm);
 
-    if (!m_server.listen(QHostAddress::Any, 52011)) {
-        qDebug() << "Failed to run http server";
-    }
+    highp vec3 diffuseColor = texture2D(diffuseTexture, flipYTexCoord).rgb;
+
+    // Calculate the ambient contribution
+    highp vec3 ambient = lightIntensity * ka * diffuseColor;
+
+    // Calculate the diffuse contribution
+    highp float sDotN = max(dot(lightDir, norm), 0.0);
+    highp vec3 diffuse = lightIntensity * diffuseColor * sDotN;
+
+    // Calculate the specular highlight contribution
+    highp vec3 specular = vec3(0.0);
+    if (sDotN > 0.0)
+        specular = (lightIntensity * ks) * pow(max(dot(r, viewDir), 0.0), shininess);
+
+    return ambient + diffuse + specular;
 }
 
-void NetworkController::newConnection()
+void main()
 {
-    QTcpSocket *socket = m_server.nextPendingConnection();
+    highp vec2 flipYTexCoord = texCoord;
+    flipYTexCoord.y = 1.0 - texCoord.y;
 
-    if (!socket)
-        return;
+    highp vec4 normal = 2.0 * texture2D(normalTexture, flipYTexCoord) - vec4(1.0);
 
-    QObject::connect(socket, &QAbstractSocket::disconnected, this, &NetworkController::disconnected);
-    QObject::connect(socket, &QIODevice::readyRead, this, &NetworkController::readyRead);
-}
+    highp vec3 result = dbModel(normalize(normal.xyz), flipYTexCoord);
 
-void NetworkController::disconnected()
-{
-    QTcpSocket *socket = qobject_cast<QTcpSocket *>(sender());
-    if (!socket)
-        return;
-
-    socket->disconnect();
-    socket->deleteLater();
-}
-
-void NetworkController::readyRead()
-{
-    QTcpSocket *socket = qobject_cast<QTcpSocket *>(sender());
-    if (!socket || socket->state() == QTcpSocket::ClosingState)
-        return;
-
-    QString requestData = socket->readAll();
-    QStringList list = requestData.split(' ');
-    QString path = list[1];
-    list = path.split('/');
-
-    QByteArray reply;
-    if (list.count() == 3) {
-        socket->write("HTTP/1.1 200 OK\r\n");
-        reply = QStringLiteral("Command accepted: %1 %2").arg(list[1], list[2]).toUtf8();
-        emit commandAccepted(list[1], list[2]);
-    } else {
-        socket->write("HTTP/1.1 404 Not Found\r\n");
-        reply = "Command rejected";
-    }
-
-    socket->write("Content-Type: text/plain\r\n");
-    socket->write(QStringLiteral("Content-Length: %1\r\n").arg(reply.size()).toUtf8());
-    socket->write("Connection: close\r\n");
-    socket->write("\r\n");
-    socket->write(reply);
-    socket->disconnectFromHost();
+    gl_FragColor = vec4(result, opacity);
 }

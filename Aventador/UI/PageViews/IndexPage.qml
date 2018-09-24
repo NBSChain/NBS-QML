@@ -26,7 +26,7 @@ Item {
 
 
     Text {
-        text: "INdex";
+        text: "Index";
         color: "white"
         font {
             family: aweFont.name;

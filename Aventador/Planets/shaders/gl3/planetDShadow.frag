@@ -1,6 +1,7 @@
 /****************************************************************************
 **
-** Copyright (C) 2016 The Qt Company Ltd.
+** Copyright (C) 2014 Klaralvdalens Datakonsult AB (KDAB).
+** Copyright (C) 2017 The Qt Company Ltd.
 ** Contact: https://www.qt.io/licensing/
 **
 ** This file is part of the Qt3D module of the Qt Toolkit.
@@ -48,64 +49,69 @@
 **
 ****************************************************************************/
 
-#include "networkcontroller.h"
+#version 150 core
 
-NetworkController::NetworkController(QObject *parent) :
-    QObject(parent)
+uniform mat4 viewMatrix;
+
+uniform vec3 lightPosition;
+uniform vec3 lightIntensity;
+
+uniform vec3 ka;            // Ambient reflectivity
+uniform vec3 ks;            // Specular reflectivity
+uniform float shininess;    // Specular shininess factor
+uniform float opacity;      // Alpha channel
+
+uniform sampler2D diffuseTexture;
+
+uniform sampler2DShadow shadowMapTexture;
+
+in vec4 positionInLightSpace;
+
+in vec3 position;
+in vec3 normal;
+in vec2 texCoord;
+
+out vec4 fragColor;
+
+vec3 dModel(const in vec2 flipYTexCoord)
 {
-    QObject::connect(&m_server, &QTcpServer::newConnection, this, &NetworkController::newConnection);
+    // Calculate the vector from the light to the fragment
+    vec3 s = normalize(vec3(viewMatrix * vec4(lightPosition, 1.0)) - position);
 
-    if (!m_server.listen(QHostAddress::Any, 52011)) {
-        qDebug() << "Failed to run http server";
-    }
+    // Calculate the vector from the fragment to the eye position
+    // (origin since this is in "eye" or "camera" space)
+    vec3 v = normalize(-position);
+
+    // Reflect the light beam using the normal at this fragment
+    vec3 r = reflect(-s, normal);
+
+    // Calculate the diffuse component
+    float diffuse = max(dot(s, normal), 0.0);
+
+    // Calculate the specular component
+    float specular = 0.0;
+    if (dot(s, normal) > 0.0)
+        specular = (shininess / (8.0 * 3.14)) * pow(max(dot(r, v), 0.0), shininess);
+
+    // Lookup diffuse and specular factors
+    vec3 diffuseColor = texture(diffuseTexture, flipYTexCoord).rgb;
+
+    // Combine the ambient, diffuse and specular contributions
+    return lightIntensity * ((ka + diffuse) * diffuseColor + specular * ks);
 }
 
-void NetworkController::newConnection()
+void main()
 {
-    QTcpSocket *socket = m_server.nextPendingConnection();
+    vec2 flipYTexCoord = texCoord;
+    flipYTexCoord.y = 1.0 - texCoord.y;
 
-    if (!socket)
-        return;
+    float shadowMapSample = textureProj(shadowMapTexture, positionInLightSpace);
 
-    QObject::connect(socket, &QAbstractSocket::disconnected, this, &NetworkController::disconnected);
-    QObject::connect(socket, &QIODevice::readyRead, this, &NetworkController::readyRead);
-}
+    vec3 result = lightIntensity * ka * texture(diffuseTexture, flipYTexCoord).rgb;
+    if (shadowMapSample > 0)
+        result += dModel(flipYTexCoord);
 
-void NetworkController::disconnected()
-{
-    QTcpSocket *socket = qobject_cast<QTcpSocket *>(sender());
-    if (!socket)
-        return;
+    float alpha = opacity * texture(diffuseTexture, flipYTexCoord).a;
 
-    socket->disconnect();
-    socket->deleteLater();
-}
-
-void NetworkController::readyRead()
-{
-    QTcpSocket *socket = qobject_cast<QTcpSocket *>(sender());
-    if (!socket || socket->state() == QTcpSocket::ClosingState)
-        return;
-
-    QString requestData = socket->readAll();
-    QStringList list = requestData.split(' ');
-    QString path = list[1];
-    list = path.split('/');
-
-    QByteArray reply;
-    if (list.count() == 3) {
-        socket->write("HTTP/1.1 200 OK\r\n");
-        reply = QStringLiteral("Command accepted: %1 %2").arg(list[1], list[2]).toUtf8();
-        emit commandAccepted(list[1], list[2]);
-    } else {
-        socket->write("HTTP/1.1 404 Not Found\r\n");
-        reply = "Command rejected";
-    }
-
-    socket->write("Content-Type: text/plain\r\n");
-    socket->write(QStringLiteral("Content-Length: %1\r\n").arg(reply.size()).toUtf8());
-    socket->write("Connection: close\r\n");
-    socket->write("\r\n");
-    socket->write(reply);
-    socket->disconnectFromHost();
+    fragColor = vec4(result, alpha);
 }
