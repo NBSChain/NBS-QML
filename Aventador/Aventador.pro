@@ -50,7 +50,7 @@ DISTFILES += \
     images/logo.png
 
 
-include(SortFilterProxyModel/SortFilterProxyModel.pri)
+include(../../SortFilterProxyModel/SortFilterProxyModel.pri)
 
 
 HEADERS += \
