@@ -10,7 +10,7 @@ import QtQuick 2.0
 Item {
     id: infoSheet
 
-    width: 200
+    width: 380
     height: 450
     anchors.verticalCenter: parent.verticalCenter
 
@@ -20,6 +20,7 @@ Item {
     property alias orbitalPeriod: infoText.orbitalPeriod
     property alias distance: infoText.distance
     property alias exampleDetails: infoText.exampleDetails
+    property alias hash58: infoText.hash58
 
     Behavior on opacity { PropertyAnimation {} }
 
@@ -51,6 +52,7 @@ Item {
         property string orbitalPeriod: ""
         property string distance: ""
         property string exampleDetails: ""
+        property string hash58: "";
 
         font.family: "Helvetica"
         font.pixelSize: 18
@@ -60,16 +62,17 @@ Item {
         color: "white"
 
         text: {
-            if (planet == "Solar System") {
+            if (planet == "NBS Chain") {
                 "<p>" + exampleDetails + "</p>"
             } else if (planet == "Sun") {
-                "<p>Equatorial Diameter:</p><p>" + radius + "</p></br>"
-                + "<p>Surface Temperature:</p><p>" + temperature + "</p>"
+                "<p>Hash:</p><p style=\"font-size:12px\">" + hash58 + "</p></br>"
+                "<p>Total Storages: </p><p>" + radius + "</p></br>"
+                + "<p>Total Nodes: </p><p>" + temperature + "</p>"
             } else {
-                "<p>Equatorial Diameter:</p><p>" + radius + "</p></br>"
-                + "<p>Surface Temperature:</p><p>" + temperature + "</p></br>"
-                + "<p>Solar Orbit Period:</p><p>" + orbitalPeriod + "</p></br>"
-                + "<p>Distance from Sun:</p><p>" + distance + "</p>"
+                "<p>Peer Hash:</p><p style=\"font-size:12px\">" + hash58 + "</p></br>"
+                + "<p>Peer Storage: " + radius + "</p></br>"
+                + "<p>GC Period: " + orbitalPeriod + "</p></br>"
+                + "<p>Conntection Peers: " + temperature + "</p>"
             }
         }
 

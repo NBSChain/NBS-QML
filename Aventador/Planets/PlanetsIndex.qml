@@ -79,96 +79,99 @@ Item {
     }
 
     //TODO
-    ListModel {
+//    ListModel {
+//        id                                  : planetModel;
+
+//        ListElement {
+//            name: "Sun"
+//            radius: "109 x Earth"
+//            temperature: "5 778 K"
+//            orbitalPeriod: ""
+//            distance: ""
+//            planetImageSource: "qrc:/images/sun.png"
+//            planetNumber: 0
+//        }
+//        ListElement {
+//            name: "Mercury"
+//            radius: "0.3829 x Earth"
+//            temperature: "80-700 K"
+//            orbitalPeriod: "87.969 d"
+//            distance: "0.387 098 AU"
+//            planetImageSource: "qrc:/images/mercury.png"
+//            planetNumber: 1
+//        }
+//        ListElement {
+//            name: "Venus"
+//            radius: "0.9499 x Earth"
+//            temperature: "737 K"
+//            orbitalPeriod: "224.701 d"
+//            distance: "0.723 327 AU"
+//            planetImageSource: "qrc:/images/venus.png"
+//            planetNumber: 2
+//        }
+//        ListElement {
+//            name: "Earth"
+//            radius: "6 378.1 km"
+//            temperature: "184-330 K"
+//            orbitalPeriod: "365.256 d"
+//            distance: "149598261 km (1 AU)"
+//            planetImageSource: "qrc:/images/earth.png"
+//            planetNumber: 3
+//        }
+//        ListElement {
+//            name: "Mars"
+//            radius: "0.533 x Earth"
+//            temperature: "130-308 K"
+//            orbitalPeriod: "686.971 d"
+//            distance: "1.523679 AU"
+//            planetImageSource: "qrc:/images/mars.png"
+//            planetNumber: 4
+//        }
+//        ListElement {
+//            name: "Jupiter"
+//            radius: "11.209 x Earth"
+//            temperature: "112-165 K"
+//            orbitalPeriod: "4332.59 d"
+//            distance: "5.204267 AU"
+//            planetImageSource: "qrc:/images/jupiter.png"
+//            planetNumber: 5
+//        }
+//        ListElement {
+//            name: "Saturn"
+//            radius: "9.4492 x Earth"
+//            temperature: "84-134 K"
+//            orbitalPeriod: "10759.22 d"
+//            distance: "9.5820172 AU"
+//            planetImageSource: "qrc:/images/saturn.png"
+//            planetNumber: 6
+//        }
+//        ListElement {
+//            name: "Uranus"
+//            radius: "4.007 x Earth"
+//            temperature: "49-76 K"
+//            orbitalPeriod: "30687.15 d"
+//            distance: "19.189253 AU"
+//            planetImageSource: "qrc:/images/uranus.png"
+//            planetNumber: 7
+//        }
+//        ListElement {
+//            name: "Neptune"
+//            radius: "3.883 x Earth"
+//            temperature: "55-72 K"
+//            orbitalPeriod: "60190.03 d"
+//            distance: "30.070900 AU"
+//            planetImageSource: "qrc:/images/neptune.png"
+//            planetNumber: 8
+//        }
+
+//        ListElement {
+//            name                            : "NBS Chain Network"
+//            planetImageSource               : ""
+//            planetNumber                    : 100 // Defaults to solar system
+//        }
+//    }
+    PlanetModel {
         id                                  : planetModel;
-
-        ListElement {
-            name: "Sun"
-            radius: "109 x Earth"
-            temperature: "5 778 K"
-            orbitalPeriod: ""
-            distance: ""
-            planetImageSource: "qrc:/images/sun.png"
-            planetNumber: 0
-        }
-        ListElement {
-            name: "Mercury"
-            radius: "0.3829 x Earth"
-            temperature: "80-700 K"
-            orbitalPeriod: "87.969 d"
-            distance: "0.387 098 AU"
-            planetImageSource: "qrc:/images/mercury.png"
-            planetNumber: 1
-        }
-        ListElement {
-            name: "Venus"
-            radius: "0.9499 x Earth"
-            temperature: "737 K"
-            orbitalPeriod: "224.701 d"
-            distance: "0.723 327 AU"
-            planetImageSource: "qrc:/images/venus.png"
-            planetNumber: 2
-        }
-        ListElement {
-            name: "Earth"
-            radius: "6 378.1 km"
-            temperature: "184-330 K"
-            orbitalPeriod: "365.256 d"
-            distance: "149598261 km (1 AU)"
-            planetImageSource: "qrc:/images/earth.png"
-            planetNumber: 3
-        }
-        ListElement {
-            name: "Mars"
-            radius: "0.533 x Earth"
-            temperature: "130-308 K"
-            orbitalPeriod: "686.971 d"
-            distance: "1.523679 AU"
-            planetImageSource: "qrc:/images/mars.png"
-            planetNumber: 4
-        }
-        ListElement {
-            name: "Jupiter"
-            radius: "11.209 x Earth"
-            temperature: "112-165 K"
-            orbitalPeriod: "4332.59 d"
-            distance: "5.204267 AU"
-            planetImageSource: "qrc:/images/jupiter.png"
-            planetNumber: 5
-        }
-        ListElement {
-            name: "Saturn"
-            radius: "9.4492 x Earth"
-            temperature: "84-134 K"
-            orbitalPeriod: "10759.22 d"
-            distance: "9.5820172 AU"
-            planetImageSource: "qrc:/images/saturn.png"
-            planetNumber: 6
-        }
-        ListElement {
-            name: "Uranus"
-            radius: "4.007 x Earth"
-            temperature: "49-76 K"
-            orbitalPeriod: "30687.15 d"
-            distance: "19.189253 AU"
-            planetImageSource: "qrc:/images/uranus.png"
-            planetNumber: 7
-        }
-        ListElement {
-            name: "Neptune"
-            radius: "3.883 x Earth"
-            temperature: "55-72 K"
-            orbitalPeriod: "60190.03 d"
-            distance: "30.070900 AU"
-            planetImageSource: "qrc:/images/neptune.png"
-            planetNumber: 8
-        }
-
-        ListElement {
-            name                            : "Solar System"
-            planetImageSource               : ""
-            planetNumber                    : 100 // Defaults to solar system
-        }
     }
 
     Component {
@@ -198,7 +201,28 @@ Item {
                 if(planetButtonView.currentIndex > 0){
                     planetButtonView.currentIndex--;
                 }else {
+                    rotationSpeedSlider.forceActiveFocus();
+                }
+            }
+            onSwipeDown: {
+                if (planetButtonView.currentIndex < planetButtonView.count - 1) {
+                    planetButtonView.currentIndex++
+                } else {
+                    planetSizeSlider.forceActiveFocus()
+                }
+            }
 
+            onSwipeLeft: {
+                if (index <= planetButtonView.count / 2) {
+                    rotationSpeedSlider.forceActiveFocus()
+                } else {
+                    planetSizeSlider.forceActiveFocus()
+                }
+            }
+
+            Keys.onPressed: {
+                if (event.key === Qt.Key_Select) {
+                    planetSelector.focusedPlanet = focusPlanet
                 }
             }
         }
@@ -218,11 +242,12 @@ Item {
 
     InfoSheet {
         id                              : info;
-        width                           : 400;
+        width                           : 380;
         anchors.right                   : planetButtonView.left;
         anchors.rightMargin             : 40;
         opacity                         : 1;
-        planet                          : "Solar System";
+        planet                          : "NBS Chain";
+        hash58                          : "QmcZ7vMAKR6PpZKSDmYnTstue1Ep1PAxVD7ZE24EyZ6dDv";
         exampleDetails                  : "<p>NBS致力于将数字资产以分布式存储的形式进行加密保存，</p>"+
                                           "<p>以区块链记账的方式实现数字资产所有权的登记</p>"+
                                           "<p>以有差异化的token价值来体现不同数字资产的不同使用权，</p>"+
@@ -233,13 +258,14 @@ Item {
     }
 
     function updatePlanetInfo () {
-       info.width = 200
+       info.width = 380
        if (focusedPlanet !== 100) {
            info.planet = planetModel.get(focusedPlanet).name
            info.radius = planetModel.get(focusedPlanet).radius
            info.temperature = planetModel.get(focusedPlanet).temperature
            info.orbitalPeriod = planetModel.get(focusedPlanet).orbitalPeriod
            info.distance = planetModel.get(focusedPlanet).distance
+           info.hash58 = planetModel.get(focusedPlanet).hash58
        }
     }
 
@@ -421,7 +447,7 @@ Item {
             id: planetSizeSlider
             anchors.verticalCenter: parent.verticalCenter
             width: sliderLength
-            value: 1200
+            value: 500
             minimumValue: 1
             maximumValue: 2000
             onValueChanged: solarsystem.changeScale(value, false)

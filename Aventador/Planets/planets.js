@@ -83,7 +83,7 @@ function planetId(planetName) {
         return URANUS
     case "Neptune":
         return NEPTUNE
-    case "Solar System":
+    case "NBS Chain Network":
         return SOLAR_SYSTEM
     }
 }
@@ -108,7 +108,7 @@ function planetIndex(planetName) {
         return 7
     case "Neptune":
         return 8
-    case "Solar System":
+    case "NBS Chain Network":
         return 9
     }
 }

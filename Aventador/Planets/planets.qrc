@@ -16,5 +16,6 @@
         <file>ShadowEffect.qml</file>
         <file>StyledSlider.qml</file>
         <file>SunEffect.qml</file>
+        <file>PlanetModel.qml</file>
     </qresource>
 </RCC>

@@ -53,5 +53,6 @@
         <file>images/uranus.png</file>
         <file>images/venus.png</file>
         <file>images/nasa/uranusringcolortrans.png</file>
+        <file>images/planet-logo.png</file>
     </qresource>
 </RCC>
