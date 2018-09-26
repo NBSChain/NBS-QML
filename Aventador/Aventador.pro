@@ -26,8 +26,10 @@ SOURCES += main.cpp \
 
 RESOURCES += qml.qrc \
     res.qrc \
-    Planets/planets.qrc \
-    Planets/planets-res.qrc
+#    Planets/planets.qrc \
+#    Planets/planets-res.qrc
+    canvas3d/nbs-planets.qrc \
+    canvas3d/nbs-planets-res.qrc
 
 
 # Additional import path used to resolve QML modules in Qt Creator's code model

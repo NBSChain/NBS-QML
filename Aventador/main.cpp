@@ -43,8 +43,8 @@ int main(int argc, char *argv[])
     viewer.setColor(QColor(Qt::transparent));
 
     NetworkController networkController;
-
     viewer.rootContext()->setContextProperty("networkController",&networkController);
+
     viewer.setFormat(format);
     viewer.setResizeMode(QQuickView::SizeRootObjectToView);
     viewer.setSource(QUrl(mainQmlApp));
