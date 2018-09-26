@@ -5,7 +5,7 @@
 #include <QOpenGLContext>
 
 #include <QScreen>
-#include "cpp/networkcontroller.h"
+//#include "cpp/networkcontroller.h"
 
 /**
  * @file
@@ -42,8 +42,8 @@ int main(int argc, char *argv[])
     viewer.setFlags(Qt::FramelessWindowHint);
     viewer.setColor(QColor(Qt::transparent));
 
-    NetworkController networkController;
-    viewer.rootContext()->setContextProperty("networkController",&networkController);
+//    NetworkController networkController;
+//    viewer.rootContext()->setContextProperty("networkController",&networkController);
 
     viewer.setFormat(format);
     viewer.setResizeMode(QQuickView::SizeRootObjectToView);

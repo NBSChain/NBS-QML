@@ -91,7 +91,7 @@ Window {
             Loader  {
                 id                                              : midPageViewID;
                 anchors.fill                                    : parent;
-                source                                          :"qrc:/PlanetsIndex.qml"; // "qrc:/planets.qml";//
+                source                                          : "qrc:/planets.qml";//"qrc:/PlanetsIndex.qml"; //
             }
         }
     }

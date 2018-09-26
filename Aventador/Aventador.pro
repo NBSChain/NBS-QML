@@ -1,13 +1,14 @@
-#!include( ../../../Qt/Examples/Qt-5.11.1/qt3d/examples.pri ) {
-#    error( "Couldn't find the examples.pri file!" )
-#}
+# lanbery
 QT += sql qml quick\    
     concurrent \
     3dcore 3drender 3dinput \
     3dextras \
     3dquick 3dquickrender 3dquickinput 3dquickextras \
-    network
-CONFIG += c++11 resources_big
+
+#    network
+
+CONFIG += c++11 \
+#    resources_big
 
 
 # The following define makes your compiler emit warnings if you use
@@ -22,7 +23,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += main.cpp \
-    cpp/networkcontroller.cpp
+#    cpp/networkcontroller.cpp \
 
 RESOURCES += qml.qrc \
     res.qrc \
@@ -49,11 +50,20 @@ RC_ICONS = logo.ico
 ICON = nbs.icns
 
 DISTFILES += \
-    images/logo.png
-
+    images/logo.png \
 
 include(../../SortFilterProxyModel/SortFilterProxyModel.pri)
 
 
 HEADERS += \
-    cpp/networkcontroller.h
+#    cpp/networkcontroller.h \
+
+OTHER_FILES += UI/*.qml \
+            UI/PageViews/*.qml \
+            UI/AddFile/*.qml \
+            canvas3d/*.qml \
+            canvas3d/controls/*.qml \
+            canvas3d/planet.js \
+            canvas3d/images/*
+
+
