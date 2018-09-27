@@ -49,7 +49,7 @@
 ****************************************************************************/
 
 import QtQuick 2.0
-import QtCanvas3D 1.0
+import QtCanvas3D 1.1
 import QtQuick.Layouts 1.3
 import "controls"
 
