@@ -1,5 +1,6 @@
 # lanbery
-QT += sql qml quick\    
+QT += sql qml quick\
+    opengl \
     concurrent \
     3dcore 3drender 3dinput \
     3dextras \
@@ -53,8 +54,7 @@ DISTFILES += \
     images/logo.png \
 
 include(../../SortFilterProxyModel/SortFilterProxyModel.pri)
-
-
+# include()
 HEADERS += \
 #    cpp/networkcontroller.h \
 

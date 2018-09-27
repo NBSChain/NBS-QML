@@ -3,6 +3,7 @@
 #include <QQuickView>
 #include <QQmlContext>
 #include <QOpenGLContext>
+#include <QDir>
 
 #include <QScreen>
 //#include "cpp/networkcontroller.h"
@@ -42,6 +43,13 @@ int main(int argc, char *argv[])
     viewer.setFlags(Qt::FramelessWindowHint);
     viewer.setColor(QColor(Qt::transparent));
 
+    #ifdef Q_OS_WIN
+        QString extraImportPath(QStringLiteral("%1/../../../../%2"));
+    #else
+        QString extraImportPath(QStringLiteral("%1/../../../%2"));
+    #endif
+    viewer.engine()->addImportPath(extraImportPath.arg(QGuiApplication::applicationDirPath(),
+                                                           QString::fromLatin1("qml")));
 //    NetworkController networkController;
 //    viewer.rootContext()->setContextProperty("networkController",&networkController);
 
