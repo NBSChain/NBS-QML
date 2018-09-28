@@ -28,11 +28,12 @@ var THREEx = THREEx || {}
 
 THREEx.Planets	= {}
 
-THREEx.Planets.baseURL	= '../'
+THREEx.Planets.baseURL	= ''
 
 // from http://planetpixelemporium.com/
 
 THREEx.Planets.createSun	= function(){
+    console.log("createSun");
     var geometry	= new THREE.SphereGeometry(0.5, 32, 32)
     var texture	= new THREE.TextureLoader().load(THREEx.Planets.baseURL+'images/sunmap.jpg')
     var material	= new THREE.MeshPhongMaterial({
@@ -346,7 +347,10 @@ THREEx.Planets.createPluto	= function(){
 }
 
 THREEx.Planets.createStarfield	= function(radius){
+    console.log("createStarfield")
+    console.log(radius);
     var texture	= new THREE.TextureLoader().load(THREEx.Planets.baseURL+'images/galaxy_starfield.png')
+    console.log(texture);
     var material	= new THREE.MeshBasicMaterial({
         map	: texture,
         side	: THREE.BackSide

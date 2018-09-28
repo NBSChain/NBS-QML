@@ -63,7 +63,7 @@ var focusedMinimumScale = 20;
 var actualScale;
 
 function initializeGL(canvas, eventSource, mainView) {
-
+    if(qmlView)qmlView = null;
     planetCanvas = canvas;
     qmlView = mainView;
 
@@ -82,8 +82,11 @@ function initializeGL(canvas, eventSource, mainView) {
 
     scene.add(new THREE.AmbientLight(0x111111));
 
+    console.log("loadPlanetData start...");
     loadPlanetData();
+    console.log("loadPlanetData end...");
     createPlanets();
+    console.log("create Planets end...");
     setScale(1200);
 
     camera.lookAt(objects[0].position); // look at the Sun
@@ -197,6 +200,7 @@ function createPlanets() {
 
     objects = [];
 
+    console.log(commonGeometry)
     commonGeometry = new THREE.BufferGeometry().fromGeometry(new THREE.SphereGeometry(1, 64, 64));
     hitGeometry = new THREE.BufferGeometry().fromGeometry(new THREE.SphereGeometry(1, 8, 8));
 
@@ -289,7 +293,9 @@ function createSun(radius) {
 }
 
 function createPlanet(radius, bumpMapScale, mapTexture, bumpTexture, specularTexture) {
-
+    console.log("createPlanet...")
+    console.log(mapTexture)
+    console.log(bumpTexture)
     var textureLoader = new THREE.TextureLoader();
     var material = new THREE.MeshPhongMaterial({
                                                    map: textureLoader.load(mapTexture),
@@ -316,7 +322,7 @@ function createEarthCloud(earthMesh) {
 
     var textureLoader = new THREE.TextureLoader();
     var material = new THREE.MeshPhongMaterial({
-                                                   map: textureLoader.load('qrc:images/earthcloudmapcolortrans.png'),
+                                                   map: textureLoader.load('images/earthcloudmapcolortrans.png'),
                                                    side: THREE.BackSide,
                                                    transparent: true,
                                                    opacity: 0.8
@@ -324,7 +330,7 @@ function createEarthCloud(earthMesh) {
     var mesh = new THREE.Mesh(commonGeometry, material);
 
     var material2 = new THREE.MeshPhongMaterial({
-                                                   map: textureLoader.load('qrc:images/earthcloudmapcolortrans.png'),
+                                                   map: textureLoader.load('images/earthcloudmapcolortrans.png'),
                                                    side: THREE.FrontSide,
                                                    transparent: true,
                                                    opacity: 0.8
@@ -576,7 +582,8 @@ function onDocumentMouseDown(x, y) {
 }
 
 function paintGL(canvas) {
-
+    console.log("paintGL");
+    console.log(canvas);
     if (qmlView.focusedPlanet === SOLAR_SYSTEM)
         daysPerFrame = daysPerFrameScale * 10;
     else
@@ -671,9 +678,11 @@ function paintGL(canvas) {
                                          qmlView.zLookAtOffset);
     cameraLookAt.add(lookAtOffset);
     camera.lookAt(cameraLookAt);
-
+    console.log(scene);
+     console.log(camera);
     // Render the scene
     renderer.render(scene, camera);
+
 
 }
 

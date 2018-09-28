@@ -1,6 +1,7 @@
 # lanbery
 QT += qml quick\
-#    opengl \
+    opengl \
+
 #    concurrent \
 #    3dcore 3drender 3dinput \
 #    3dextras \
@@ -9,6 +10,7 @@ QT += qml quick\
 #    network
 
 CONFIG += c++11 \
+    qml_debug \
 #    resources_big
 
 

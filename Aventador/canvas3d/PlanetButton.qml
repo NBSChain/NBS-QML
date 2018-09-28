@@ -72,6 +72,17 @@ Rectangle {
             anchors.fill: parent
             hoverEnabled: true
             onClicked: { planetSelector.focusedPlanet = focusPlanet; }
+            onEntered: PropertyAnimation { target: planetText; property: "opacity"; to: 1 }
+            onExited: PropertyAnimation {
+                target: planetText
+                property: "opacity"
+                to: {
+                    if (planetText.text != "Solar System")
+                       0
+                    else
+                       1
+                }
+            }
         }
     }
 
@@ -82,6 +93,12 @@ Rectangle {
         font.pixelSize: fontSize
         font.weight: Font.Light
         color: "white"
+        opacity: {
+            if (text == "Solar System" || (Qt.platform.os === "tvos" && planetButton.activeFocus))
+                opacity = 1
+            else
+                opacity = 0
+        }
     }
 
 }
