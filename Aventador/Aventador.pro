@@ -69,3 +69,10 @@ OTHER_FILES += UI/*.qml \
             canvas3d/images/*
 
 
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../libs/QtCanvas3D/ -lqtcanvas3d
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../libs/QtCanvas3D/ -lqtcanvas3dd
+else:unix: LIBS += -L$$PWD/../../libs/QtCanvas3D/ -lqtcanvas3d
+
+INCLUDEPATH += $$PWD/../../libs/QtCanvas3D
+DEPENDPATH += $$PWD/../../libs/QtCanvas3D
