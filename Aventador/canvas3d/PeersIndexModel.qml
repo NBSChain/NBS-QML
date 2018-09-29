@@ -16,6 +16,7 @@ ListModel {
         planetNumber: 0
         hash:"QmcZ7vMAKR6PpZKSDmYnTstue1Ep1PAxVD7ZE24EyZ6dDv";
         storage:"200 GB";
+        gcPeriod:"";
         connectedPeers:91201
         remark:""
     }

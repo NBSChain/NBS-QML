@@ -231,7 +231,7 @@ Item {
         anchors.bottomMargin: 10
         anchors.horizontalCenter: parent.horizontalCenter
         width: sliderLength
-        value: 1200
+        value: 680
         minimumValue: 1
         maximumValue: 2000
         onValueChanged: GLCode.setScale(value);
