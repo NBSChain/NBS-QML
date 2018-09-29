@@ -56,7 +56,7 @@ DISTFILES += \
     images/logo.png \
 
 include(../../SortFilterProxyModel/SortFilterProxyModel.pri)
-# include()
+//include()
 HEADERS += \
 #    cpp/networkcontroller.h \
 
@@ -67,5 +67,7 @@ OTHER_FILES += UI/*.qml \
             canvas3d/controls/*.qml \
             canvas3d/planet.js \
             canvas3d/images/*
+
+
 
 
