@@ -6,5 +6,6 @@
         <file>planets.qml</file>
         <file>StyledSlider.qml</file>
         <file>controls/ControlEventSource.qml</file>
+        <file>PeersIndexModel.qml</file>
     </qresource>
 </RCC>

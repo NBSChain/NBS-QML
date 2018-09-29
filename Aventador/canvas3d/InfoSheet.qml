@@ -53,16 +53,16 @@ import QtQuick 2.0
 Rectangle {
     id: infoSheet
 
-    width: 200
+    width: 380
     height: 450
-    anchors.verticalCenter: parent.verticalCenter
+    anchors.verticalCenter          : parent.verticalCenter
 
-    property alias planet: planetText.planet
-    property alias radius: infoText.radius
-    property alias temperature: infoText.temperature
-    property alias orbitalPeriod: infoText.orbitalPeriod
-    property alias distance: infoText.distance
-    property alias exampleDetails: infoText.exampleDetails
+    property alias planet           : planetText.planet
+    property alias hash             : infoText.hash
+    property alias storage          : infoText.storage
+    property alias gcPeriod         : infoText.gcPeriod
+    property alias connectedPeers   : infoText.connectedPeers
+    property alias remark           : infoText.remark
 
     Behavior on opacity { PropertyAnimation {} }
 
@@ -73,7 +73,6 @@ Rectangle {
         anchors.top: parent.top
         anchors.topMargin: 20
         anchors.horizontalCenter: parent.horizontalCenter
-
         property string planet: ""
 
         font.family: "Helvetica"
@@ -90,11 +89,11 @@ Rectangle {
         anchors.top: planetText.bottom
         anchors.horizontalCenter: parent.horizontalCenter
 
-        property string radius: ""
-        property string temperature: ""
-        property string orbitalPeriod: ""
-        property string distance: ""
-        property string exampleDetails: ""
+        property string hash : ""
+        property string storage : ""
+        property string gcPeriod : ""
+        property string connectedPeers : ""
+        property string remark : ""
 
         font.family: "Helvetica"
         font.pixelSize: 16
@@ -105,15 +104,17 @@ Rectangle {
 
         text: {
             if (planet == "Solar System") {
-                "<p>" + exampleDetails + "</p>"
+                "<p>" + remark + "</p>"
             } else if (planet == "Sun") {
-                "<p>Equatorial Diameter:</p><p>" + radius + "</p></br>"
-                + "<p>Surface Temperature:</p><p>" + temperature + "</p>"
+                "<h2>NBS Chain </h2></br>"
+                + "<p>区块存续历史，创新链接未来.</p></br>"
+                + "<p>Network Storage:" + storage + "</p></br>"
+                + "<p>Network Peers:" + connectedPeers + "</p>"
             } else {
-                "<p>Equatorial Diameter:</p><p>" + radius + "</p></br>"
-                + "<p>Surface Temperature:</p><p>" + temperature + "</p></br>"
-                + "<p>Solar Orbit Period:</p><p>" + orbitalPeriod + "</p></br>"
-                + "<p>Distance from Sun:</p><p>" + distance + "</p>"
+                "<font color=\"blue\" width=200 >" + hash + "</font></br>"
+                + "<p>Storage : " + storage + "</p></br>"
+                + "<p>GCPeriod : " + gcPeriod + "</p></br>"
+                + "<p>Connetions : " + connectedPeers + "</p>"
             }
         }
 

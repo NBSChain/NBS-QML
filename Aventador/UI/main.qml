@@ -23,6 +23,7 @@ Window {
     property color              normalBgColor                   : settings.grigioLynxColor;
     property string             currentViewName                 : "index";
 
+
     visible                                                     : true;    
     flags                                                       : settings.winMode;
 
