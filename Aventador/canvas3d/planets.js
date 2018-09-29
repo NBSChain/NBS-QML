@@ -294,15 +294,13 @@ function createSun(radius) {
 
 function createPlanet(radius, bumpMapScale, mapTexture, bumpTexture, specularTexture) {
     console.log("createPlanet...")
-    console.log(mapTexture)
-    console.log(bumpTexture)
     var textureLoader = new THREE.TextureLoader();
     var material = new THREE.MeshPhongMaterial({
                                                    map: textureLoader.load(mapTexture),
                                                    bumpMap: textureLoader.load(bumpTexture),
                                                    bumpScale: bumpMapScale
                                                });
-
+    console.log(textureLoader.load(mapTexture));
     if (specularTexture) {
         material.specularMap = textureLoader.load(specularTexture);
         material.specular = new THREE.Color('grey');
@@ -366,7 +364,8 @@ function createRing(radius, width, height, texture) {
 function createStarfield(radius) {
 
     var textureLoader = new THREE.TextureLoader();
-    var texture = textureLoader.load('images/galaxy_starfield.png')
+    var texture = textureLoader.load('images/galaxy_starfield.png');
+    console.log(texture);
     var material = new THREE.MeshBasicMaterial({
                                                    map: texture,
                                                    side: THREE.BackSide

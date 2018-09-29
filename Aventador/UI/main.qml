@@ -9,6 +9,8 @@ import "./SilingBar"
 import "./BottomStatus"
 import "./PageViews"
 
+import "./Stars"
+
 
 Window {
     id                                                          : mainWindow;
@@ -94,6 +96,12 @@ Window {
                 anchors.fill                                    : parent;
                 source                                          : "qrc:/planets.qml";//"qrc:/PlanetsIndex.qml"; //qrc:/planets.qml
             }
+
+//            StarsItem {
+//                id : starItemView;
+//                anchors.fill                                    : parent;
+//            }
+
         }
     }
 

@@ -40,6 +40,6 @@
         <file>UI/Utils/TextLabelRight.qml</file>
         <file>UI/Utils/GrpBozLabel.qml</file>
         <file>UI/Utils/TextFieldBoz.qml</file>
-
+        <file>UI/Stars/StarsItem.qml</file>
     </qresource>
 </RCC>
