@@ -582,8 +582,8 @@ function onDocumentMouseDown(x, y) {
 }
 
 function paintGL(canvas) {
-    console.log("paintGL");
-    console.log(canvas);
+//    console.log("paintGL");
+//    console.log(canvas);
     if (qmlView.focusedPlanet === SOLAR_SYSTEM)
         daysPerFrame = daysPerFrameScale * 10;
     else
@@ -678,8 +678,8 @@ function paintGL(canvas) {
                                          qmlView.zLookAtOffset);
     cameraLookAt.add(lookAtOffset);
     camera.lookAt(cameraLookAt);
-    console.log(scene);
-     console.log(camera);
+//    console.log(scene);
+//    console.log(camera);
     // Render the scene
     renderer.render(scene, camera);
 
