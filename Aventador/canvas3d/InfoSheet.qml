@@ -111,7 +111,7 @@ Item {
                 + "<p>Network Storage:" + storage + "</p></br>"
                 + "<p>Network Peers:" + connectedPeers + "</p>"
             } else {
-                "<font color=\"blue\" width=200 >" + hash + "</font></br>"
+                "<font color=\"blue\" width=200 >" + "Peer Info" + "</font></br>"
                 + "<p>Storage : " + storage + "</p></br>"
                 + "<p>GCPeriod : " + gcPeriod + "</p></br>"
                 + "<p>Connetions : " + connectedPeers + "</p>"
