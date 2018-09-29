@@ -82,11 +82,11 @@ function initializeGL(canvas, eventSource, mainView) {
 
     scene.add(new THREE.AmbientLight(0x111111));
 
-    console.log("loadPlanetData start...");
+    //console.log("loadPlanetData start...");
     loadPlanetData();
-    console.log("loadPlanetData end...");
+   // console.log("loadPlanetData end...");
     createPlanets();
-    console.log("create Planets end...");
+   // console.log("create Planets end...");
     setScale(1200);
 
     camera.lookAt(objects[0].position); // look at the Sun

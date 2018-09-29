@@ -34,5 +34,6 @@
         <file>planets.js</file>
         <file>three.js</file>
         <file>threex.planets.js</file>
+        <file>images/nbsstar160.png</file>
     </qresource>
 </RCC>

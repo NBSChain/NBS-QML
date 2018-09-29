@@ -50,7 +50,7 @@
 
 import QtQuick 2.0
 
-Rectangle {
+Item {
     id: infoSheet
 
     width: 380
@@ -66,7 +66,7 @@ Rectangle {
 
     Behavior on opacity { PropertyAnimation {} }
 
-    color: "black"
+    //color: "black"
 
     Text {
         id: planetText
@@ -103,7 +103,7 @@ Rectangle {
         color: "white"
 
         text: {
-            if (planet == "Solar System") {
+            if (planet == "NBS Chain") {
                 "<p>" + remark + "</p>"
             } else if (planet == "Sun") {
                 "<h2>NBS Chain </h2></br>"

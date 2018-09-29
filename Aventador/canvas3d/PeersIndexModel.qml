@@ -105,8 +105,8 @@ ListModel {
 
     }
     ListElement {
-        name: "Solar System"
-        planetImageSource: ""
+        name: "NBS Chain"
+        planetImageSource: "images/nbsstar160.png"
         planetNumber: 100 // Defaults to solar system
         storage:"192.45 TB";
         connectedPeers:19702

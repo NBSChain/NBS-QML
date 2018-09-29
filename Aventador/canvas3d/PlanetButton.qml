@@ -77,10 +77,10 @@ Rectangle {
                 target: planetText
                 property: "opacity"
                 to: {
-                    if (planetText.text != "Solar System")
+                    if (planetText.text != "NBS Chain")
                        0
                     else
-                       1
+                       0
                 }
             }
         }
@@ -94,8 +94,8 @@ Rectangle {
         font.weight: Font.Light
         color: "white"
         opacity: {
-            if (text == "Solar System" || (Qt.platform.os === "tvos" && planetButton.activeFocus))
-                opacity = 1
+            if (text == "NBS Chain" || (Qt.platform.os === "tvos" && planetButton.activeFocus))
+                opacity = 0
             else
                 opacity = 0
         }
