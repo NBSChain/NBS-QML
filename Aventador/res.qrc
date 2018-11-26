@@ -11,6 +11,6 @@
         <file>images/left_bubble_grey.png</file>
         <file>images/right_bubble_green.png</file>
         <file>main.cpp</file>
-        
+        <file>canvas3d/nbs-planets-res.qrc</file>
     </qresource>
 </RCC>

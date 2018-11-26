@@ -20,6 +20,7 @@ A Dapp application based on NBS Chain.
   - IM即时通讯
   - 文件上传
   - 文件查询
+  - gRPC 协议实现
 
 
 
