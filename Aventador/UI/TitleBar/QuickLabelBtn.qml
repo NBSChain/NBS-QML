@@ -32,7 +32,7 @@ Button {
         color                                       : selected ? _activedBgColor : _normalBgColor;
 
         Label   {
-            anchors.centerIn                        : parent;
+            anchors.fill                        : parent;
             id                                      : quickLabel;
             text                                    : labelText;
             color                                   : selected ? _activedFontColor : _normalFontColor;

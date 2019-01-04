@@ -21,7 +21,7 @@ Rectangle {
     property color      titleColor          : foregroundColor;
 
     MouseArea   {
-        property real xmouse;//鼠标x,y坐标
+        property real xmouse;               //鼠标x,y坐标
         property real ymouse;
         anchors.fill                        : parent;
         acceptedButtons                     : Qt.LeftButton;//只处理鼠标左键事件
@@ -220,6 +220,7 @@ Rectangle {
             anchors.verticalCenter              : parent.verticalCenter;
             width                               : 102*dp;
             height                              : parent.height;
+            color                               : settings.grigioLynxColor;
             anchors  {
                 left                            : (winMode === Qt.Window) ? root.left : appTitle.right;
                 leftMargin                      : (winMode === Qt.Window) ? 0*dp : 10*dp;
@@ -286,7 +287,7 @@ Rectangle {
                 fontColor                       : "#ffffff";
                 wBtnWidth                       : 22*dp;
                 wBtnHeight                      : 22*dp;
-                _showToolTip                    : false;
+                _showToolTip                     : false;
                 wBtnText                        : "\uf4e9";     //
                 fontSize                        : 22*dp;
                 toolTip                         : qsTr("");
