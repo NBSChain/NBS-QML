@@ -25,8 +25,6 @@ A Dapp application based on NBS Chain.
 
 
 
-
-
 ## 项目状态
 [![Throughput Graph](https://graphs.waffle.io/NBSChain/NBS-QML/throughput.svg)](https://waffle.io/NBSChain/NBS-QML/metrics/throughput)
 [**`Project Issues dev`**](https://github.com/NBSChain/NBS-QML/issues)
